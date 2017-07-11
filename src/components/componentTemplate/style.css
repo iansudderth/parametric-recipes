@@ -1,0 +1,14 @@
+@import "../../style/variables.css";
+
+.example{
+	font-size: 2rem;
+}
+
+.test{
+	color:blue;
+}
+
+.postcss_test {
+	color:$testColor;
+
+}
