@@ -1,8 +1,9 @@
-import React from 'react'
-import Recipe from '../react-files/recipe/index.js'
+import React from 'react';
+import Recipe from '../react-files/recipe/index';
+import withRoot from '../react-files/style/withRoot';
 
-export default (props) => {
-	return (
-		<Recipe/>
-		)
+function RecipePage(props) {
+  return <Recipe />;
 }
+
+export default withRoot(RecipePage);

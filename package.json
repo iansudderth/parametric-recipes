@@ -1,17 +1,42 @@
 {
   "scripts": {
-    "dev": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "dev-seed": "NODE_ENV=development node server.js --seed",
+    "db": "mongod --dbpath=./db/",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "heroku-postbuild": "next build",
+    "analyze": "cross-env ANALYZE=1 next build"
   },
   "dependencies": {
+    "autosize-input": "^0.4.0",
     "axios": "^0.16.2",
+    "draft-js": "^0.10.1",
+    "eslint-config-prettier": "^2.3.0",
     "express": "^4.14.0",
-    "next": "latest",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "material-ui": "next",
+    "material-ui-icons": "^1.0.0-beta.5",
+    "next": "^3.0.6",
+    "prop-types": "^15.5.10",
     "react": "^15.4.2",
+    "react-contenteditable": "^2.0.4",
     "react-dom": "^15.4.2",
+    "react-input-autosize": "^1.1.4",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
-    "redux-promise": "^0.5.3"
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-plugin-react": "^7.3.0",
+    "prettier": "^1.5.3",
+    "prettier-eslint": "^6.4.2"
   }
 }

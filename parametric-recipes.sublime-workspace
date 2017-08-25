@@ -1,0 +1,1172 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"css",
+				"cssAnswer2RegEx"
+			],
+			[
+				"htm",
+				"htmlAnswer2RegEx"
+			],
+			[
+				"cssA",
+				"cssAnswerRegEx"
+			],
+			[
+				"htmlA",
+				"htmlAnswerRegEx"
+			],
+			[
+				"min",
+				"minWidth\t = 'inherit' Style CSS"
+			],
+			[
+				"input",
+				"inputStyle"
+			],
+			[
+				"inp",
+				"inputStyle"
+			],
+			[
+				"tex",
+				"textField"
+			],
+			[
+				"clan",
+				"className\t: DOMString Element"
+			],
+			[
+				"Reci",
+				"RecipePage"
+			],
+			[
+				"react",
+				"react-files"
+			],
+			[
+				"with",
+				"withStyles"
+			],
+			[
+				"chang",
+				"changeHandler"
+			],
+			[
+				"St",
+				"StyledInput"
+			],
+			[
+				"const",
+				"constructor\tReact.Component"
+			],
+			[
+				"sec",
+				"sectionKey"
+			],
+			[
+				"Art",
+				"ArticleItem"
+			],
+			[
+				"Tutor",
+				"Tutorials\t(Nav.js)"
+			],
+			[
+				"click",
+				"clickHandler"
+			],
+			[
+				"Nav",
+				"NavItem"
+			],
+			[
+				"prop",
+				"propTypes\t(TodoDialog.js)"
+			],
+			[
+				"de",
+				"description"
+			],
+			[
+				"Site",
+				"SiteDialog"
+			],
+			[
+				"dial",
+				"dialog"
+			],
+			[
+				"Dial",
+				"DialogActions"
+			],
+			[
+				"Todo",
+				"TodoDialog"
+			],
+			[
+				"child",
+				"children\t(App.js)"
+			],
+			[
+				"Ap",
+				"AppWrapper\t(App.js)"
+			],
+			[
+				"border",
+				"border-box\t(Layout.js)"
+			],
+			[
+				"box",
+				"boxSizing\t(Layout.js)"
+			],
+			[
+				"text",
+				"textGroup"
+			],
+			[
+				"cont",
+				"container\t(index.js)"
+			],
+			[
+				"body",
+				"bodyText"
+			],
+			[
+				"create",
+				"createStyleSheet"
+			],
+			[
+				"Item",
+				"ItemDialog"
+			],
+			[
+				"test",
+				"test.js"
+			],
+			[
+				"close",
+				"closeDialog"
+			],
+			[
+				"di",
+				"dialog"
+			],
+			[
+				"mod",
+				"modalOpen"
+			],
+			[
+				"card",
+				"cardActions"
+			],
+			[
+				"max",
+				"maxWidth\t = 'none' Style CSS"
+			],
+			[
+				"Card",
+				"CardContent"
+			],
+			[
+				"por",
+				"portfolioItems"
+			],
+			[
+				"Por",
+				"PortfolioItem"
+			],
+			[
+				"cons",
+				"constructor\t(Layout.js)"
+			],
+			[
+				"Po",
+				"PortfolioItem"
+			],
+			[
+				"Connect",
+				"ConnectPage"
+			],
+			[
+				"Connec",
+				"ConnectPage\t(index.js)"
+			],
+			[
+				"marg",
+				"marginTop"
+			],
+			[
+				"About",
+				"AboutPage"
+			],
+			[
+				"port",
+				"portfolio"
+			],
+			[
+				"change",
+				"changePage"
+			],
+			[
+				"changePage",
+				"changePageComposer"
+			],
+			[
+				"chan",
+				"changePage"
+			],
+			[
+				"bor",
+				"borderBottom"
+			],
+			[
+				"active",
+				"activePage"
+			],
+			[
+				"connect",
+				"connectActive\t(Navbar.js)"
+			],
+			[
+				"class",
+				"classes"
+			],
+			[
+				"about",
+				"aboutActive"
+			],
+			[
+				"activ",
+				"activePage"
+			],
+			[
+				"N",
+				"NavbarDrawer"
+			],
+			[
+				"style",
+				"styleSheet"
+			],
+			[
+				"List",
+				"ListItemText"
+			],
+			[
+				"onCl",
+				"onclick\t: EventHandler Window"
+			],
+			[
+				"Na",
+				"Navbar"
+			],
+			[
+				"n",
+				"NavbarDrawer.js"
+			],
+			[
+				"exten",
+				"extends〔keyword〕"
+			],
+			[
+				"connct",
+				"connectActive"
+			],
+			[
+				"icon",
+				"iconGroup"
+			],
+			[
+				"Ob",
+				"Object"
+			],
+			[
+				"outp",
+				"outputFile"
+			],
+			[
+				"out",
+				"outputFile"
+			],
+			[
+				"loc",
+				"locationName"
+			],
+			[
+				"oneOF",
+				"PropTypes.oneOfType"
+			],
+			[
+				"upd",
+				"updateItem"
+			],
+			[
+				"chane",
+				"changeBaseComposer"
+			],
+			[
+				"dele",
+				"deleteItemComposer"
+			],
+			[
+				"completeI",
+				"completeItemComposer"
+			],
+			[
+				"reo",
+				"reorderItemComposer"
+			],
+			[
+				"up",
+				"updateItem"
+			],
+			[
+				"count",
+				"counterText"
+			],
+			[
+				"del",
+				"deleteItemComposer"
+			],
+			[
+				"oneO",
+				"oneOfType"
+			],
+			[
+				"oneOfT",
+				"PropTypes.oneOfType"
+			],
+			[
+				"ac",
+				"accentColor"
+			],
+			[
+				"accent",
+				"accentTextColor"
+			],
+			[
+				"new",
+				"newItemAction"
+			],
+			[
+				"Pro",
+				"PropTypes"
+			],
+			[
+				"reor",
+				"reorderItem"
+			],
+			[
+				"comple",
+				"completeItem"
+			],
+			[
+				"Icon",
+				"IconButton"
+			],
+			[
+				"deep",
+				"deepOrange"
+			],
+			[
+				"inco",
+				"incompleteAccentColor"
+			],
+			[
+				"income",
+				"incompleteAccentColor"
+			],
+			[
+				"faded",
+				"fadedAccentColorParser"
+			],
+			[
+				"incom",
+				"incompleteColor"
+			],
+			[
+				"incompl",
+				"incompleteTextColor"
+			],
+			[
+				"currentIt",
+				"currentItemColor"
+			],
+			[
+				"upda",
+				"updateHandler"
+			],
+			[
+				"T",
+				"Typography"
+			],
+			[
+				"edi",
+				"editText"
+			],
+			[
+				"Edi",
+				"EditableTextArea\t(EditableTextArea.js)"
+			],
+			[
+				"Edit",
+				"EditableTextArea"
+			],
+			[
+				"red",
+				"redirect"
+			],
+			[
+				"Head",
+				"HeaderMenu"
+			],
+			[
+				"base",
+				"baseItem\t(TodoContainer.js)"
+			],
+			[
+				"color",
+				"colorItemClickHandler"
+			],
+			[
+				"Colo",
+				"ColorMenu\t(ListItem.js)"
+			],
+			[
+				"mat",
+				"material-ui\t(index.js)"
+			],
+			[
+				"hel",
+				"helpers/"
+			],
+			[
+				"ext",
+				"extends\t(TodoContainer.js)"
+			],
+			[
+				"onC",
+				"onClick\t(ListHeader.js)"
+			],
+			[
+				"update",
+				"updateData\t(index.js)"
+			],
+			[
+				"bind",
+				"bindActionCreators"
+			],
+			[
+				"Reac",
+				"ReactLoading"
+			],
+			[
+				"title",
+				"titleText"
+			],
+			[
+				"Rep",
+				"ReportIcon"
+			],
+			[
+				"mater",
+				"material-ui"
+			],
+			[
+				"Sav",
+				"SaveIcon"
+			],
+			[
+				"ne",
+				"network"
+			],
+			[
+				"UP",
+				"UPDATE_PROGRESS"
+			],
+			[
+				"UPD",
+				"UPDATE_SUCCESS"
+			],
+			[
+				"updateD",
+				"updateDataThrottled"
+			],
+			[
+				"throttl",
+				"throttle-action"
+			],
+			[
+				"componentD",
+				"componentDidUpdate\t Life Cycle"
+			],
+			[
+				"set",
+				"setTimeout\t( handler: any, timeout?: long, arguments_..: any ): long Window"
+			],
+			[
+				"con",
+				"const"
+			],
+			[
+				"UPDATE",
+				"UPDATE_PROGRESS"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "packages",
+		"selected_items":
+		[
+			[
+				"packages",
+				"Packages UI"
+			],
+			[
+				"paCK",
+				"Package Control: Install Package"
+			],
+			[
+				"auto",
+				"eslintAutoFix"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"prettier",
+				"JsPrettier: Format Code"
+			],
+			[
+				"git",
+				"Git: Change Branch"
+			],
+			[
+				"nex",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"jsp",
+				"JsPrettier: Format Code"
+			],
+			[
+				"js",
+				"JsPrettier: Format Code"
+			],
+			[
+				"INSTA",
+				"Package Control: Install Package"
+			],
+			[
+				"jspr",
+				"JsPrettier: Format Code"
+			],
+			[
+				"next erro",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"forma",
+				"Format: Javascript"
+			],
+			[
+				"lint",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package u",
+				"Packages UI"
+			],
+			[
+				"well",
+				"Snippet: bs3-well"
+			],
+			[
+				"read",
+				"ReadmePlease"
+			],
+			[
+				"react",
+				"Snippet: React: class component"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"color",
+				"Color Scheme Editor: Edit current color scheme"
+			],
+			[
+				"re",
+				"ReadmePlease"
+			],
+			[
+				"ream",
+				"ReadmePlease"
+			],
+			[
+				"term",
+				"Terminal: Open in project folder"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"rea",
+				"ReadmePlease"
+			],
+			[
+				"add",
+				"Package Control: Add Repository"
+			],
+			[
+				"p",
+				"Package Control: Disable Package"
+			],
+			[
+				"package",
+				"Package Control: Disable Package"
+			],
+			[
+				"refle",
+				"Emmet: Reflect CSS Value"
+			],
+			[
+				"brack",
+				"BracketHighlighter: Select Bracket Content with Brackets"
+			],
+			[
+				"select be",
+				"BracketHighlighter: Select Bracket Content"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 193.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/iansudderth/Desktop/parametric-recipes"
+	],
+	"file_history":
+	[
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/StyledInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/.eslintrc.json",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/AboutPage/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/ConnectPage/index.js",
+		"/Users/iansudderth/Desktop/development-resources/src/scripts/components/Layout.js",
+		"/Users/iansudderth/Desktop/development-resources/src/scripts/App.js",
+		"/Users/iansudderth/Desktop/development-resources/src/scripts/components/Nav/Nav.js",
+		"/Users/iansudderth/Desktop/development-resources/src/scripts/components/MainContent/ArticleList.js",
+		"/Users/iansudderth/Desktop/development-resources/src/scripts/data.js",
+		"/Users/iansudderth/Desktop/development-resources/.eslintrc.json",
+		"/Users/iansudderth/Desktop/development-resources/src/scripts/components/MainContent/MainContent.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/PortfolioPage/_portfolioItems.js",
+		"/Users/iansudderth/Library/Application Support/Sublime Text 3/Packages/User/JsPrettier.sublime-settings",
+		"/Users/iansudderth/Library/Application Support/Sublime Text 3/Packages/JsPrettier/JsPrettier.sublime-settings",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/PortfolioPage/PortfolioItemDialogs/test.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/PortfolioPage/PortfolioItemDialogs/TodoDialog.js",
+		"/Users/iansudderth/Library/Application Support/Sublime Text 3/Packages/User/ESLint-Formatter.sublime-settings",
+		"/Users/iansudderth/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/iansudderth/Desktop/portfolio site/.eslintrc.json",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/NavbarDrawer.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/Navbar.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/Layout.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/PortfolioPage/PortfolioItem.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/PortfolioPage/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/PortfolioPage/PortfolioItemDialogs/SiteDialog.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/pages/_document.js",
+		"/Users/iansudderth/Desktop/portfolio site/pages/todo.js",
+		"/Users/iansudderth/Desktop/portfolio site/pages/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/index.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ColorMenu.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/containers/TodoContainer.js",
+		"/Users/iansudderth/Desktop/portfolio site/package.json",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/actions/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ColorMenu.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/HeaderMenu.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/CompleteList.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/EditableTextArea.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/HeaderMenu.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/IncompleteList.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/List.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ListHeader.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ListItem.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ListItemTextArea.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/NewItemForm.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/Progress.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/containers/TodoContainer.jsx",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/helpers/colorParser.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/reducers/baseItem_reducer.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/reducers/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/reducers/items_reducer.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/reducers/network_reducer.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/style/createDefaultContext.js",
+		"/Users/iansudderth/Desktop/typescript-tests/greeter.ts",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ListItemTextArea.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ListItem.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ListHeader.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/List.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/IncompleteList.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/EditableTextArea.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/CompleteList.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/Progress.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/NewItemForm.js",
+		"/Users/iansudderth/Desktop/portfolio site/server.js",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/App.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/server.js",
+		"/Users/iansudderth/Desktop/portfolio site/style/withRoot.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/package.json",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/pages/todo.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/PortfolioPage/PortfolioItemDialogs/test.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/PortfolioPage/_portfolioItems.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/PortfolioPage/PortfolioItem.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/README.md",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/ListHeader.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/schema/generateNewTodoList.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/Layout.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/AboutPage/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/ConnectPage/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/index.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/Navbar.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/NavbarDrawer.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/style/context.js",
+		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/Navbar/index.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/.gitignore",
+		"/Users/iansudderth/Desktop/Spring 17 Graduation/CSV_Processor.py",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/ColorMenu.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/CompleteList.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/App.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/Progress.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/NewItemForm.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/ListItemTextArea.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/ListItem.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/List.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/IncompleteList.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/HeaderMenu.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/EditableTextArea.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/actions/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/helpers/colorParser.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/pages/_document.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/pages/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/containers/TodoContainer.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/reducers/baseItem_reducer.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/reducers/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/reducers/items_reducer.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/reducers/network_reducer.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/style/createDefaultContext.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/.eslintrc.json",
+		"/Users/iansudderth/Library/Application Support/Sublime Text 3/Packages/User/EnvironmentSettings.sublime-settings",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/.eslintrc.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/recursivetodo.sublime-project",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/schema/seed.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/schema/todoListSchema.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/.next/bundles/pages/todo.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/.gitignore",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/anotherList.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/componentTemplate/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/CompleteList/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/NewItemForm/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/ListItem/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/ListHeader/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/List/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/IncompleteList/index.js",
+		"/Users/iansudderth/Desktop/custom-server-express/todo.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/next.config.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/src/components/NewItemForm/index.js",
+		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/src/components/List/index.js"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+			"/Users/iansudderth/Documents/Coding/gulp-redo/node_modules/bootstrap/scss"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"  {\n    link: \"#images\",\n    text: \"Tutorials\"\n  }",
+			"change",
+			"const",
+			"textColor",
+			"non",
+			"set",
+			"theme",
+			"root",
+			"value",
+			"FaArrowLeft",
+			"component",
+			")\n",
+			"component",
+			"APIShell",
+			"component",
+			"th",
+			"labelcolor",
+			"$icon-font-path",
+			"class",
+			"class (def",
+			"class",
+			"entity.name",
+			"comment",
+			"text",
+			"app",
+			"sizes",
+			"abbrev",
+			"spacer",
+			"console",
+			">\n",
+			"am a",
+			"require",
+			"conn",
+			"effects/",
+			"efftcts/",
+			"htmlS",
+			"bootstrap/",
+			"npm",
+			"nom",
+			"builds/development/",
+			",']",
+			"blue",
+			"aqua",
+			"<p>",
+			"ul",
+			"\n\t",
+			"TabbedPanelsTabHover",
+			"TabbedPanelsTabSelected",
+			"div",
+			"h1",
+			"h3",
+			"h1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.clipboard_manager":
+	{
+		"height": 0.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 324.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 103.0
+	},
+	"pinned_build_system": "",
+	"project": "parametric-recipes.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 248.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
