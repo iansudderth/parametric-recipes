@@ -98,7 +98,13 @@ class StyledInput extends Component {
           className={classes.input}
           ref={this.inputRef}
         />
-        <span className={classes.unit} style={this.unitStyle()} onClick={this.clickHandler}>g</span>
+        <span
+          className={classes.unit}
+          style={this.unitStyle()}
+          onClick={this.clickHandler}
+        >
+          {this.props.unit || 'g'}
+        </span>
       </div>
     );
   }

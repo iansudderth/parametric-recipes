@@ -56,6 +56,7 @@ var App = function (_Component) {
         }
       }, _react2.default.createElement(_NumberInput2.default, {
         fontSize: 40,
+        unit: 'g',
         __source: {
           fileName: _jsxFileName,
           lineNumber: 8

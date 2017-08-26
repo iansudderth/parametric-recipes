@@ -7,6 +7,7 @@ class App extends Component {
       <div>
         <NumberInput
           fontSize={40}
+          unit={'g'}
         />
       </div>
     );
