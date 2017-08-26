@@ -5,7 +5,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NumberInput />
+        <NumberInput
+          fontSize={40}
+        />
       </div>
     );
   }

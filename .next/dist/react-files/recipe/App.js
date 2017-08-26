@@ -28,20 +28,14 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _StyledInput = require('./components/StyledInput');
+var _NumberInput = require('./components/NumberInput');
 
-var _StyledInput2 = _interopRequireDefault(_StyledInput);
-
-var _NumberSpace = require('./components/NumberSpace');
-
-var _NumberSpace2 = _interopRequireDefault(_NumberSpace);
+var _NumberInput2 = _interopRequireDefault(_NumberInput);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = '/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/App.js';
 
-
-var AutosizeInput = require('react-input-autosize');
 
 var App = function (_Component) {
   (0, _inherits3.default)(App, _Component);
@@ -58,12 +52,13 @@ var App = function (_Component) {
       return _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 7
         }
-      }, _react2.default.createElement(_StyledInput2.default, {
+      }, _react2.default.createElement(_NumberInput2.default, {
+        fontSize: 40,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 8
         }
       }));
     }

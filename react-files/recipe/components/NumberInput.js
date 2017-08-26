@@ -1,12 +1,38 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import injectSheet from 'react-jss';
 
-const shadowStyle = {
-  fontSize: 40,
-  fontFamily: 'sans-serif',
-  display: 'inline-block',
+
+const styles = {
+  root: {
+    display: 'inline-block',
+  },
+  input: {
+    fontFamily: 'Roboto',
+    fontSize: 40,
+    border: 'none',
+    background: 'none',
+    textAlign: 'center',
+    '&:focus': {
+      outline: 'none',
+    },
+  },
+  unit: {
+    fontFamily: 'Roboto',
+    fontSize: 40,
+  },
 };
 
+function removePrecedingZeros(str) {
+  if (str.length <= 1) { return str; }
+  const strArray = str.split('');
+  while (strArray[0] === '0' && strArray[1] !== '.') {
+    strArray.shift();
+  }
+  const output = strArray.join('');
+  return output;
+}
 
 class StyledInput extends Component {
   constructor(props) {
@@ -21,50 +47,65 @@ class StyledInput extends Component {
    let newVal = event.target.value;
    newVal = newVal.trim();
    newVal = newVal.length === 0 ? '0' : newVal;
-   if (isNaN(newVal)) {
-     this.setState({ inputValue: oldVal });
-   } else {
-     this.setState({ inputValue: newVal });
-   }
- }
-
- inputRef = (el) => {
-   this.input = el;
+   let inputValue = isNaN(newVal) ? oldVal : newVal;
+   inputValue = removePrecedingZeros(inputValue);
+   this.setState({ inputValue });
  }
 
 
-  style = () => {
+  resizeStyle = () => {
+    const fontSize = this.props.fontSize ? { fontSize: this.props.fontSize } : {};
+    const fontFamily = this.props.fontFamily ? { fontFamily: this.props.fontFamily } : {};
     const charWidth = this.state.inputValue.toString().length;
     let oneCount = this.state.inputValue.match(/11/g);
-    oneCount = oneCount ? oneCount.length : 0;
-    console.log(oneCount);
+    oneCount = oneCount ? oneCount.length + 1 : 0;
     let dotCount = this.state.inputValue.match(/\./g);
     dotCount = dotCount ? 1 : 0;
 
-    const inputWidth = (charWidth - oneCount - dotCount) + (oneCount * 0.75) + (dotCount * 0.8);
+    const inputWidth = (charWidth - oneCount - dotCount) + (oneCount * 1) + (dotCount * 0.5);
 
-    return { width: `calc(${inputWidth}ch + 2px)`, fontSize: 40, textAlign: 'left', padding: 0, fontFamily: 'sans-serif' };
+    const widthStyle = { width: `calc(${inputWidth}ch + 2px)` };
+
+    return Object.assign(widthStyle, fontSize, fontFamily);
+  }
+
+  unitStyle = () => {
+    const fontSize = this.props.fontSize ? { fontSize: this.props.fontSize } : {};
+    const fontFamily = this.props.fontFamily ? { fontFamily: this.props.fontFamily } : {};
+
+    return Object.assign(fontSize, fontFamily);
+  }
+
+  inputRef = (el) => {
+    this.input = el;
+  }
+
+  clickHandler = () => {
+    const length = this.state.inputValue.length;
+    this.input.focus();
+    this.input.setSelectionRange(length, length);
   }
 
   render() {
     const classes = this.props.classes;
     return (
-      <div>
-        <h3>{this.state.inputValue}</h3>
-        <div style={shadowStyle}>
-          {this.state.inputValue}
-        </div>
-        <br />
+      <div className={classes.root}>
         <input
           type="text"
-          ref={this.inputRef}
           onChange={this.changeHandler}
           value={this.state.inputValue}
-          style={this.style()}
+          style={this.resizeStyle()}
+          className={classes.input}
+          ref={this.inputRef}
         />
+        <span className={classes.unit} style={this.unitStyle()} onClick={this.clickHandler}>g</span>
       </div>
     );
   }
 }
 
-export default StyledInput;
+StyledInput.propTypes = {
+  classes: PropTypes.object,
+};
+
+export default withStyles(styles)(StyledInput);

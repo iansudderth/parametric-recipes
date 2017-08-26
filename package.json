@@ -24,6 +24,7 @@
     "react-contenteditable": "^2.0.4",
     "react-dom": "^15.4.2",
     "react-input-autosize": "^1.1.4",
+    "react-jss": "^7.1.0",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
