@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import NumberInput from './NumberInput';
 
 function Ingredient(props) {
 	let { name, amount, unit, scaling } = props.ingredient;
@@ -8,9 +9,10 @@ function Ingredient(props) {
 	unit = unit || '';
 	scaling = scaling ? `${scaling}%` : '';
 	return (
-		<div>
-			{`${name}  ${amount}${unit}  ${scaling}`}
-		</div>
+		<li>
+			{`${name}  `}
+			<NumberInput amount={amount} unit={unit} />
+		</li>
 	);
 }
 

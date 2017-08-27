@@ -1,15 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import NumberInput from './NumberInput';
+
+const styles = {
+	headerContainer: {
+		fontFamily: 'Roboto',
+	},
+	servingsContainer: {
+		fontSize: 20,
+		fontWeight: 300,
+	},
+};
 
 function Header(props) {
+	const { headerContainer, servingsContainer } = props.classes;
+
 	return (
-		<div>
-			<h1>
-				{props.title}
-			</h1>
-			<h2>
-				{`${props.serving.amount} ${props.serving.name}`}
-			</h2>
+		<div className={headerContainer}>
+			<div>
+				<h1>
+					{props.title}
+				</h1>
+			</div>
+			<div className={servingsContainer}>
+				<h2 style={{ fontWeight: 400 }}>
+					<NumberInput
+						amount={props.serving.amount}
+						unit={props.serving.name}
+					/>
+				</h2>
+			</div>
 		</div>
 	);
 }
@@ -32,4 +53,4 @@ Header.defaultProps = {
 	},
 };
 
-export default Header;
+export default withStyles(styles)(Header);

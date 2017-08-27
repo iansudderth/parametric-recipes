@@ -8,6 +8,8 @@ const styles = {
 	sectionContainer: {
 		display: 'flex',
 		borderBottom: '2px solid black',
+		fontSize: '20px',
+		fontFamily: 'Roboto',
 	},
 	ingredientSection: {
 		width: '50%',
@@ -21,16 +23,18 @@ function Section(props) {
 	const { sectionContainer, ingredientSection, stepsSection } = props.classes;
 	return (
 		<div className={sectionContainer}>
-			<div className={stepsSection}>
-				{props.ingredientsArray.map(ingredient =>
-					(<Ingredient
-						key={`ingredient-${ingredient.name}-${ingredient.amount}`}
-						scalingFactor={props.scalingFactor}
-						ingredient={ingredient}
-					/>),
-				)}
-			</div>
 			<div className={ingredientSection}>
+				<ul>
+					{props.ingredientsArray.map(ingredient =>
+						(<Ingredient
+							key={`ingredient-${ingredient.name}-${ingredient.amount}`}
+							scalingFactor={props.scalingFactor}
+							ingredient={ingredient}
+						/>),
+					)}
+				</ul>
+			</div>
+			<div className={stepsSection}>
 				<Steps
 					steps={props.steps}
 					startingNumber={props.stepsStartingNumber}

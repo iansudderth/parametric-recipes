@@ -38,7 +38,7 @@ class StyledInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: '22',
+      inputValue: this.props.amount.toString(),
     };
   }
 
@@ -111,7 +111,7 @@ class StyledInput extends Component {
           style={this.unitStyle()}
           onClick={this.clickHandler}
         >
-          {this.props.unit || 'g'}
+          {this.props.unit}
         </span>
       </div>
     );
@@ -120,6 +120,18 @@ class StyledInput extends Component {
 
 StyledInput.propTypes = {
   classes: PropTypes.object,
+  fontSize: PropTypes.number,
+  fontFamily: PropTypes.string,
+  amount: PropTypes.number,
+  unit: PropTypes.string,
+};
+
+StyledInput.defaultProps = {
+  classes: {},
+  fontSize: 20,
+  fontFamily: 'Roboto',
+  amount: 22,
+  unit: 'g',
 };
 
 export default withStyles(styles)(StyledInput);
