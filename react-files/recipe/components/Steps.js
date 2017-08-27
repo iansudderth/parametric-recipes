@@ -5,21 +5,23 @@ import StepItem from './StepItem';
 function Steps(props) {
 	return (
 		<div>
-			<ul>
+			<ol start={props.startingNumber}>
 				{props.steps.map(step =>
 					<StepItem key={`step${step}`} step={step} />,
 				)}
-			</ul>
+			</ol>
 		</div>
 	);
 }
 
 Steps.propTypes = {
 	steps: PropTypes.arrayOf(PropTypes.string),
+	startingNumber: PropTypes.number,
 };
 
 Steps.defaultProps = {
 	steps: [],
+	startingNumber: 1,
 };
 
 export default Steps;

@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Ingredient(props) {
+	let { name, amount, unit, scaling } = props.ingredient;
+	name = name || '';
+	amount = amount || '';
+	unit = unit || '';
+	scaling = scaling ? `${scaling}%` : '';
 	return (
 		<div>
-			{'stuff'}
+			{`${name}  ${amount}${unit}  ${scaling}`}
 		</div>
 	);
 }

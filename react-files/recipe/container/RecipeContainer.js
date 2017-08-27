@@ -5,6 +5,24 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Section from '../components/Section';
 
+function generateSections(recipeArr, scalingFactor) {
+	let stepsCount = 1;
+	return recipeArr.map(section => {
+		const startingNumber = stepsCount;
+		stepsCount += section.procedure.length;
+
+		return (
+			<Section
+				key={`section-${section.procedure[0]}`}
+				steps={section.procedure}
+				ingredientsArray={section.ingredients}
+				scalingFactor={scalingFactor}
+				stepsStartingNumber={startingNumber}
+			/>
+		);
+	});
+}
+
 function RecipeContainer(props) {
 	return (
 		<div>
@@ -15,14 +33,7 @@ function RecipeContainer(props) {
 				/>
 			</div>
 			<div>
-				{props.recipe.recipe.map(section =>
-					(<Section
-						key={`section-${section.procedure[0]}`}
-						steps={section.procedure}
-						ingredientsArray={section.ingredients}
-						scalingFactor={props.scalingFactor}
-					/>),
-				)}
+				{generateSections(props.recipe.recipe, props.scalingFactor)}
 			</div>
 		</div>
 	);

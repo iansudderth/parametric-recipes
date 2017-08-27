@@ -1,12 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
 import Ingredient from './Ingredient';
 import Steps from './Steps';
 
+const styles = {
+	sectionContainer: {
+		display: 'flex',
+		borderBottom: '2px solid black',
+	},
+	ingredientSection: {
+		width: '50%',
+	},
+	stepsSection: {
+		width: '50%',
+	},
+};
+
 function Section(props) {
+	const { sectionContainer, ingredientSection, stepsSection } = props.classes;
 	return (
-		<div>
-			<div>
+		<div className={sectionContainer}>
+			<div className={stepsSection}>
 				{props.ingredientsArray.map(ingredient =>
 					(<Ingredient
 						key={`ingredient-${ingredient.name}-${ingredient.amount}`}
@@ -15,8 +30,11 @@ function Section(props) {
 					/>),
 				)}
 			</div>
-			<div>
-				<Steps steps={props.steps} />
+			<div className={ingredientSection}>
+				<Steps
+					steps={props.steps}
+					startingNumber={props.stepsStartingNumber}
+				/>
 			</div>
 		</div>
 	);
@@ -33,12 +51,14 @@ Section.propTypes = {
 	),
 	scalingFactor: PropTypes.number,
 	steps: PropTypes.arrayOf(PropTypes.string),
+	stepsStartingNumber: PropTypes.number,
 };
 
 Section.defaultProps = {
 	ingredientsArray: [],
 	scalingFactor: 1,
 	steps: [],
+	stepsStartingNumber: 1,
 };
 
-export default Section;
+export default withStyles(styles)(Section);
