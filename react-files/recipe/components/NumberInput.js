@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import injectSheet from 'react-jss';
 
-
 const styles = {
   root: {
     display: 'inline-block',
@@ -25,7 +24,9 @@ const styles = {
 };
 
 function removePrecedingZeros(str) {
-  if (str.length <= 1) { return str; }
+  if (str.length <= 1) {
+    return str;
+  }
   const strArray = str.split('');
   while (strArray[0] === '0' && strArray[1] !== '.') {
     strArray.shift();
@@ -42,49 +43,57 @@ class StyledInput extends Component {
     };
   }
 
- changeHandler = (event) => {
-   const oldVal = this.state.inputValue;
-   let newVal = event.target.value;
-   newVal = newVal.trim();
-   newVal = newVal.length === 0 ? '0' : newVal;
-   let inputValue = isNaN(newVal) ? oldVal : newVal;
-   inputValue = removePrecedingZeros(inputValue);
-   this.setState({ inputValue });
- }
-
+  changeHandler = event => {
+    const oldVal = this.state.inputValue;
+    let newVal = event.target.value;
+    newVal = newVal.trim();
+    newVal = newVal.length === 0 ? '0' : newVal;
+    let inputValue = isNaN(newVal) ? oldVal : newVal;
+    inputValue = removePrecedingZeros(inputValue);
+    this.setState({ inputValue });
+  };
 
   resizeStyle = () => {
-    const fontSize = this.props.fontSize ? { fontSize: this.props.fontSize } : {};
-    const fontFamily = this.props.fontFamily ? { fontFamily: this.props.fontFamily } : {};
+    const fontSize = this.props.fontSize
+      ? { fontSize: this.props.fontSize }
+      : {};
+    const fontFamily = this.props.fontFamily
+      ? { fontFamily: this.props.fontFamily }
+      : {};
     const charWidth = this.state.inputValue.toString().length;
     let oneCount = this.state.inputValue.match(/11/g);
     oneCount = oneCount ? oneCount.length + 1 : 0;
     let dotCount = this.state.inputValue.match(/\./g);
     dotCount = dotCount ? 1 : 0;
 
-    const inputWidth = (charWidth - oneCount - dotCount) + (oneCount * 1) + (dotCount * 0.5);
+    const inputWidth =
+      charWidth - oneCount - dotCount + oneCount * 1 + dotCount * 0.5;
 
     const widthStyle = { width: `calc(${inputWidth}ch + 2px)` };
 
     return Object.assign(widthStyle, fontSize, fontFamily);
-  }
+  };
 
   unitStyle = () => {
-    const fontSize = this.props.fontSize ? { fontSize: this.props.fontSize } : {};
-    const fontFamily = this.props.fontFamily ? { fontFamily: this.props.fontFamily } : {};
+    const fontSize = this.props.fontSize
+      ? { fontSize: this.props.fontSize }
+      : {};
+    const fontFamily = this.props.fontFamily
+      ? { fontFamily: this.props.fontFamily }
+      : {};
 
     return Object.assign(fontSize, fontFamily);
-  }
+  };
 
-  inputRef = (el) => {
+  inputRef = el => {
     this.input = el;
-  }
+  };
 
   clickHandler = () => {
     const length = this.state.inputValue.length;
     this.input.focus();
     this.input.setSelectionRange(length, length);
-  }
+  };
 
   render() {
     const classes = this.props.classes;

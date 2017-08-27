@@ -1,11 +1,15 @@
 const recipe = {
   title: 'Pressure Cooked Tamales',
   serving: { amount: 10, unit: 'servings' },
-  recipe:
-  [
+  recipe: [
     {
       ingredients: [
-        { name: 'Dried corn husks', amount: '20', unit: ' Husks', scaling: null },
+        {
+          name: 'Dried corn husks',
+          amount: '20',
+          unit: ' Husks',
+          scaling: null,
+        },
       ],
       procedure: [
         'Soak in warm water until the husks are pliable, at least 30 minutes. Shake them dry,',
@@ -13,7 +17,12 @@ const recipe = {
     },
     {
       ingredients: [
-        { name: 'Lard or unsalted butter', amount: 225, unit: 'g', scaling: 50 },
+        {
+          name: 'Lard or unsalted butter',
+          amount: 225,
+          unit: 'g',
+          scaling: 50,
+        },
       ],
       procedure: [
         'Whip in a stand mixer, scraping the sides often, until light and airy, about 5 minutes.',
@@ -21,8 +30,18 @@ const recipe = {
     },
     {
       ingredients: [
-        { name: 'Masa harina (Maseca brand)', amount: 450, unit: 'g', scaling: 100 },
-        { name: 'Toasted Corn Stock or water, lukewarm see page 90', amount: 300, unit: 'g', scaling: 67 },
+        {
+          name: 'Masa harina (Maseca brand)',
+          amount: 450,
+          unit: 'g',
+          scaling: 100,
+        },
+        {
+          name: 'Toasted Corn Stock or water, lukewarm see page 90',
+          amount: 300,
+          unit: 'g',
+          scaling: 67,
+        },
       ],
       procedure: [
         'Gradually add to the mixer, alternating between the two ingredients, until fully blended to make masa batter.',
@@ -30,9 +49,24 @@ const recipe = {
     },
     {
       ingredients: [
-        { name: 'Fresh corn kernels, cut from the cob', amount: 525, unit: 'g', scaling: 117 },
-        { name: 'Unsalted butter, melted', amount: 22, unit: 'g', scaling: 4.9 },
-        { name: 'Sour cream, creme fraiche, or crema', amount: 22, unit: 'g', scaling: 4.9 },
+        {
+          name: 'Fresh corn kernels, cut from the cob',
+          amount: 525,
+          unit: 'g',
+          scaling: 117,
+        },
+        {
+          name: 'Unsalted butter, melted',
+          amount: 22,
+          unit: 'g',
+          scaling: 4.9,
+        },
+        {
+          name: 'Sour cream, creme fraiche, or crema',
+          amount: 22,
+          unit: 'g',
+          scaling: 4.9,
+        },
         { name: 'Sugar', amount: 15, unit: 'g', scaling: 3.3 },
         { name: 'Salt', amount: 14, unit: 'g', scaling: 3.3 },
       ],

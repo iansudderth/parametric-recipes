@@ -5,14 +5,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NumberInput
-          fontSize={40}
-          unit={'g'}
-        />
+        <NumberInput fontSize={40} unit={'g'} />
       </div>
     );
   }
 }
-
 
 export default App;
