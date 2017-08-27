@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import Header from '../components/Header';
+import Section from '../components/Section';
 
 function RecipeContainer(props) {
 	return (
@@ -11,6 +14,7 @@ function RecipeContainer(props) {
 			<div>
 				{props.recipe.recipe.map(section =>
 					(<Section
+						key={`section-${section.procedure[0]}`}
 						steps={section.procedure}
 						ingredientsArray={section.ingredients}
 						scalingFactor={props.scalingFactor}
@@ -52,4 +56,8 @@ RecipeContainer.defaultProps = {
 	},
 };
 
-export default RecipeContainer;
+function mapStateToProps({ recipe, scalingFactor }) {
+	return { recipe, scalingFactor };
+}
+
+export default connect(mapStateToProps)(RecipeContainer);

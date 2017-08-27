@@ -6,7 +6,9 @@ function Steps(props) {
 	return (
 		<div>
 			<ul>
-				{props.steps.map(step => <StepItem step={step} />)}
+				{props.steps.map(step =>
+					<StepItem key={`step${step}`} step={step} />,
+				)}
 			</ul>
 		</div>
 	);

@@ -9,6 +9,7 @@ function Section(props) {
 			<div>
 				{props.ingredientsArray.map(ingredient =>
 					(<Ingredient
+						key={`ingredient-${ingredient.name}-${ingredient.amount}`}
 						scalingFactor={props.scalingFactor}
 						ingredient={ingredient}
 					/>),
