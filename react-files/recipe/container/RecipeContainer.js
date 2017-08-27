@@ -9,7 +9,10 @@ function RecipeContainer(props) {
 	return (
 		<div>
 			<div>
-				<Header />
+				<Header
+					title={props.recipe.title}
+					serving={props.recipe.serving}
+				/>
 			</div>
 			<div>
 				{props.recipe.recipe.map(section =>

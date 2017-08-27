@@ -4,12 +4,18 @@ import PropTypes from 'prop-types';
 function Header(props) {
 	return (
 		<div>
-			<h1>This is the Header</h1>
+			<h1>
+				{props.title}
+			</h1>
+			<h2>
+				{`${props.serving.amount} ${props.serving.name}`}
+			</h2>
 		</div>
 	);
 }
 
 Header.propTypes = {
+	scalingFactor: PropTypes.number,
 	title: PropTypes.string,
 	serving: PropTypes.shape({
 		amount: PropTypes.number,
@@ -18,6 +24,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
+	scalingFactor: 1,
 	title: 'Recipe',
 	serving: {
 		amount: 1,
