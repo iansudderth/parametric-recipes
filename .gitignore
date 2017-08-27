@@ -16,7 +16,7 @@
 .env.test.local
 .env.production.local
 .sublime-project
-.next
+/.next
 
 npm-debug.log*
 yarn-debug.log*

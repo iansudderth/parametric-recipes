@@ -12,8 +12,6 @@ var _reactRedux = require('react-redux');
 
 var _redux = require('redux');
 
-var _styles = require('material-ui/styles');
-
 var _reducers = require('./reducers');
 
 var _reducers2 = _interopRequireDefault(_reducers);
@@ -33,18 +31,16 @@ var Boiler = function Boiler() {
   return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 10
     }
-  }, _react2.default.createElement(_reactRedux.Provider, {
-    store: createStoreWithMiddleware(_reducers2.default),
-    __source: {
+  }, _react2.default.createElement(_reactRedux.Provider, { store: createStoreWithMiddleware(_reducers2.default), __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 11
     }
   }, _react2.default.createElement(_App2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 12
     }
   })));
 };

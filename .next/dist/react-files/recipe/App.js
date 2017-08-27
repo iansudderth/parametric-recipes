@@ -54,10 +54,7 @@ var App = function (_Component) {
           fileName: _jsxFileName,
           lineNumber: 7
         }
-      }, _react2.default.createElement(_NumberInput2.default, {
-        fontSize: 40,
-        unit: 'g',
-        __source: {
+      }, _react2.default.createElement(_NumberInput2.default, { fontSize: 40, unit: 'g', __source: {
           fileName: _jsxFileName,
           lineNumber: 8
         }
