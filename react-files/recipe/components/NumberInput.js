@@ -42,7 +42,8 @@ class NumberInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: this.props.amount.toString(),
+      inputValue:
+        this.props.amount === null ? null : this.props.amount.toString(),
       isBeingEdited: false,
     };
   }
@@ -54,6 +55,7 @@ class NumberInput extends Component {
     newVal = newVal.length === 0 ? '0' : newVal;
     let inputValue = isNaN(newVal) ? oldVal : newVal;
     inputValue = removePrecedingZeros(inputValue);
+    inputValue = inputValue === '' ? '0' : inputValue;
     const updatedScalingFactor = parseFloat(inputValue) / this.props.amount;
     this.setState({ inputValue });
     this.props.changeScalingFactor(updatedScalingFactor);
@@ -103,6 +105,9 @@ class NumberInput extends Component {
   };
 
   generateValue = () => {
+    if (this.props.amount === null) {
+      return '';
+    }
     const newVal = this.props.amount * this.props.scalingFactor;
     return _.round(newVal, 2);
   };
@@ -128,16 +133,18 @@ class NumberInput extends Component {
     const classes = this.props.classes;
     return (
       <div className={classes.root}>
-        <input
-          type="text"
-          onChange={this.changeHandler}
-          onFocus={this.focusHandler}
-          onBlur={this.blurHandler}
-          value={this.outputValue()}
-          style={this.resizeStyle()}
-          className={classes.input}
-          ref={this.inputRef}
-        />
+        {this.props.amount === null
+          ? ''
+          : <input
+              type="text"
+              onChange={this.changeHandler}
+              onFocus={this.focusHandler}
+              onBlur={this.blurHandler}
+              value={this.outputValue()}
+              style={this.resizeStyle()}
+              className={classes.input}
+              ref={this.inputRef}
+          />}
         <span
           className={classes.unit}
           style={this.unitStyle()}
@@ -163,7 +170,7 @@ NumberInput.defaultProps = {
   classes: {},
   fontSize: 20,
   fontFamily: 'Roboto',
-  amount: 22,
+  amount: null,
   unit: 'g',
   scalingFactor: 1,
 };

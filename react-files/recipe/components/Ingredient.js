@@ -5,7 +5,7 @@ import NumberInput from './NumberInput';
 function Ingredient(props) {
 	let { name, amount, unit, scaling } = props.ingredient;
 	name = name || '';
-	amount = amount || '';
+	amount = amount || null;
 	unit = unit || '';
 	scaling = scaling ? `${scaling}%` : '';
 	return (
