@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -101,13 +102,18 @@ class NumberInput extends Component {
     this.input.setSelectionRange(length, length);
   };
 
-  focusHandler = () => {
+  generateValue = () => {
     const newVal = this.props.amount * this.props.scalingFactor;
+    return _.round(newVal, 2);
+  };
+
+  focusHandler = () => {
+    const newVal = this.generateValue();
     this.setState({ isBeingEdited: true, inputValue: newVal });
   };
 
   blurHandler = () => {
-    const newVal = this.props.amount * this.props.scalingFactor;
+    const newVal = this.generateValue();
     this.setState({ isBeingEdited: false, inputValue: newVal });
   };
 
@@ -115,7 +121,7 @@ class NumberInput extends Component {
     if (this.state.isBeingEdited) {
       return this.state.inputValue;
     }
-    return this.props.amount * this.props.scalingFactor;
+    return this.generateValue();
   };
 
   render() {
