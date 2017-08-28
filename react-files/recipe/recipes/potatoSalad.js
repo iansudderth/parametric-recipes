@@ -1,6 +1,6 @@
 const recipe = {
   title: 'Warm Potato and Pistachio Pesto Salad',
-  serving: { amount: 8, name: 'servings' },
+  serving: { amount: 8, unit: 'servings' },
   recipe: [
     {
       ingredients: [

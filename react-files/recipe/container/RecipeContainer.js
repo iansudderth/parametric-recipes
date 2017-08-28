@@ -33,20 +33,25 @@ function generateSections(recipeArr, scalingFactor) {
 function RecipeContainer(props) {
 	const { container } = props.classes;
 	return (
-		<Card className={container}>
-			<div>
+		<div>
+			<Card className={container}>
 				<div>
-					<Header
-						title={props.recipe.title}
-						serving={props.recipe.serving}
-						scalingFactor={props.scalingFactor}
-					/>
+					<div>
+						<Header
+							title={props.recipe.title}
+							serving={props.recipe.serving}
+							scalingFactor={props.scalingFactor}
+						/>
+					</div>
+					<div>
+						{generateSections(
+							props.recipe.recipe,
+							props.scalingFactor,
+						)}
+					</div>
 				</div>
-				<div>
-					{generateSections(props.recipe.recipe, props.scalingFactor)}
-				</div>
-			</div>
-		</Card>
+			</Card>
+		</div>
 	);
 }
 

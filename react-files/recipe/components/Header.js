@@ -41,7 +41,7 @@ function Header(props) {
 				<h2 style={{ fontWeight: 400 }}>
 					<NumberInput
 						amount={props.serving.amount}
-						unit={props.serving.name}
+						unit={props.serving.unit}
 						scalingFactor={props.scalingFactor}
 						fontSize={30}
 					/>
@@ -56,7 +56,7 @@ Header.propTypes = {
 	title: PropTypes.string,
 	serving: PropTypes.shape({
 		amount: PropTypes.number,
-		name: PropTypes.string,
+		unit: PropTypes.string,
 	}),
 };
 
@@ -65,7 +65,7 @@ Header.defaultProps = {
 	title: 'Recipe',
 	serving: {
 		amount: 1,
-		name: 'serving',
+		unit: 'servings',
 	},
 };
 
