@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _getPrototypeOf = require('next/node_modules/babel-runtime/core-js/object/get-prototype-of');
@@ -32,40 +32,42 @@ var _NumberInput = require('./components/NumberInput');
 
 var _NumberInput2 = _interopRequireDefault(_NumberInput);
 
+var _RecipeContainer = require('./container/RecipeContainer');
+
+var _RecipeContainer2 = _interopRequireDefault(_RecipeContainer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = '/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/App.js';
 
 
 var App = function (_Component) {
-  (0, _inherits3.default)(App, _Component);
+	(0, _inherits3.default)(App, _Component);
 
-  function App() {
-    (0, _classCallCheck3.default)(this, App);
+	function App() {
+		(0, _classCallCheck3.default)(this, App);
 
-    return (0, _possibleConstructorReturn3.default)(this, (App.__proto__ || (0, _getPrototypeOf2.default)(App)).apply(this, arguments));
-  }
+		return (0, _possibleConstructorReturn3.default)(this, (App.__proto__ || (0, _getPrototypeOf2.default)(App)).apply(this, arguments));
+	}
 
-  (0, _createClass3.default)(App, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement('div', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7
-        }
-      }, _react2.default.createElement(_NumberInput2.default, {
-        fontSize: 40,
-        unit: 'g',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8
-        }
-      }));
-    }
-  }]);
+	(0, _createClass3.default)(App, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement('div', {
+				__source: {
+					fileName: _jsxFileName,
+					lineNumber: 8
+				}
+			}, _react2.default.createElement(_RecipeContainer2.default, {
+				__source: {
+					fileName: _jsxFileName,
+					lineNumber: 9
+				}
+			}));
+		}
+	}]);
 
-  return App;
+	return App;
 }(_react.Component);
 
 exports.default = App;

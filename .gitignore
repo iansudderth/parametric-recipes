@@ -8,6 +8,8 @@
 
 # production
 /build
+dist
+.next
 
 # misc
 .DS_Store
@@ -16,7 +18,6 @@
 .env.test.local
 .env.production.local
 .sublime-project
-.next
 
 npm-debug.log*
 yarn-debug.log*
