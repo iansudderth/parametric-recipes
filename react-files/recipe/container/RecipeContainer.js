@@ -1,9 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Card from 'material-ui/Card';
+import { withStyles } from 'material-ui/styles';
 import Header from '../components/Header';
 import Section from '../components/Section';
+
+const styles = {
+	container: {
+		margin: 10,
+	},
+};
 
 function generateSections(recipeArr, scalingFactor) {
 	let stepsCount = 1;
@@ -24,19 +31,22 @@ function generateSections(recipeArr, scalingFactor) {
 }
 
 function RecipeContainer(props) {
+	const { container } = props.classes;
 	return (
-		<div>
+		<Card className={container}>
 			<div>
-				<Header
-					title={props.recipe.title}
-					serving={props.recipe.serving}
-					scalingFactor={props.scalingFactor}
-				/>
+				<div>
+					<Header
+						title={props.recipe.title}
+						serving={props.recipe.serving}
+						scalingFactor={props.scalingFactor}
+					/>
+				</div>
+				<div>
+					{generateSections(props.recipe.recipe, props.scalingFactor)}
+				</div>
 			</div>
-			<div>
-				{generateSections(props.recipe.recipe, props.scalingFactor)}
-			</div>
-		</div>
+		</Card>
 	);
 }
 
@@ -75,4 +85,4 @@ function mapStateToProps({ recipe, scalingFactor }) {
 	return { recipe, scalingFactor };
 }
 
-export default connect(mapStateToProps)(RecipeContainer);
+export default withStyles(styles)(connect(mapStateToProps)(RecipeContainer));

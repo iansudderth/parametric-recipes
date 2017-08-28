@@ -8,7 +8,10 @@ import { changeScalingFactor } from '../actions/';
 
 const styles = {
   root: {
-    display: 'inline-block',
+    display: 'flex',
+    flexWrap: 'nowrap',
+    alignItems: 'center',
+    paddingLeft: 12,
   },
   input: {
     fontFamily: 'Roboto',

@@ -1,6 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
 import NumberInput from './NumberInput';
+
+const styles = {
+	container: {
+		display: 'flex',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		paddingTop: 12,
+		paddingBottom: 12,
+		borderBottom: '2px solid #F0F0F0',
+		'&:last-child': {
+			borderBottom: 'none',
+		},
+	},
+};
 
 function Ingredient(props) {
 	let { name, amount, unit, scaling } = props.ingredient;
@@ -8,9 +23,13 @@ function Ingredient(props) {
 	amount = amount || null;
 	unit = unit || '';
 	scaling = scaling ? `${scaling}%` : '';
+
+	const { container } = props.classes;
 	return (
-		<li>
-			{`${name}  `}
+		<li className={container}>
+			<div>
+				{`${name}  `}
+			</div>
 			<NumberInput
 				amount={amount}
 				unit={unit}
@@ -40,4 +59,4 @@ Ingredient.defaultProps = {
 	},
 };
 
-export default Ingredient;
+export default withStyles(styles)(Ingredient);

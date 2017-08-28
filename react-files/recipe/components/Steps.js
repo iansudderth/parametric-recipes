@@ -1,11 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
 import StepItem from './StepItem';
 
+const styles = {
+	container: {
+		margin: 0,
+		marginLeft: 18,
+		paddingLeft: 12,
+	},
+};
+
 function Steps(props) {
+	const { container } = props.classes;
+
 	return (
 		<div>
-			<ol start={props.startingNumber}>
+			<ol start={props.startingNumber} className={container}>
 				{props.steps.map(step =>
 					<StepItem key={`step${step}`} step={step} />,
 				)}
@@ -24,4 +35,4 @@ Steps.defaultProps = {
 	startingNumber: 1,
 };
 
-export default Steps;
+export default withStyles(styles)(Steps);
