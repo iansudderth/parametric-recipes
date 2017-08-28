@@ -17,3 +17,4 @@ export function changeScalingFactor(newScalingFactor) {
 		payload: newScalingFactor,
 	};
 }
+

@@ -11,7 +11,11 @@ function Ingredient(props) {
 	return (
 		<li>
 			{`${name}  `}
-			<NumberInput amount={amount} unit={unit} />
+			<NumberInput
+				amount={amount}
+				unit={unit}
+				scalingFactor={props.scalingFactor}
+			/>
 		</li>
 	);
 }

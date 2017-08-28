@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { withStyles } from 'material-ui/styles';
+import { changeScalingFactor } from '../actions/';
 
 const styles = {
   root: {
@@ -34,11 +37,12 @@ function removePrecedingZeros(str) {
   return output;
 }
 
-class StyledInput extends Component {
+class NumberInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
       inputValue: this.props.amount.toString(),
+      isBeingEdited: false,
     };
   }
 
@@ -49,7 +53,9 @@ class StyledInput extends Component {
     newVal = newVal.length === 0 ? '0' : newVal;
     let inputValue = isNaN(newVal) ? oldVal : newVal;
     inputValue = removePrecedingZeros(inputValue);
+    const updatedScalingFactor = parseFloat(inputValue) / this.props.amount;
     this.setState({ inputValue });
+    this.props.changeScalingFactor(updatedScalingFactor);
   };
 
   resizeStyle = () => {
@@ -59,10 +65,11 @@ class StyledInput extends Component {
     const fontFamily = this.props.fontFamily
       ? { fontFamily: this.props.fontFamily }
       : {};
-    const charWidth = this.state.inputValue.toString().length;
-    let oneCount = this.state.inputValue.match(/11/g);
+    const outputValue = this.outputValue().toString();
+    const charWidth = outputValue.length;
+    let oneCount = outputValue.match(/11/g);
     oneCount = oneCount ? oneCount.length + 1 : 0;
-    let dotCount = this.state.inputValue.match(/\./g);
+    let dotCount = outputValue.match(/\./g);
     dotCount = dotCount ? 1 : 0;
 
     const inputWidth =
@@ -94,6 +101,23 @@ class StyledInput extends Component {
     this.input.setSelectionRange(length, length);
   };
 
+  focusHandler = () => {
+    const newVal = this.props.amount * this.props.scalingFactor;
+    this.setState({ isBeingEdited: true, inputValue: newVal });
+  };
+
+  blurHandler = () => {
+    const newVal = this.props.amount * this.props.scalingFactor;
+    this.setState({ isBeingEdited: false, inputValue: newVal });
+  };
+
+  outputValue = () => {
+    if (this.state.isBeingEdited) {
+      return this.state.inputValue;
+    }
+    return this.props.amount * this.props.scalingFactor;
+  };
+
   render() {
     const classes = this.props.classes;
     return (
@@ -101,7 +125,9 @@ class StyledInput extends Component {
         <input
           type="text"
           onChange={this.changeHandler}
-          value={this.state.inputValue}
+          onFocus={this.focusHandler}
+          onBlur={this.blurHandler}
+          value={this.outputValue()}
           style={this.resizeStyle()}
           className={classes.input}
           ref={this.inputRef}
@@ -118,20 +144,33 @@ class StyledInput extends Component {
   }
 }
 
-StyledInput.propTypes = {
+NumberInput.propTypes = {
   classes: PropTypes.object,
   fontSize: PropTypes.number,
   fontFamily: PropTypes.string,
-  amount: PropTypes.number,
+  amount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   unit: PropTypes.string,
+  scalingFactor: PropTypes.number,
 };
 
-StyledInput.defaultProps = {
+NumberInput.defaultProps = {
   classes: {},
   fontSize: 20,
   fontFamily: 'Roboto',
   amount: 22,
   unit: 'g',
+  scalingFactor: 1,
 };
 
-export default withStyles(styles)(StyledInput);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      changeScalingFactor,
+    },
+    dispatch,
+  );
+}
+
+export default withStyles(styles)(
+  connect(null, mapDispatchToProps)(NumberInput),
+);

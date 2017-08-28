@@ -30,6 +30,7 @@ function RecipeContainer(props) {
 				<Header
 					title={props.recipe.title}
 					serving={props.recipe.serving}
+					scalingFactor={props.scalingFactor}
 				/>
 			</div>
 			<div>

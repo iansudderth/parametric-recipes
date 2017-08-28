@@ -28,6 +28,7 @@ function Header(props) {
 					<NumberInput
 						amount={props.serving.amount}
 						unit={props.serving.name}
+						scalingFactor={props.scalingFactor}
 					/>
 				</h2>
 			</div>
