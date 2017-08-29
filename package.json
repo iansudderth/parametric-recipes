@@ -11,6 +11,7 @@
   "dependencies": {
     "autosize-input": "^0.4.0",
     "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
     "draft-js": "^0.10.1",
     "eslint-config-prettier": "^2.3.0",
     "express": "^4.14.0",
@@ -18,6 +19,7 @@
     "lodash": "^4.17.4",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.5",
+    "mongoose": "^4.11.9",
     "next": "^3.0.6",
     "prop-types": "^15.5.10",
     "react": "^15.4.2",

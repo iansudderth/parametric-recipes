@@ -8,7 +8,6 @@ const recipe = {
           name: 'Dried corn husks',
           amount: 20,
           unit: ' Husks',
-          scaling: null,
         },
       ],
       procedure: [
@@ -21,7 +20,6 @@ const recipe = {
           name: 'Lard or unsalted butter',
           amount: 225,
           unit: 'g',
-          scaling: 50,
         },
       ],
       procedure: [
@@ -34,13 +32,11 @@ const recipe = {
           name: 'Masa harina (Maseca brand)',
           amount: 450,
           unit: 'g',
-          scaling: 100,
         },
         {
           name: 'Toasted Corn Stock or water, lukewarm see page 90',
           amount: 300,
           unit: 'g',
-          scaling: 67,
         },
       ],
       procedure: [
@@ -53,22 +49,19 @@ const recipe = {
           name: 'Fresh corn kernels, cut from the cob',
           amount: 525,
           unit: 'g',
-          scaling: 117,
         },
         {
           name: 'Unsalted butter, melted',
           amount: 22,
           unit: 'g',
-          scaling: 4.9,
         },
         {
           name: 'Sour cream, creme fraiche, or crema',
           amount: 22,
           unit: 'g',
-          scaling: 4.9,
         },
-        { name: 'Sugar', amount: 15, unit: 'g', scaling: 3.3 },
-        { name: 'Salt', amount: 14, unit: 'g', scaling: 3.3 },
+        { name: 'Sugar', amount: 15, unit: 'g' },
+        { name: 'Salt', amount: 14, unit: 'g' },
       ],
       procedure: [
         'Combine in a food processor, and blend to make com puree',

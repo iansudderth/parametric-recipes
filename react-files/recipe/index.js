@@ -2,16 +2,19 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 import reducers from './reducers';
 import App from './App';
 
-const store = createStore(reducers, composeWithDevTools(applyMiddleware()));
+const createStoreWithMiddleware = composeWithDevTools(applyMiddleware(thunk))(
+	createStore,
+);
 
-const Boiler = () =>
-  (<div>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </div>);
+const Boiler = props =>
+	<div>
+		<Provider store={createStoreWithMiddleware(reducers, props.seedState)}>
+			<App />
+		</Provider>
+	</div>;
 
 export default Boiler;

@@ -4,9 +4,9 @@ const recipe = {
 	recipe: [
 		{
 			ingredients: [
-				{ name: 'Water', amount: 600, unit: 'g', scaling: 120 },
-				{ name: 'Salt', amount: 24, unit: 'g', scaling: 4.8 },
-				{ name: 'Sugar', amount: 12, unit: 'g', scaling: 2.4 },
+				{ name: 'Water', amount: 600, unit: 'g' },
+				{ name: 'Salt', amount: 24, unit: 'g' },
+				{ name: 'Sugar', amount: 12, unit: 'g' },
 			],
 			procedure: ['Combine, and stir until dissolved to make a brine.'],
 		},
@@ -16,14 +16,13 @@ const recipe = {
 					name: 'Ahi tuna, cut into 2.5 cm/1 in pieces',
 					amount: 500,
 					unit: 'g',
-					scaling: 100,
 				},
 			],
 			procedure: ['Place in the brine, and refrigerate for 24 hours.'],
 		},
 		{
 			ingredients: [
-				{ name: 'Olive oil', amount: 500, unit: 'g', scaling: 100 },
+				{ name: 'Olive oil', amount: 500, unit: 'g' },
 				{ name: 'Salt', amount: null, unit: 'to taste' },
 			],
 			procedure: [

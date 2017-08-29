@@ -8,8 +8,9 @@
 
 # production
 /build
+/db
 dist
-.next
+/.next
 
 # misc
 .DS_Store

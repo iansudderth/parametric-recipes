@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { requestUpdateRecipeList } from '../actions';
 import { withStyles } from 'material-ui/styles';
 import { red } from 'material-ui/colors';
 import AppBar from 'material-ui/AppBar';
@@ -34,6 +37,7 @@ class NavBar extends Component {
 	}
 
 	openRecipeDialog = () => {
+		this.props.requestUpdateRecipeList();
 		this.setState({ dialogOpen: true });
 	};
 
@@ -70,4 +74,8 @@ class NavBar extends Component {
 	}
 }
 
-export default withStyles(styles)(NavBar);
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ requestUpdateRecipeList }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(withStyles(styles)(NavBar));

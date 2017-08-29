@@ -4,10 +4,10 @@ const recipe = {
   recipe: [
     {
       ingredients: [
-        { name: 'Italian basil leaves', amount: 80, unit: 'g', scaling: 80 },
-        { name: 'Cilantro leaves', amount: 70, unit: 'g', scaling: 70 },
-        { name: 'Chives', amount: 70, unit: 'g', scaling: 70 },
-        { name: 'Scallion greens', amount: 70, unit: 'g', scaling: 70 },
+        { name: 'Italian basil leaves', amount: 80, unit: 'g' },
+        { name: 'Cilantro leaves', amount: 70, unit: 'g' },
+        { name: 'Chives', amount: 70, unit: 'g' },
+        { name: 'Scallion greens', amount: 70, unit: 'g' },
       ],
       procedure: [
         'Blanch in boiling water individually until tender, about 2 min each.',
@@ -16,9 +16,7 @@ const recipe = {
       ],
     },
     {
-      ingredients: [
-        { name: 'Garlic cloves, peeled', amount: 16, unit: 'g', scaling: 16 },
-      ],
+      ingredients: [{ name: 'Garlic cloves, peeled', amount: 16, unit: 'g' }],
       procedure: ['Blanch in boiling water for 2 min. Drain and reserve.'],
     },
     {
@@ -27,28 +25,24 @@ const recipe = {
           name: 'Extra virgin olive oil',
           amount: 190,
           unit: 'g',
-          scaling: 190,
         },
         {
           name: 'Parmiggiano Reggiano, finely grated',
           amount: 100,
           unit: 'g',
-          scaling: 100,
         },
         {
           name: 'Pistachios, peeled and toasted',
           amount: 100,
           unit: 'g',
-          scaling: 100,
         },
-        { name: 'Roasted-pistachio oil', amount: 40, unit: 'g', scaling: 100 },
+        { name: 'Roasted-pistachio oil', amount: 40, unit: 'g' },
         {
           name: 'Spinach puree (see page 2·424)',
           amount: 30,
           unit: 'g',
-          scaling: 30,
         },
-        { name: 'Lemon juice', amount: 20, unit: 'g', scaling: 20 },
+        { name: 'Lemon juice', amount: 20, unit: 'g' },
       ],
       procedure: [
         'Puree together with cooked herbs and blanched garlic until smooth.',
@@ -62,13 +56,11 @@ const recipe = {
             'Microcrystalline cellulose (AviceI CG 200, FMC BioPolymer brand)',
           amount: 7.8,
           unit: 'g',
-          scaling: 7.8,
         },
         {
           name: 'Xanthan gum (Keltrol T,CP Kelco brand)',
           amount: 1.56,
           unit: 'g',
-          scaling: 1.56,
         },
       ],
       procedure: [
@@ -83,9 +75,8 @@ const recipe = {
           name: 'Fingerling potatoes, skin on',
           amount: 800,
           unit: 'g',
-          scaling: 800,
         },
-        { name: 'Olive oil', amount: 80, unit: 'g', scaling: 80 },
+        { name: 'Olive oil', amount: 80, unit: 'g' },
       ],
       procedure: [
         'Vacuum seal potatoes and cook sous vide in 90°C / 194°F ath until tender, about 45 min.',

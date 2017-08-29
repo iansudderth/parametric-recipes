@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import List, { ListItem, ListItemAvatar, ListItemText } from 'material-ui/List';
 import { lightBlue } from 'material-ui/colors';
-import { changeRecipe } from '../actions';
+import { changeRecipe, requestRecipe } from '../actions';
 
 const styles = {
 	listItem: {
@@ -24,9 +24,9 @@ const styles = {
 };
 
 function ChangeRecipeDialog(props) {
-	function changeRecipeComposer(recipeName) {
+	function changeRecipeComposer(id) {
 		return function() {
-			props.changeRecipe(recipeName);
+			props.requestRecipe(id);
 			props.handleClose();
 		};
 	}
@@ -37,33 +37,18 @@ function ChangeRecipeDialog(props) {
 			<DialogTitle>Choose a Recipe </DialogTitle>
 			<div>
 				<List>
-					<ListItem
-						className={listItem}
-						onClick={changeRecipeComposer('potato salad')}
-					>
-						<ListItemText
-							className={listText}
-							primary={'Warm Potato and Pistachio Pesto Salad'}
-						/>
-					</ListItem>
-					<ListItem
-						className={listItem}
-						onClick={changeRecipeComposer('tamales')}
-					>
-						<ListItemText
-							className={listText}
-							primary={'Pressure Cooked Tamales'}
-						/>
-					</ListItem>
-					<ListItem
-						className={listItem}
-						onClick={changeRecipeComposer('tuna confit')}
-					>
-						<ListItemText
-							className={listText}
-							primary={'Tuna Confit'}
-						/>
-					</ListItem>
+					{props.recipeList.map(recipe =>
+						<ListItem
+							key={recipe._id}
+							className={listItem}
+							onClick={changeRecipeComposer(recipe._id)}
+						>
+							<ListItemText
+								className={listText}
+								primary={recipe.title}
+							/>
+						</ListItem>,
+					)}
 				</List>
 			</div>
 		</Dialog>
@@ -79,11 +64,16 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators(
 		{
 			changeRecipe,
+			requestRecipe,
 		},
 		dispatch,
 	);
 }
 
-export default connect(null, mapDispatchToProps)(
+function mapStateToProps({ recipeList }) {
+	return { recipeList };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(
 	withStyles(styles)(ChangeRecipeDialog),
 );
