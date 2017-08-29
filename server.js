@@ -32,6 +32,15 @@ app.prepare().then(() => {
       });
   });
 
+  server.get('/recipe/index', (req, res) => {
+    Recipe.find({})
+      .select({ title: true })
+      .sort({ title: 'asc' })
+      .then(response => {
+        res.json(response);
+      });
+  });
+
   server.get('/recipe/:id', (req, res) => {
     const id = req.params.id;
     Recipe.findOne({ _id: id }).then(response => {
