@@ -36,6 +36,10 @@ var _RecipeContainer = require('./container/RecipeContainer');
 
 var _RecipeContainer2 = _interopRequireDefault(_RecipeContainer);
 
+var _NavBar = require('./components/NavBar');
+
+var _NavBar2 = _interopRequireDefault(_NavBar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = '/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/App.js';
@@ -56,12 +60,17 @@ var App = function (_Component) {
 			return _react2.default.createElement('div', {
 				__source: {
 					fileName: _jsxFileName,
-					lineNumber: 8
+					lineNumber: 9
 				}
-			}, _react2.default.createElement(_RecipeContainer2.default, {
+			}, _react2.default.createElement(_NavBar2.default, {
 				__source: {
 					fileName: _jsxFileName,
-					lineNumber: 9
+					lineNumber: 10
+				}
+			}), _react2.default.createElement(_RecipeContainer2.default, {
+				__source: {
+					fileName: _jsxFileName,
+					lineNumber: 12
 				}
 			}));
 		}

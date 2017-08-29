@@ -6,7 +6,7 @@ const recipe = {
 			ingredients: [
 				{ name: 'Water', amount: 600, unit: 'g', scaling: 120 },
 				{ name: 'Salt', amount: 24, unit: 'g', scaling: 4.8 },
-				['Sugar', 12, 'g', 2.4],
+				{ name: 'Sugar', amount: 12, unit: 'g', scaling: 2.4 },
 			],
 			procedure: ['Combine, and stir until dissolved to make a brine.'],
 		},
@@ -24,7 +24,7 @@ const recipe = {
 		{
 			ingredients: [
 				{ name: 'Olive oil', amount: 500, unit: 'g', scaling: 100 },
-				['Salt', 'to taste'],
+				{ name: 'Salt', amount: null, unit: 'to taste' },
 			],
 			procedure: [
 				'Preheat a water bath to 51°C/124°F.',

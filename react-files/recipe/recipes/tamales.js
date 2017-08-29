@@ -6,7 +6,7 @@ const recipe = {
       ingredients: [
         {
           name: 'Dried corn husks',
-          amount: '20',
+          amount: 20,
           unit: ' Husks',
           scaling: null,
         },
@@ -72,8 +72,8 @@ const recipe = {
       ],
       procedure: [
         'Combine in a food processor, and blend to make com puree',
-        'Fold the corn puree and masa batter together to make the tamale battel',
-        'Place a dollop of tamale batter, about 70 g / 5 Tbsp, in each corn husk, andwrap firmly.',
+        'Fold the corn puree and masa batter together to make the tamale batter',
+        'Place a dollop of tamale batter, about 70 g / 5 Tbsp, in each corn husk, and wrap firmly.',
         'Arrange the tamales, seam-side down, on a metal rack or trivet in a pressure cooker, and then add 2.5 cm / I in of water.',
         'Pressure-cook at a gauge pressure of 1 bar / 15psi for 20 minutes.  Start timing when full pressure is reached.',
         'Depressurize the cooker.',
