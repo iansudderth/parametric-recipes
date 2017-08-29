@@ -6,7 +6,7 @@ const recipe = {
       ingredients: [
         {
           name: 'Dried corn husks',
-          amount: '20',
+          amount: 20,
           unit: ' Husks',
           scaling: null,
         },

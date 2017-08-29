@@ -6,10 +6,21 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
+import ChangeRecipeDialog from './ChangeRecipeDialog';
 
 const styles = {
 	navBar: {
 		backgroundColor: red[500],
+	},
+	toolBar: {
+		display: 'flex',
+		justifyContent: 'space-between',
+	},
+	navText: {
+		color: 'white',
+	},
+	changeRecipeButton: {
+		color: 'white',
 	},
 };
 
@@ -22,13 +33,38 @@ class NavBar extends Component {
 		};
 	}
 
+	openRecipeDialog = () => {
+		this.setState({ dialogOpen: true });
+	};
+
+	closeRecipeDialog = () => {
+		this.setState({ dialogOpen: false });
+	};
+
 	render() {
-		const { navBar } = this.props.classes;
+		const {
+			navBar,
+			navText,
+			toolBar,
+			changeRecipeButton,
+		} = this.props.classes;
 		return (
 			<AppBar position={'static'} className={navBar}>
-				<Toolbar>
-					{'Hey'}
+				<Toolbar className={toolBar}>
+					<Typography type={'title'} className={navText}>
+						{'Parametric Recipes'}
+					</Typography>
+					<Button
+						className={changeRecipeButton}
+						onClick={this.openRecipeDialog}
+					>
+						{'Change Recipe'}
+					</Button>
 				</Toolbar>
+				<ChangeRecipeDialog
+					open={this.state.dialogOpen}
+					handleClose={this.closeRecipeDialog}
+				/>
 			</AppBar>
 		);
 	}
