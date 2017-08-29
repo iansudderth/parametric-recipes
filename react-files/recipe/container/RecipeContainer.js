@@ -5,6 +5,7 @@ import Card from 'material-ui/Card';
 import { withStyles } from 'material-ui/styles';
 import Header from '../components/Header';
 import Section from '../components/Section';
+import WelcomeScreen from '../components/WelcomeScreen';
 
 const styles = {
 	container: {
@@ -34,23 +35,25 @@ function RecipeContainer(props) {
 	const { container } = props.classes;
 	return (
 		<div>
-			<Card className={container}>
-				<div>
-					<div>
-						<Header
-							title={props.recipe.title}
-							serving={props.recipe.serving}
-							scalingFactor={props.scalingFactor}
-						/>
-					</div>
-					<div>
-						{generateSections(
-							props.recipe.recipe,
-							props.scalingFactor,
-						)}
-					</div>
-				</div>
-			</Card>
+			{props.recipe
+				? <Card className={container}>
+						<div>
+							<div>
+								<Header
+									title={props.recipe.title}
+									serving={props.recipe.serving}
+									scalingFactor={props.scalingFactor}
+								/>
+							</div>
+							<div>
+								{generateSections(
+									props.recipe.recipe,
+									props.scalingFactor,
+								)}
+							</div>
+						</div>
+					</Card>
+				: <WelcomeScreen />}
 		</div>
 	);
 }
