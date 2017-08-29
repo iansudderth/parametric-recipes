@@ -48,12 +48,14 @@ app.prepare().then(() => {
     });
   });
 
-  server.get('*', (req, res) => {
+  server.get('/', (req, res) => {
     res.redirect('/recipe');
   });
 
+  server.get('*', (req, res) => handle(req, res));
+
   server.listen(port, err => {
     if (err) throw err;
-    console.log('> Ready on http://localhost:3000');
+    console.log('Ready on http://localhost:3000');
   });
 });
