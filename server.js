@@ -21,12 +21,15 @@ app.prepare().then(() => {
   const server = express();
 
   server.get('/recipe', (req, res) => {
-    Recipe.find({}).select({ title: true }).then(response => {
-      const mergedQuery = Object.assign({}, req.query, {
-        recipeList: response,
+    Recipe.find({})
+      .select({ title: true })
+      .sort({ title: 'asc' })
+      .then(response => {
+        const mergedQuery = Object.assign({}, req.query, {
+          recipeList: response,
+        });
+        app.render(req, res, '/recipe', mergedQuery);
       });
-      app.render(req, res, '/recipe', mergedQuery);
-    });
   });
 
   server.get('*', (req, res) => handle(req, res));

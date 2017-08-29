@@ -37,33 +37,18 @@ function ChangeRecipeDialog(props) {
 			<DialogTitle>Choose a Recipe </DialogTitle>
 			<div>
 				<List>
-					<ListItem
-						className={listItem}
-						onClick={changeRecipeComposer('potato salad')}
-					>
-						<ListItemText
-							className={listText}
-							primary={'Warm Potato and Pistachio Pesto Salad'}
-						/>
-					</ListItem>
-					<ListItem
-						className={listItem}
-						onClick={changeRecipeComposer('tamales')}
-					>
-						<ListItemText
-							className={listText}
-							primary={'Pressure Cooked Tamales'}
-						/>
-					</ListItem>
-					<ListItem
-						className={listItem}
-						onClick={changeRecipeComposer('tuna confit')}
-					>
-						<ListItemText
-							className={listText}
-							primary={'Tuna Confit'}
-						/>
-					</ListItem>
+					{props.recipeList.map(recipe =>
+						(<ListItem
+							key={recipe._id}
+							className={listItem}
+							onClick={changeRecipeComposer('potato salad')}
+						>
+							<ListItemText
+								className={listText}
+								primary={recipe.title}
+							/>
+						</ListItem>),
+					)}
 				</List>
 			</div>
 		</Dialog>
@@ -84,6 +69,10 @@ function mapDispatchToProps(dispatch) {
 	);
 }
 
-export default connect(null, mapDispatchToProps)(
+function mapStateToProps({ recipeList }) {
+	return { recipeList };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(
 	withStyles(styles)(ChangeRecipeDialog),
 );
