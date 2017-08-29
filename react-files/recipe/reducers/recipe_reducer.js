@@ -8,14 +8,10 @@ function recipe(state = tamales, action) {
 	switch (action.type) {
 		case CHANGE_RECIPE:
 			switch (action.payload) {
-				case 'potato salad':
-					return potatoSaladRecipe;
-				case 'tamales':
-					return tamales;
-				case 'tuna confit':
-					return tunaConfit;
+				case null:
+					return state;
 				default:
-					return tamales;
+					return action.payload;
 			}
 		default:
 			return state;

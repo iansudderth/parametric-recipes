@@ -32,6 +32,13 @@ app.prepare().then(() => {
       });
   });
 
+  server.get('/recipe/:id', (req, res) => {
+    const id = req.params.id;
+    Recipe.findOne({ _id: id }).then(response => {
+      res.json(response);
+    });
+  });
+
   server.get('*', (req, res) => handle(req, res));
 
   server.listen(3000, err => {

@@ -11,10 +11,10 @@ const createStoreWithMiddleware = composeWithDevTools(applyMiddleware(thunk))(
 );
 
 const Boiler = props =>
-	(<div>
+	<div>
 		<Provider store={createStoreWithMiddleware(reducers, props.seedState)}>
 			<App />
 		</Provider>
-	</div>);
+	</div>;
 
 export default Boiler;

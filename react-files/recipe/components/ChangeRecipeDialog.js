@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import List, { ListItem, ListItemAvatar, ListItemText } from 'material-ui/List';
 import { lightBlue } from 'material-ui/colors';
-import { changeRecipe } from '../actions';
+import { changeRecipe, requestRecipe } from '../actions';
 
 const styles = {
 	listItem: {
@@ -24,9 +24,9 @@ const styles = {
 };
 
 function ChangeRecipeDialog(props) {
-	function changeRecipeComposer(recipeName) {
+	function changeRecipeComposer(id) {
 		return function() {
-			props.changeRecipe(recipeName);
+			props.requestRecipe(id);
 			props.handleClose();
 		};
 	}
@@ -38,16 +38,16 @@ function ChangeRecipeDialog(props) {
 			<div>
 				<List>
 					{props.recipeList.map(recipe =>
-						(<ListItem
+						<ListItem
 							key={recipe._id}
 							className={listItem}
-							onClick={changeRecipeComposer('potato salad')}
+							onClick={changeRecipeComposer(recipe._id)}
 						>
 							<ListItemText
 								className={listText}
 								primary={recipe.title}
 							/>
-						</ListItem>),
+						</ListItem>,
 					)}
 				</List>
 			</div>
@@ -64,6 +64,7 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators(
 		{
 			changeRecipe,
+			requestRecipe,
 		},
 		dispatch,
 	);
