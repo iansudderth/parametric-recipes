@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Recipe from '../react-files/recipe/index';
 import withRoot from '../react-files/style/withRoot';
 
-function RecipePage(props) {
-  return <Recipe />;
+class RecipePage extends Component {
+	static async getInitialProps({ query }) {
+		return { query };
+	}
+
+	seedState = {
+		recipeList: this.props.query.recipeList,
+	};
+
+	render() {
+		return <Recipe seedState={this.seedState} />;
+	}
 }
 
 export default withRoot(RecipePage);

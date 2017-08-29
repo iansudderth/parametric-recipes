@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = require('react');
@@ -13,6 +13,10 @@ var _reactRedux = require('react-redux');
 var _redux = require('redux');
 
 var _reduxDevtoolsExtension = require('redux-devtools-extension');
+
+var _reduxThunk = require('redux-thunk');
+
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
 var _reducers = require('./reducers');
 
@@ -27,24 +31,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _jsxFileName = '/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/index.js';
 
 
-var store = (0, _redux.createStore)(_reducers2.default, (0, _reduxDevtoolsExtension.composeWithDevTools)((0, _redux.applyMiddleware)()));
+var createStoreWithMiddleware = (0, _reduxDevtoolsExtension.composeWithDevTools)((0, _redux.applyMiddleware)(_reduxThunk2.default))(_redux.createStore);
 
-var Boiler = function Boiler() {
-  return _react2.default.createElement('div', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    }
-  }, _react2.default.createElement(_reactRedux.Provider, { store: store, __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    }
-  }, _react2.default.createElement(_App2.default, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    }
-  })));
+var Boiler = function Boiler(props) {
+	return _react2.default.createElement('div', {
+		__source: {
+			fileName: _jsxFileName,
+			lineNumber: 14
+		}
+	}, _react2.default.createElement(_reactRedux.Provider, { store: createStoreWithMiddleware(_reducers2.default, props.seedState), __source: {
+			fileName: _jsxFileName,
+			lineNumber: 15
+		}
+	}, _react2.default.createElement(_App2.default, {
+		__source: {
+			fileName: _jsxFileName,
+			lineNumber: 16
+		}
+	})));
 };
 
 exports.default = Boiler;
