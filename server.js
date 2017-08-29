@@ -48,7 +48,9 @@ app.prepare().then(() => {
     });
   });
 
-  server.get('*', (req, res) => handle(req, res));
+  server.get('*', (req, res) => {
+    res.redirect('/recipe');
+  });
 
   server.listen(port, err => {
     if (err) throw err;
