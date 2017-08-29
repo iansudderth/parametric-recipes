@@ -5,7 +5,7 @@ const _ = require('lodash');
 const mongoose = require('mongoose');
 const seedDB = require('./schema/seed');
 const Recipe = require('./schema/Recipe');
-
+const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -50,7 +50,7 @@ app.prepare().then(() => {
 
   server.get('*', (req, res) => handle(req, res));
 
-  server.listen(3000, err => {
+  server.listen(port, err => {
     if (err) throw err;
     console.log('> Ready on http://localhost:3000');
   });
