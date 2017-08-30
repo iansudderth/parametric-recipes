@@ -32,6 +32,10 @@ app.prepare().then(() => {
       });
   });
 
+  server.get('/recipe/new', (req, res) => {
+    app.render(req, res, '/newRecipe', req.query);
+  });
+
   server.get('/recipe/index', (req, res) => {
     Recipe.find({})
       .select({ title: true })
