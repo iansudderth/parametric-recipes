@@ -7,7 +7,9 @@ class RecipePage extends Component {
 		return { query };
 	}
 
-	seedState = {};
+	seedState = {
+		editMode: true,
+	};
 
 	render() {
 		return <Recipe seedState={this.seedState} editMode />;

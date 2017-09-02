@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import NumberInput from './components/NumberInput';
 import RecipeContainer from './container/RecipeContainer';
+import RecipeEditorContainer from './container/RecipeEditorContainer';
+import { connect } from 'react-redux';
 import NavBar from './components/NavBar';
 
-class App extends Component {
-	render() {
-		return (
-			<div>
-				<NavBar />
-
-				<RecipeContainer />
-			</div>
-		);
-	}
+function App(props) {
+	return (
+		<div>
+			<NavBar />
+			{props.editMode ? <RecipeEditorContainer /> : <RecipeContainer />}
+		</div>
+	);
 }
 
-export default App;
+function mapStateToProps({ editMode }) {
+	return { editMode };
+}
+
+export default connect(mapStateToProps)(App);
