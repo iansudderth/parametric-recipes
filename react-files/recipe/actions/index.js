@@ -1,108 +1,129 @@
 import axios from 'axios';
 
-// ===============
-// Action Creators
-// ===============
+import {
+	CHANGE_RECIPE,
+	changeRecipe,
+	CHANGE_SCALING_FACTOR,
+	changeScalingFactor,
+} from './recipeActions';
 
-export const CHANGE_RECIPE = 'CHANGE_RECIPE';
-export function changeRecipe(recipe) {
-	return {
-		type: CHANGE_RECIPE,
-		payload: recipe,
-	};
-}
+export {
+	CHANGE_RECIPE,
+	changeRecipe,
+	CHANGE_SCALING_FACTOR,
+	changeScalingFactor,
+};
 
-export const CHANGE_SCALING_FACTOR = 'CHANGE_SCALING_FACTOR';
-export function changeScalingFactor(newScalingFactor) {
-	return {
-		type: CHANGE_SCALING_FACTOR,
-		payload: newScalingFactor,
-	};
-}
+import {
+	RECIPE_REQUEST_PROGRESS,
+	RECIPE_REQUEST_SUCCESS,
+	RECIPE_REQUEST_ERROR,
+	requestRecipe,
+	UPDATE_RECIPE_LIST_PROGRESS,
+	UPDATE_RECIPE_LIST_SUCCESS,
+	UPDATE_RECIPE_LIST_ERROR,
+	UPDATE_RECIPE_LIST,
+	REQUEST_UPDATE_RECIPE_LIST,
+	requestUpdateRecipeList,
+} from './networkActions';
 
-export const RECIPE_REQUEST_PROGRESS = 'RECIPE_REQUEST_PROGRESS';
-export function networkProgress() {
-	return {
-		type: RECIPE_REQUEST_PROGRESS,
-	};
-}
+export {
+	RECIPE_REQUEST_PROGRESS,
+	RECIPE_REQUEST_SUCCESS,
+	RECIPE_REQUEST_ERROR,
+	requestRecipe,
+	UPDATE_RECIPE_LIST_PROGRESS,
+	UPDATE_RECIPE_LIST_SUCCESS,
+	UPDATE_RECIPE_LIST_ERROR,
+	UPDATE_RECIPE_LIST,
+	REQUEST_UPDATE_RECIPE_LIST,
+	requestUpdateRecipeList,
+};
 
-export const RECIPE_REQUEST_SUCCESS = 'RECIPE_REQUEST_SUCCESS';
-export function networkSuccess() {
-	return {
-		type: RECIPE_REQUEST_SUCCESS,
-	};
-}
-export const RECIPE_REQUEST_ERROR = 'RECIPE_REQUEST_ERROR';
-export function networkError(error) {
-	return {
-		type: RECIPE_REQUEST_ERROR,
-		payload: error,
-	};
-}
+import {
+	EDIT_TITLE,
+	editTitle,
+	EDIT_SERVING_AMOUNT,
+	editServingAmount,
+	EDIT_SERVING_UNIT,
+	editServingUnit,
+} from './editHeaderActions';
 
-export function requestRecipe(id) {
-	return function(dispatch) {
-		dispatch(networkProgress());
+export {
+	EDIT_TITLE,
+	editTitle,
+	EDIT_SERVING_AMOUNT,
+	editServingAmount,
+	EDIT_SERVING_UNIT,
+	editServingUnit,
+};
 
-		return axios.get(`/recipe/${id}`).then(
-			response => {
-				dispatch(networkSuccess());
-				const newRecipe = response.data;
-				dispatch(changeRecipe(newRecipe));
-			},
-			error => {
-				console.log(error);
-				dispatch(networkError(error));
-			},
-		);
-	};
-}
+import {
+	NEW_SECTION,
+	newSection,
+	DELETE_SECTION,
+	deleteSection,
+	REORDER_SECTION,
+	reorderSection,
+} from './editSectionActions';
 
-export const UPDATE_RECIPE_LIST_PROGRESS = 'UPDATE_RECIPE_LIST_PROGRESS';
-export function updateRecipeListProgress() {
-	return {
-		type: UPDATE_RECIPE_LIST_PROGRESS,
-	};
-}
+export {
+	NEW_SECTION,
+	newSection,
+	DELETE_SECTION,
+	deleteSection,
+	REORDER_SECTION,
+	reorderSection,
+};
 
-export const UPDATE_RECIPE_LIST_SUCCESS = 'UPDATE_RECIPE_LIST_SUCCESS';
-export function updateRecipeListSuccess() {
-	return {
-		type: UPDATE_RECIPE_LIST_SUCCESS,
-	};
-}
+import {
+	NEW_INGREDIENT,
+	newIngredient,
+	EDIT_INGREDIENT_NAME,
+	editIngredientName,
+	EDIT_INGREDIENT_AMOUNT,
+	editIngredientAmount,
+	EDIT_INGREDIENT_UNIT,
+	editIngredientUnit,
+	REORDER_INGREDIENT,
+	reorderIngredient,
+	DELETE_INGREDIENT,
+	deleteIngredient,
+} from './editIngredientAction';
 
-export const UPDATE_RECIPE_LIST_ERROR = 'UPDATE_RECIPE_LIST_ERROR';
-export function updateRecipeListError(error) {
-	return {
-		type: UPDATE_RECIPE_LIST_ERROR,
-		payload: error,
-	};
-}
+export {
+	NEW_INGREDIENT,
+	newIngredient,
+	EDIT_INGREDIENT_NAME,
+	editIngredientName,
+	EDIT_INGREDIENT_AMOUNT,
+	editIngredientAmount,
+	EDIT_INGREDIENT_UNIT,
+	editIngredientUnit,
+	REORDER_INGREDIENT,
+	reorderIngredient,
+	DELETE_INGREDIENT,
+	deleteIngredient,
+};
 
-export const UPDATE_RECIPE_LIST = 'UPDATE_RECIPE_LIST';
-export function updateRecipeList(list) {
-	return {
-		type: UPDATE_RECIPE_LIST,
-		payload: list,
-	};
-}
+import {
+	NEW_STEP,
+	newStep,
+	EDIT_STEP,
+	editStep,
+	DELETE_STEP,
+	deleteStep,
+	REORDER_STEP,
+	reorderStep,
+} from './editStepActions';
 
-export const REQUEST_UPDATE_RECIPE_LIST = 'REQUEST_UPDATE_RECIPE_LIST';
-export function requestUpdateRecipeList() {
-	return function(dispatch) {
-		dispatch(updateRecipeListProgress());
-		axios.get('/recipe/index').then(
-			response => {
-				dispatch(updateRecipeListSuccess());
-				dispatch(updateRecipeList(response.data));
-				console.log(response);
-			},
-			error => {
-				dispatch(updateRecipeListError(error));
-				console.log(error);
-			},
-		);
-	};
-}
+export {
+	NEW_STEP,
+	newStep,
+	EDIT_STEP,
+	editStep,
+	DELETE_STEP,
+	deleteStep,
+	REORDER_STEP,
+	reorderStep,
+};
