@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Card from 'material-ui/Card';
+import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
 import EditHeader from '../components/edit_mode/EditHeader';
+
+const styles = {
+	container:{
+		margin:12
+	}
+}
 
 class RecipeEditorContainer extends Component {
 	constructor(props) {
@@ -11,13 +19,16 @@ class RecipeEditorContainer extends Component {
 	}
 
 	render() {
+		const {container} = this.props.classes
 		return (
-			<div>
+			<div className={container}>
+				<Card>
 				<EditHeader
 					title={this.props.recipe.title}
 					servingAmount={this.props.recipe.serving.amount}
 					servingUnit={this.props.recipe.serving.unit}
 				/>
+				</Card>
 			</div>
 		);
 	}
@@ -35,6 +46,6 @@ function mapDispatchToProps(dispatch) {
 	return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(
+export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(
 	RecipeEditorContainer,
-);
+));

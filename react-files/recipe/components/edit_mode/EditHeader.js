@@ -10,27 +10,41 @@ import TextAreaInput from '../inputs/TextAreaInput';
 const styles = {
 	servingSection: {
 		display: 'flex',
+		margin:0,
+		marginTop:12
 	},
+	title:{
+		margin:0
+	},
+	container:{
+		padding:12
+	}
 };
 
 function EditHeader(props) {
-	const { servingSection } = props.classes;
+	const { servingSection, title, container } = props.classes;
 	return (
-		<div>
-			<h1>
+		<div className={container}>
+			<h1 className={title}>
 				<TextAreaInput
 				value={props.title}
 				updateValue={props.editTitle}
+				fontSize={40}
+				fontWeight={600}
 				/>
 			</h1>
 			<div className={servingSection}>
 				<NumberInput
 					amount={props.servingAmount}
 					updateValue={props.editServingAmount}
+					fontSize={30}
+					fontWeight={400}
 				/>
 				<TextAreaInput
 					updateValue={props.editServingUnit}
 					value={props.servingUnit}
+					fontSize={30}
+					fontWeight={400}
 				/>
 			</div>
 		</div>

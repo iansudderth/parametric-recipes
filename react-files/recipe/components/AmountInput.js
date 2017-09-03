@@ -61,13 +61,14 @@ class AmountInput extends Component {
           fontSize={this.props.fontSize}
           inputRef={this.inputRef}
         />
-        <span
+        <div
           className={classes.unit}
           style={this.unitStyle()}
           onClick={this.focusInput}
+          role={'none'}
         >
           {this.props.unit}
-        </span>
+        </div>
       </div>
     );
   }
@@ -100,4 +101,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default withStyles()(connect(null, mapDispatchToProps)(AmountInput));
+export default withStyles(styles)(connect(null, mapDispatchToProps)(AmountInput));

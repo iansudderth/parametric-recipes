@@ -10,6 +10,7 @@ const styles = {
 		fontSize: 20,
 		width: '100%',
 		border: 'none',
+		padding:0,
 		background: 'none',
 		'&:focus': {
 			outline: 'none',
@@ -38,8 +39,9 @@ class TextAreaInput extends Component {
 
 	inputStyles = () => {
 		const fontSize = { fontSize: this.props.fontSize };
+		const fontWeight = {fontWeight: this.props.fontWeight}
 
-		return Object.assign({}, fontSize);
+		return Object.assign({}, fontSize, fontWeight);
 	};
 
 	updateValue = () => {
@@ -70,11 +72,13 @@ TextAreaInput.propTypes = {
 		container: PropTypes.string,
 	}),
 	updateValue: PropTypes.func,
+	fontWeight : PropTypes.number
 };
 
 TextAreaInput.defaultProps = {
 	value: '',
 	fontSize: 20,
+	fontWeight : 300,
 	classes: {
 		area: '',
 		container: '',
