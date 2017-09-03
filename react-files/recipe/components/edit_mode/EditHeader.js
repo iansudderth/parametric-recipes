@@ -6,18 +6,22 @@ import { withStyles } from 'material-ui/styles';
 import { editTitle, editServingAmount, editServingUnit } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
+import {red} from 'material-ui/colors'
 
 const styles = {
 	servingSection: {
 		display: 'flex',
 		margin:0,
-		marginTop:12
+		marginTop:12,
+		alignItems:'baseline'
 	},
 	title:{
 		margin:0
 	},
 	container:{
-		padding:12
+		padding:18,
+		borderBottom:`4px double ${red[500]}`,
+		marginBottom: 18
 	}
 };
 
@@ -45,6 +49,7 @@ function EditHeader(props) {
 					value={props.servingUnit}
 					fontSize={30}
 					fontWeight={400}
+					leftPadding={4}
 				/>
 			</div>
 		</div>

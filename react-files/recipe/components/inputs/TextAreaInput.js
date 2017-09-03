@@ -7,6 +7,8 @@ const styles = {
 	area: {
 		resize: 'none',
 		fontFamily: 'Roboto',
+		display:'flex',
+		alignItems:'baseline',
 		fontSize: 20,
 		width: '100%',
 		border: 'none',
@@ -40,8 +42,9 @@ class TextAreaInput extends Component {
 	inputStyles = () => {
 		const fontSize = { fontSize: this.props.fontSize };
 		const fontWeight = {fontWeight: this.props.fontWeight}
+		const leftPadding = {paddingLeft : this.props.leftPadding}
 
-		return Object.assign({}, fontSize, fontWeight);
+		return Object.assign({}, fontSize, fontWeight, leftPadding);
 	};
 
 	updateValue = () => {
@@ -72,13 +75,15 @@ TextAreaInput.propTypes = {
 		container: PropTypes.string,
 	}),
 	updateValue: PropTypes.func,
-	fontWeight : PropTypes.number
+	fontWeight : PropTypes.number,
+	leftPadding: PropTypes.number
 };
 
 TextAreaInput.defaultProps = {
 	value: '',
 	fontSize: 20,
 	fontWeight : 300,
+	leftPadding:0,
 	classes: {
 		area: '',
 		container: '',
