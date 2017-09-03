@@ -93,6 +93,7 @@ class NumberInput extends Component {
     this.props.updateValue(this.state.inputValue);
     const newVal = this.generateValue();
     this.setState({ isBeingEdited: false, inputValue: newVal });
+    ``;
   };
 
   outputValue = () => {

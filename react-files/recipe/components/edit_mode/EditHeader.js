@@ -2,29 +2,44 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withStyles } from 'material-ui/styles';
 import { editTitle, editServingAmount, editServingUnit } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
+import TextAreaInput from '../inputs/TextAreaInput';
+
+const styles = {
+	servingSection: {
+		display: 'flex',
+	},
+};
 
 function EditHeader(props) {
+	const { servingSection } = props.classes;
 	return (
 		<div>
 			<h1>
-				{props.title}
+				<TextAreaInput
+				value={props.title}
+				updateValue={props.editTitle}
+				/>
 			</h1>
-			<h2>
+			<div className={servingSection}>
 				<NumberInput
 					amount={props.servingAmount}
 					updateValue={props.editServingAmount}
 				/>
-				{props.servingUnit}
-			</h2>
+				<TextAreaInput
+					updateValue={props.editServingUnit}
+					value={props.servingUnit}
+				/>
+			</div>
 		</div>
 	);
 }
 
 EditHeader.propTypes = {
 	title: PropTypes.string,
-	servingAmount: PropTypes.number,
+	servingAmount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	servingUnit: PropTypes.string,
 };
 
@@ -45,4 +60,6 @@ function mapDispatchToProps(dispatch) {
 	);
 }
 
-export default connect(null, mapDispatchToProps)(EditHeader);
+export default withStyles(styles)(
+	connect(null, mapDispatchToProps)(EditHeader),
+);
