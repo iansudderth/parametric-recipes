@@ -3,21 +3,19 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { editTitle, editServingAmount, editServingUnit } from '../../actions';
+import NumberInput from '../inputs/NumberInput';
 
 function EditHeader(props) {
-	function changeComposer(key) {
-		return function() {
-			props.changeHandler(key, props.servingAmount + 1);
-		};
-	}
-
 	return (
 		<div>
 			<h1>
 				{props.title}
 			</h1>
 			<h2>
-				{props.servingAmount}
+				<NumberInput
+					amount={props.servingAmount}
+					updateValue={props.editServingAmount}
+				/>
 				{props.servingUnit}
 			</h2>
 		</div>

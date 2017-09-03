@@ -90,9 +90,9 @@ class NumberInput extends Component {
   };
 
   blurHandler = () => {
+    this.props.updateValue(this.state.inputValue);
     const newVal = this.generateValue();
     this.setState({ isBeingEdited: false, inputValue: newVal });
-    this.props.updateValue(newVal);
   };
 
   outputValue = () => {

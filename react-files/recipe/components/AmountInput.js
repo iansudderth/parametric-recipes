@@ -79,6 +79,7 @@ AmountInput.propTypes = {
   scalingFactor: PropTypes.number,
   changeScalingFactor: PropTypes.func,
   fontSize: PropTypes.number,
+  fontFamily: PropTypes.string,
 };
 
 AmountInput.defaultProps = {
@@ -86,6 +87,7 @@ AmountInput.defaultProps = {
   unit: 'g',
   scalingFactor: 1,
   fontSize: 20,
+  fontFamily: '',
   changeScalingFactor: x => null,
 };
 
