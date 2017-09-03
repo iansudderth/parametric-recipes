@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import NumberInput from './NumberInput';
+import AmountInput from './AmountInput';
 
 const styles = {
 	container: {
@@ -30,7 +30,7 @@ function Ingredient(props) {
 			<div>
 				{`${name}  `}
 			</div>
-			<NumberInput
+			<AmountInput
 				amount={amount}
 				unit={unit}
 				scalingFactor={props.scalingFactor}

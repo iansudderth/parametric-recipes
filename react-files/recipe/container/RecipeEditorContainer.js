@@ -7,66 +7,16 @@ class RecipeEditorContainer extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			recipe: {
-				title: 'My new recipe',
-				serving: {
-					amount: 1,
-					unit: 'serving',
-				},
-				recipe: [
-					{
-						ingredients: [
-							{
-								name: 'something',
-								amount: 5,
-								unit: 'g',
-							},
-							{
-								name: 'something else',
-								amount: 5,
-								unit: 'g',
-							},
-							{
-								name: 'another thing',
-								amount: 5,
-								unit: 'g',
-							},
-						],
-						procedure: [
-							'do a thing.',
-							'do another thing.',
-							'serve',
-						],
-					},
-				],
-			},
-		};
+		this.state = {};
 	}
-
-	headerEditHandler = (key, newValue) => {
-		switch (key) {
-			case 'amount':
-				this.setState(prevState => {
-					prevState.recipe.serving.amount = newValue;
-					return prevState;
-				});
-				break;
-			case 'unit':
-				this.setState(prevState => {
-					prevState;
-				});
-		}
-	};
 
 	render() {
 		return (
 			<div>
 				<EditHeader
-					title={this.state.recipe.title}
-					servingAmount={this.state.recipe.serving.amount}
-					servingUnit={this.state.recipe.serving.unit}
-					changeHandler={this.headerEditHandler}
+					title={this.props.recipe.title}
+					servingAmount={this.props.recipe.serving.amount}
+					servingUnit={this.props.recipe.serving.unit}
 				/>
 			</div>
 		);
@@ -75,4 +25,16 @@ class RecipeEditorContainer extends Component {
 
 RecipeEditorContainer.propTypes = {};
 
-export default RecipeEditorContainer;
+function mapStateToProps({ recipe }) {
+	return {
+		recipe,
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return {};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+	RecipeEditorContainer,
+);

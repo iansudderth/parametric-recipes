@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { red } from 'material-ui/colors';
-import NumberInput from './NumberInput';
+import AmountInput from './AmountInput';
 
 const styles = {
 	headerContainer: {
@@ -39,7 +39,7 @@ function Header(props) {
 			</div>
 			<div className={servingsContainer}>
 				<h2 style={{ fontWeight: 400 }}>
-					<NumberInput
+					<AmountInput
 						amount={props.serving.amount}
 						unit={props.serving.unit}
 						scalingFactor={props.scalingFactor}

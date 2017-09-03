@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { withStyles } from 'material-ui/styles';
-import { changeScalingFactor } from '../actions/';
 
 const styles = {
   root: {
@@ -61,7 +58,7 @@ class NumberInput extends Component {
     inputValue = inputValue === '' ? '0' : inputValue;
     const updatedScalingFactor = parseFloat(inputValue) / this.props.amount;
     this.setState({ inputValue });
-    this.props.changeScalingFactor(updatedScalingFactor);
+    this.props.updateScalingFactor(updatedScalingFactor);
   };
 
   resizeStyle = () => {
@@ -123,6 +120,7 @@ class NumberInput extends Component {
   blurHandler = () => {
     const newVal = this.generateValue();
     this.setState({ isBeingEdited: false, inputValue: newVal });
+    this.props.updateValue(newVal);
   };
 
   outputValue = () => {
@@ -147,7 +145,7 @@ class NumberInput extends Component {
               style={this.resizeStyle()}
               className={classes.input}
               ref={this.inputRef}
-          />}
+            />}
         <span
           className={classes.unit}
           style={this.unitStyle()}
@@ -167,6 +165,8 @@ NumberInput.propTypes = {
   amount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   unit: PropTypes.string,
   scalingFactor: PropTypes.number,
+  updateScalingFactor: PropTypes.func,
+  updateValue: PropTypes.func,
 };
 
 NumberInput.defaultProps = {
@@ -176,17 +176,8 @@ NumberInput.defaultProps = {
   amount: null,
   unit: 'g',
   scalingFactor: 1,
+  updateScalingFactor: x => null,
+  updateValue: x => null,
 };
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      changeScalingFactor,
-    },
-    dispatch,
-  );
-}
-
-export default withStyles(styles)(
-  connect(null, mapDispatchToProps)(NumberInput),
-);
+export default withStyles(styles)(NumberInput);

@@ -9,6 +9,36 @@ class RecipePage extends Component {
 
 	seedState = {
 		editMode: true,
+		recipe: {
+			title: 'A new recipe',
+			serving: {
+				amount: 1,
+				unit: 'serving',
+			},
+
+			recipe: [
+				{
+					ingredients: [
+						{
+							name: 'something',
+							amount: 5,
+							unit: 'g',
+						},
+						{
+							name: 'something else',
+							amount: 5,
+							unit: 'g',
+						},
+						{
+							name: 'another thing',
+							amount: 5,
+							unit: 'g',
+						},
+					],
+					procedure: ['do a thing.', 'do another thing.', 'serve'],
+				},
+			],
+		},
 	};
 
 	render() {
