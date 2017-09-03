@@ -1,23 +1,76 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { withStyles } from 'material-ui/styles';
 import NumberInput from './inputs/NumberInput';
 import { changeScalingFactor } from '../actions';
 
-function AmountInput(props) {
-  function updateScalingFactor(newScalingFactor) {
-    props.changeScalingFactor(newScalingFactor);
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    alignItems: 'center',
+    paddingLeft: 12,
+  },
+  unit: {
+    fontFamily: 'Roboto',
+    fontSize: 40,
+  },
+};
+
+class AmountInput extends Component {
+  constructor(props) {
+    super(props);
   }
-  return (
-    <NumberInput
-      amount={props.amount}
-      unit={props.unit}
-      scalingFactor={props.scalingFactor}
-      updateScalingFactor={updateScalingFactor}
-      fontSize={props.fontSize}
-    />
-  );
+
+  updateScalingFactor = newScalingFactor => {
+    this.props.changeScalingFactor(newScalingFactor);
+  };
+
+  unitStyle = () => {
+    const fontSize = this.props.fontSize
+      ? { fontSize: this.props.fontSize }
+      : {};
+    const fontFamily = this.props.fontFamily
+      ? { fontFamily: this.props.fontFamily }
+      : {};
+
+    return Object.assign(fontSize, fontFamily);
+  };
+
+  inputRef = el => {
+    this.input = el;
+  };
+
+  focusInput = () => {
+    const length = this.input.value.length;
+    this.input.focus();
+    this.input.setSelectionRange(length, length);
+  };
+
+  render() {
+    const classes = this.props.classes;
+    return (
+      <div className={classes.root}>
+        <NumberInput
+          amount={this.props.amount}
+          unit={this.props.unit}
+          scalingFactor={this.props.scalingFactor}
+          updateScalingFactor={this.updateScalingFactor}
+          fontSize={this.props.fontSize}
+          inputRef={this.inputRef}
+        />
+        <span
+          className={classes.unit}
+          style={this.unitStyle()}
+          onClick={this.focusInput}
+        >
+          {this.props.unit}
+        </span>
+      </div>
+    );
+  }
 }
 
 AmountInput.propTypes = {
@@ -45,4 +98,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default connect(null, mapDispatchToProps)(AmountInput);
+export default withStyles()(connect(null, mapDispatchToProps)(AmountInput));

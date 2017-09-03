@@ -5,10 +5,7 @@ import { withStyles } from 'material-ui/styles';
 
 const styles = {
   root: {
-    display: 'flex',
-    flexWrap: 'nowrap',
-    alignItems: 'center',
-    paddingLeft: 12,
+    display: 'inline',
   },
   input: {
     fontFamily: 'Roboto',
@@ -19,10 +16,6 @@ const styles = {
     '&:focus': {
       outline: 'none',
     },
-  },
-  unit: {
-    fontFamily: 'Roboto',
-    fontSize: 40,
   },
 };
 
@@ -83,27 +76,6 @@ class NumberInput extends Component {
     return Object.assign(widthStyle, fontSize, fontFamily);
   };
 
-  unitStyle = () => {
-    const fontSize = this.props.fontSize
-      ? { fontSize: this.props.fontSize }
-      : {};
-    const fontFamily = this.props.fontFamily
-      ? { fontFamily: this.props.fontFamily }
-      : {};
-
-    return Object.assign(fontSize, fontFamily);
-  };
-
-  inputRef = el => {
-    this.input = el;
-  };
-
-  clickHandler = () => {
-    const length = this.state.inputValue.length;
-    this.input.focus();
-    this.input.setSelectionRange(length, length);
-  };
-
   generateValue = () => {
     if (this.props.amount === null) {
       return '';
@@ -144,15 +116,8 @@ class NumberInput extends Component {
               value={this.outputValue()}
               style={this.resizeStyle()}
               className={classes.input}
-              ref={this.inputRef}
+              ref={this.props.inputRef}
             />}
-        <span
-          className={classes.unit}
-          style={this.unitStyle()}
-          onClick={this.clickHandler}
-        >
-          {this.props.unit}
-        </span>
       </div>
     );
   }
@@ -163,10 +128,10 @@ NumberInput.propTypes = {
   fontSize: PropTypes.number,
   fontFamily: PropTypes.string,
   amount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  unit: PropTypes.string,
   scalingFactor: PropTypes.number,
   updateScalingFactor: PropTypes.func,
   updateValue: PropTypes.func,
+  inputRef: PropTypes.func,
 };
 
 NumberInput.defaultProps = {
@@ -174,10 +139,10 @@ NumberInput.defaultProps = {
   fontSize: 20,
   fontFamily: 'Roboto',
   amount: null,
-  unit: 'g',
   scalingFactor: 1,
   updateScalingFactor: x => null,
   updateValue: x => null,
+  inputRef: x => null,
 };
 
 export default withStyles(styles)(NumberInput);

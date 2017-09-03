@@ -20,7 +20,6 @@ function EditHeader(props) {
 				{props.servingAmount}
 				{props.servingUnit}
 			</h2>
-			<button onClick={changeComposer('amount')}>Click Me</button>
 		</div>
 	);
 }
