@@ -7,12 +7,12 @@ const styles = {
 	area: {
 		resize: 'none',
 		fontFamily: 'Roboto',
-		display:'flex',
-		alignItems:'baseline',
+		display: 'flex',
+		alignItems: 'baseline',
 		fontSize: 20,
 		width: '100%',
 		border: 'none',
-		padding:0,
+		padding: 0,
 		background: 'none',
 		'&:focus': {
 			outline: 'none',
@@ -20,6 +20,7 @@ const styles = {
 	},
 	container: {
 		flexGrow: 1,
+		display: 'inline-flex',
 	},
 };
 
@@ -33,22 +34,32 @@ class TextAreaInput extends Component {
 	}
 
 	changeHandler = event => {
-		let newValue = event.target.value
-		newValue = newValue.replace(/[\t\n\r]/g , '');
-		newValue = newValue.replace(/^\s*/gm,'');
+		let newValue = event.target.value;
+		newValue = newValue.replace(/[\t\n\r]/g, '');
+		newValue = newValue.replace(/^\s*/gm, '');
 		this.setState({ value: newValue });
 	};
 
 	inputStyles = () => {
 		const fontSize = { fontSize: this.props.fontSize };
-		const fontWeight = {fontWeight: this.props.fontWeight}
-		const leftPadding = {paddingLeft : this.props.leftPadding}
+		const fontWeight = { fontWeight: this.props.fontWeight };
+		const leftPadding = { paddingLeft: this.props.leftPadding };
 
 		return Object.assign({}, fontSize, fontWeight, leftPadding);
 	};
 
 	updateValue = () => {
 		this.props.updateValue(this.state.value);
+	};
+
+	textareaRef = el => {
+		this.innerTextarea = el;
+	};
+
+	keyPressHandler = event => {
+		if (event.which === 13) {
+			this.innerTextarea.blur();
+		}
 	};
 
 	render() {
@@ -61,6 +72,8 @@ class TextAreaInput extends Component {
 					style={this.inputStyles()}
 					onBlur={this.updateValue}
 					value={this.state.value}
+					innerRef={this.textareaRef}
+					onKeyPress={this.keyPressHandler}
 				/>
 			</div>
 		);
@@ -75,15 +88,15 @@ TextAreaInput.propTypes = {
 		container: PropTypes.string,
 	}),
 	updateValue: PropTypes.func,
-	fontWeight : PropTypes.number,
-	leftPadding: PropTypes.number
+	fontWeight: PropTypes.number,
+	leftPadding: PropTypes.number,
 };
 
 TextAreaInput.defaultProps = {
 	value: '',
 	fontSize: 20,
-	fontWeight : 300,
-	leftPadding:0,
+	fontWeight: 300,
+	leftPadding: 0,
 	classes: {
 		area: '',
 		container: '',

@@ -1,9 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles'
-import {red} from 'material-ui/colors'
-import EditIngredient from './EditIngredient'
-import EditStep from './EditStep'
+import { withStyles } from 'material-ui/styles';
+import { red } from 'material-ui/colors';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import IconButton from 'material-ui/IconButton';
+import Button from 'material-ui/Button';
+import Add from 'material-ui-icons/Add';
+import EditIngredient from './EditIngredient';
+import EditStep from './EditStep';
+import {
+	editStep,
+	newStep,
+	deleteStep,
+	newIngredient,
+	editIngredientName,
+	editIngredientAmount,
+	editIngredientUnit,
+	deleteIngredient,
+} from '../../actions';
 
 const styles = {
 	sectionContainer: {
@@ -41,24 +56,41 @@ const styles = {
 			borderTop: `2px solid ${red[100]}`,
 		},
 	},
-		stepsContainer: {
+	stepsContainer: {
 		margin: 0,
 		marginLeft: 18,
 		paddingLeft: 12,
-		'& li' :{
+		'& li': {
 			paddingTop: 12,
 			paddingBottom: 12,
-		}
-	}
+		},
+	},
+	newStepContainer: {
+		display: 'flex',
+		justifyContent: 'center',
+		paddingBottom: 12,
+		paddingTop: 12,
+	},
 };
 
 function EditSection(props) {
-	const {sectionContainer, ingredientSection, stepsSection, stepsContainer} = props.classes
+	const {
+		sectionContainer,
+		ingredientSection,
+		stepsSection,
+		stepsContainer,
+		newStepContainer,
+	} = props.classes;
+
+	function newStepDispatcher() {
+		props.newStep(props.sectionIndex);
+	}
+
 	return (
 		<div className={sectionContainer}>
-			<div className={ingredientSection} >
-			<ul>
-				{props.ingredientsArray.map( (ingredient, index) => (
+			<div className={ingredientSection}>
+				<ul>
+					{props.ingredientsArray.map((ingredient, index) => (
 						<EditIngredient
 							key={`ingredient-${index}-${ingredient.name}`}
 							ingredientName={ingredient.name}
@@ -67,27 +99,34 @@ function EditSection(props) {
 							sectionIndex={props.sectionIndex}
 							ingredientIndex={index}
 						/>
-						)
-				)}
+					))}
 				</ul>
 			</div>
-			<div className={stepsSection} >
+			<div className={stepsSection}>
 				<ol className={stepsContainer}>
-				{props.steps.map( (step, index) => (
-					<EditStep
-						key={`step-${index}-${step}`}
-						stepText={step}
-						sectionIndex={props.sectionIndex}
-						stepIndex={index}
-					/>
-					)
-				)
-
-				}
+					{props.steps.map((step, index) => (
+						<EditStep
+							key={`step-${index}-${step}`}
+							stepText={step}
+							sectionIndex={props.sectionIndex}
+							stepIndex={index}
+							editStep={props.editStep}
+						/>
+					))}
 				</ol>
+				<div className={newStepContainer}>
+					<Button
+						raised
+						color={'primary'}
+						onClick={newStepDispatcher}
+					>
+						<Add />
+						{'New Step'}
+					</Button>
+				</div>
 			</div>
 		</div>
-		);
+	);
 }
 
 EditSection.propTypes = {
@@ -104,4 +143,22 @@ EditSection.propTypes = {
 	stepsStartingNumber: PropTypes.number,
 };
 
-export default withStyles(styles)(EditSection);
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(
+		{
+			editStep,
+			newStep,
+			deleteStep,
+			newIngredient,
+			editIngredientName,
+			editIngredientAmount,
+			editIngredientUnit,
+			deleteIngredient,
+		},
+		dispatch,
+	);
+}
+
+export default withStyles(styles)(
+	connect(null, mapDispatchToProps)(EditSection),
+);
