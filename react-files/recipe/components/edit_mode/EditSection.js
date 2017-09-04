@@ -68,6 +68,12 @@ const styles = {
 		paddingBottom: 12,
 		paddingTop: 12,
 	},
+	newIngredientContainer: {
+		display: 'flex',
+		justifyContent: 'center',
+		paddingBottom: 12,
+		paddingTop: 12,
+	},
 };
 
 function EditSection(props) {
@@ -77,6 +83,7 @@ function EditSection(props) {
 		stepsSection,
 		stepsContainer,
 		newStepContainer,
+		newIngredientContainer,
 	} = props.classes;
 
 	function newStepDispatcher() {
@@ -85,6 +92,10 @@ function EditSection(props) {
 
 	function deleteStepDispatcher(stepIndex) {
 		props.deleteStep(props.sectionIndex, stepIndex);
+	}
+
+	function newIngredientDispatcher() {
+		props.newIngredient(props.sectionIndex);
 	}
 
 	return (
@@ -102,6 +113,16 @@ function EditSection(props) {
 						/>
 					))}
 				</ul>
+				<div className={newIngredientContainer}>
+					<Button
+						raised
+						color="primary"
+						onClick={newIngredientDispatcher}
+					>
+						<Add />
+						{'New Ingredient'}
+					</Button>
+				</div>
 			</div>
 			<div className={stepsSection}>
 				<ol className={stepsContainer}>
