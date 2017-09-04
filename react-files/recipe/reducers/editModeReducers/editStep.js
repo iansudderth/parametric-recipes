@@ -19,6 +19,14 @@ export default function editStepReducer(state, action) {
 			];
 			return newState;
 		}
+		case DELETE_STEP: {
+			const { sectionIndex, stepIndex } = action.payload;
+			newState = _.merge({}, state);
+			let stepsArray = [...newState.recipe[sectionIndex].procedure];
+			_.pullAt(stepsArray, stepIndex);
+			newState.recipe[sectionIndex].procedure = stepsArray;
+			return newState;
+		}
 		default:
 			return state;
 	}

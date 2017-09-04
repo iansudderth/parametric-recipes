@@ -60,10 +60,7 @@ const styles = {
 		margin: 0,
 		marginLeft: 18,
 		paddingLeft: 12,
-		'& li': {
-			paddingTop: 12,
-			paddingBottom: 12,
-		},
+		paddingTop: 6,
 	},
 	newStepContainer: {
 		display: 'flex',
@@ -84,6 +81,10 @@ function EditSection(props) {
 
 	function newStepDispatcher() {
 		props.newStep(props.sectionIndex);
+	}
+
+	function deleteStepDispatcher(stepIndex) {
+		props.deleteStep(props.sectionIndex, stepIndex);
 	}
 
 	return (
@@ -111,6 +112,7 @@ function EditSection(props) {
 							sectionIndex={props.sectionIndex}
 							stepIndex={index}
 							editStep={props.editStep}
+							deleteStep={deleteStepDispatcher}
 						/>
 					))}
 				</ol>
