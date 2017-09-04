@@ -4,6 +4,7 @@ import Card from 'material-ui/Card';
 import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
 import EditHeader from '../components/edit_mode/EditHeader';
+import EditSection from '../components/edit_mode/EditSection'
 
 const styles = {
 	container:{
@@ -28,6 +29,16 @@ class RecipeEditorContainer extends Component {
 					servingAmount={this.props.recipe.serving.amount}
 					servingUnit={this.props.recipe.serving.unit}
 				/>
+				{this.props.recipe.recipe.map( (section,index) => {
+					return(
+					<EditSection
+					key={`recipe-section-${index}`}
+					sectionIndex={index}
+					ingredientsArray={section.ingredients}
+					steps={section.procedure}
+					/>
+					)
+				})}
 				</Card>
 			</div>
 		);

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withStyles } from 'material-ui/styles';
+import {red} from 'material-ui/colors'
 import { editTitle, editServingAmount, editServingUnit } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
-import {red} from 'material-ui/colors'
 
 const styles = {
 	servingSection: {
