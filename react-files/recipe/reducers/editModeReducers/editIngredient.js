@@ -19,6 +19,14 @@ export default function editIngredientReducer(state, action) {
 			];
 			return newState;
 		}
+		case DELETE_INGREDIENT: {
+			const { sectionIndex, ingredientIndex } = action.payload;
+			let newState = _.merge({}, state);
+			let sectionIngredients = newState.recipe[sectionIndex].ingredients;
+			_.pullAt(sectionIngredients, ingredientIndex);
+			newState.recipe[sectionIndex].ingredients = [...sectionIngredients];
+			return newState;
+		}
 		default:
 			return state;
 	}

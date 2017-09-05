@@ -110,6 +110,10 @@ function EditSection(props) {
 							ingredientUnit={ingredient.unit}
 							sectionIndex={props.sectionIndex}
 							ingredientIndex={index}
+							deleteIngredient={props.deleteIngredient}
+							editIngredientName={props.editIngredientName}
+							editIngredientAmount={props.editIngredientAmount}
+							editIngredientUnit={props.editIngredientUnit}
 						/>
 					))}
 				</ul>

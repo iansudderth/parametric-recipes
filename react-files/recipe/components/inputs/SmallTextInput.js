@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import AutosizeInput from '../inputs/AutosizeInput';
@@ -100,10 +99,12 @@ SmallTextInput.propTypes = {
   inputRef: PropTypes.func,
   characterCap: PropTypes.number,
   leftSpacing: PropTypes.number,
+  value: PropTypes.string,
 };
 
 SmallTextInput.defaultProps = {
   classes: {},
+  value: 'g',
   fontSize: 20,
   fontFamily: 'Roboto',
   leftSpacing: 0,

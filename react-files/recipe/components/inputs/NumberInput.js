@@ -21,10 +21,14 @@ const styles = {
 };
 
 function removePrecedingZeros(str) {
-  if (str.length <= 1) {
+  let inputString = str;
+  if (typeof inputString !== 'string') {
+    inputString = inputString.toString();
+  }
+  if (inputString.length <= 1) {
     return str;
   }
-  const strArray = str.split('');
+  const strArray = inputString.split('');
   while (strArray[0] === '0' && strArray[1] !== '.') {
     strArray.shift();
   }
