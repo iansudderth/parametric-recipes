@@ -3,7 +3,7 @@ import {
 	NEW_INGREDIENT,
 	DELETE_INGREDIENT,
 	EDIT_INGREDIENT_NAME,
-	EDIT_SERVING_AMOUNT,
+	EDIT_INGREDIENT_AMOUNT,
 	EDIT_INGREDIENT_UNIT,
 	REORDER_INGREDIENT,
 } from '../../actions';
@@ -25,6 +25,42 @@ export default function editIngredientReducer(state, action) {
 			let sectionIngredients = newState.recipe[sectionIndex].ingredients;
 			_.pullAt(sectionIngredients, ingredientIndex);
 			newState.recipe[sectionIndex].ingredients = [...sectionIngredients];
+			return newState;
+		}
+		case EDIT_INGREDIENT_NAME: {
+			const { sectionIndex, ingredientIndex, newName } = action.payload;
+			let newIngredient =
+				state.recipe[sectionIndex].ingredients[ingredientIndex];
+			newIngredient = _.merge({}, newIngredient, { name: newName });
+			let newState = _.merge({}, state);
+			newState.recipe[sectionIndex].ingredients[
+				ingredientIndex
+			] = newIngredient;
+			return newState;
+		}
+		case EDIT_INGREDIENT_AMOUNT: {
+			let { sectionIndex, ingredientIndex, newAmount } = action.payload;
+			if (typeof newAmount === 'string') {
+				newAmount = parseFloat(newAmount);
+			}
+			let newIngredient =
+				state.recipe[sectionIndex].ingredients[ingredientIndex];
+			newIngredient = _.merge({}, newIngredient, { amount: newAmount });
+			let newState = _.merge({}, state);
+			newState.recipe[sectionIndex].ingredients[
+				ingredientIndex
+			] = newIngredient;
+			return newState;
+		}
+		case EDIT_INGREDIENT_UNIT: {
+			const { sectionIndex, ingredientIndex, newUnit } = action.payload;
+			let newIngredient =
+				state.recipe[sectionIndex].ingredients[ingredientIndex];
+			newIngredient = _.merge({}, newIngredient, { unit: newUnit });
+			let newState = _.merge({}, state);
+			newState.recipe[sectionIndex].ingredients[
+				ingredientIndex
+			] = newIngredient;
 			return newState;
 		}
 		default:

@@ -49,6 +49,30 @@ function EditIngredient(props) {
 		props.deleteIngredient(props.sectionIndex, props.ingredientIndex);
 	}
 
+	function editIngredientNameDispatch(newName) {
+		props.editIngredientName(
+			props.sectionIndex,
+			props.ingredientIndex,
+			newName,
+		);
+	}
+
+	function editIngredientAmountDispatch(newAmount) {
+		props.editIngredientAmount(
+			props.sectionIndex,
+			props.ingredientIndex,
+			newAmount,
+		);
+	}
+
+	function editIngredientUnitDispatch(newUnit) {
+		props.editIngredientUnit(
+			props.sectionIndex,
+			props.ingredientIndex,
+			newUnit,
+		);
+	}
+
 	const {
 		container,
 		amountContainer,
@@ -65,16 +89,21 @@ function EditIngredient(props) {
 					<TextAreaInput
 						value={props.ingredientName}
 						fontWeight={400}
+						updateValue={editIngredientNameDispatch}
 					/>
 				</div>
 				<div className={amountContainer}>
 					<div className={numberContainer}>
-						<NumberInput amount={props.ingredientAmount} />
+						<NumberInput
+							amount={props.ingredientAmount}
+							updateValue={editIngredientAmountDispatch}
+						/>
 					</div>
 					<div className={unitContainer}>
 						<SmallTextInput
 							value={props.ingredientUnit}
 							fontWeight={400}
+							updateValue={editIngredientUnitDispatch}
 						/>
 					</div>
 				</div>

@@ -48,7 +48,7 @@ class SmallTextInput extends Component {
         value = value.slice(0, this.props.characterCap);
       }
     }
-    this.updateValue(value);
+    this.props.updateValue(value);
     this.setState({ inputValue: value });
   };
 
