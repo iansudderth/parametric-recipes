@@ -3,26 +3,30 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withStyles } from 'material-ui/styles';
-import {red} from 'material-ui/colors'
+import { red } from 'material-ui/colors';
 import { editTitle, editServingAmount, editServingUnit } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
+import SmallTextInput from '../inputs/SmallTextInput';
+import SmallTextAreaInput from '../inputs/SmallTextAreaInput';
+import AutosizeInput from '../inputs/AutosizeInput';
+import TestInput from '../inputs/TestInput';
 
 const styles = {
 	servingSection: {
 		display: 'flex',
-		margin:0,
-		marginTop:12,
-		alignItems:'baseline'
+		margin: 0,
+		marginTop: 12,
+		alignItems: 'baseline',
 	},
-	title:{
-		margin:0
+	title: {
+		margin: 0,
 	},
-	container:{
-		padding:18,
-		borderBottom:`4px double ${red[500]}`,
-		marginBottom: 18
-	}
+	container: {
+		padding: 18,
+		borderBottom: `4px double ${red[500]}`,
+		marginBottom: 18,
+	},
 };
 
 function EditHeader(props) {
@@ -31,10 +35,10 @@ function EditHeader(props) {
 		<div className={container}>
 			<h1 className={title}>
 				<TextAreaInput
-				value={props.title}
-				updateValue={props.editTitle}
-				fontSize={40}
-				fontWeight={600}
+					value={props.title}
+					updateValue={props.editTitle}
+					fontSize={40}
+					fontWeight={600}
 				/>
 			</h1>
 			<div className={servingSection}>
@@ -51,6 +55,9 @@ function EditHeader(props) {
 					fontWeight={400}
 					leftPadding={4}
 				/>
+			</div>
+			<div>
+				<TestInput value={'stuff'} />
 			</div>
 		</div>
 	);

@@ -53,7 +53,7 @@ const potatoSalad = {
     },
     {
       ingredients: [
-        { name: 'Salt', amount: null, unit: 'to taste', scaling: null },
+        { name: 'Salt', amount: 0, unit: 'to taste' },
         {
           name:
             'Microcrystalline cellulose (AviceI CG 200, FMC BioPolymer brand)',
@@ -195,7 +195,7 @@ const tunaConfit = {
     {
       ingredients: [
         { name: 'Olive oil', amount: 500, unit: 'g' },
-        { name: 'Salt', amount: null, unit: 'to taste' },
+        { name: 'Salt', amount: 0, unit: 'to taste' },
       ],
       procedure: [
         'Preheat a water bath to 51°C/124°F.',

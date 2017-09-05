@@ -53,14 +53,18 @@ class AmountInput extends Component {
     const classes = this.props.classes;
     return (
       <div className={classes.root}>
-        <NumberInput
-          amount={this.props.amount}
-          unit={this.props.unit}
-          scalingFactor={this.props.scalingFactor}
-          updateScalingFactor={this.updateScalingFactor}
-          fontSize={this.props.fontSize}
-          inputRef={this.inputRef}
-        />
+        {this.props.amount === 0 ? (
+          ''
+        ) : (
+          <NumberInput
+            amount={this.props.amount}
+            unit={this.props.unit}
+            scalingFactor={this.props.scalingFactor}
+            updateScalingFactor={this.updateScalingFactor}
+            fontSize={this.props.fontSize}
+            inputRef={this.inputRef}
+          />
+        )}
         <div
           className={classes.unit}
           style={this.unitStyle()}
@@ -101,4 +105,6 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default withStyles(styles)(connect(null, mapDispatchToProps)(AmountInput));
+export default withStyles(styles)(
+  connect(null, mapDispatchToProps)(AmountInput),
+);
