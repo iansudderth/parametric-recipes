@@ -8,7 +8,6 @@ import { editTitle, editServingAmount, editServingUnit } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
 import SmallTextInput from '../inputs/SmallTextInput';
-import SmallTextAreaInput from '../inputs/SmallTextAreaInput';
 
 const styles = {
 	servingSection: {

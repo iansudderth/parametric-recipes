@@ -21,6 +21,7 @@ const styles = {
 	container: {
 		flexGrow: 1,
 		display: 'inline-flex',
+		width: '100%',
 	},
 };
 
