@@ -9,8 +9,6 @@ import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
 import SmallTextInput from '../inputs/SmallTextInput';
 import SmallTextAreaInput from '../inputs/SmallTextAreaInput';
-import AutosizeInput from '../inputs/AutosizeInput';
-import TestInput from '../inputs/TestInput';
 
 const styles = {
 	servingSection: {
@@ -48,16 +46,13 @@ function EditHeader(props) {
 					fontSize={30}
 					fontWeight={400}
 				/>
-				<TextAreaInput
+				<SmallTextInput
 					updateValue={props.editServingUnit}
 					value={props.servingUnit}
 					fontSize={30}
 					fontWeight={400}
 					leftPadding={4}
 				/>
-			</div>
-			<div>
-				<TestInput value={'stuff'} />
 			</div>
 		</div>
 	);

@@ -18,18 +18,11 @@ const styles = {
 };
 
 function Ingredient(props) {
-	let { name, amount, unit, scaling } = props.ingredient;
-	name = name || '';
-	amount = amount || null;
-	unit = unit || '';
-	scaling = scaling ? `${scaling}%` : '';
-
+	const { name, amount, unit, scaling } = props.ingredient;
 	const { container } = props.classes;
 	return (
 		<li className={container}>
-			<div>
-				{`${name}  `}
-			</div>
+			<div>{`${name}  `}</div>
 			<AmountInput
 				amount={amount}
 				unit={unit}

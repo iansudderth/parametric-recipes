@@ -78,7 +78,6 @@ export function requestUpdateRecipeList() {
 			response => {
 				dispatch(updateRecipeListSuccess());
 				dispatch(updateRecipeList(response.data));
-				console.log(response);
 			},
 			error => {
 				dispatch(updateRecipeListError(error));

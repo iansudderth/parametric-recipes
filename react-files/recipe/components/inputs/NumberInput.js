@@ -84,6 +84,19 @@ class NumberInput extends Component {
     return this.generateValue();
   };
 
+  inputRef = el => {
+    if (el) {
+      this.props.inputRef(el.input);
+      this.input = el.input;
+    }
+  };
+
+  keyHandler = event => {
+    if (event.which === 13 && this.input) {
+      this.input.blur();
+    }
+  };
+
   render() {
     const classes = this.props.classes;
     return (
@@ -95,8 +108,9 @@ class NumberInput extends Component {
           onBlur={this.blurHandler}
           value={this.outputValue()}
           className={classes.input}
-          ref={this.props.inputRef}
+          ref={this.inputRef}
           inputStyle={this.resizeStyle()}
+          onKeyPress={this.keyHandler}
         />
       </div>
     );
@@ -120,9 +134,9 @@ NumberInput.defaultProps = {
   fontFamily: 'Roboto',
   amount: null,
   scalingFactor: 1,
-  updateScalingFactor: x => null,
-  updateValue: x => null,
-  inputRef: x => null,
+  updateScalingFactor: () => null,
+  updateValue: () => null,
+  inputRef: () => null,
 };
 
 export default withStyles(styles)(NumberInput);

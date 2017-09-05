@@ -6,11 +6,14 @@ import AutosizeInput from '../inputs/AutosizeInput';
 
 const styles = {
   root: {
-    display: 'inline',
+    display: 'inline-flex',
     fontFamily: 'Roboto',
-    fontSize: 40,
-    '&:focus': {
-      outline: 'none',
+    alignItems: 'baseline',
+    '& input': {
+      border: 'none',
+      '&:focus': {
+        outline: 'none',
+      },
     },
   },
 };
@@ -18,13 +21,22 @@ class SmallTextInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: '00',
+      inputValue: this.props.value,
     };
   }
 
   changeHandler = event => {
+    const oldVal = this.state.inputValue;
     const newVal = event.target.value;
-    this.setState({ inputValue: newVal });
+    let value = newVal;
+    if (
+      this.props.characterCap !== 0 &&
+      value.length >= this.props.characterCap
+    ) {
+      value = oldVal;
+    }
+
+    this.setState({ inputValue: value });
   };
 
   blurHandler = () => {
@@ -37,12 +49,13 @@ class SmallTextInput extends Component {
         value = value.slice(0, this.props.characterCap);
       }
     }
+    this.updateValue(value);
     this.setState({ inputValue: value });
   };
 
   keyHandler = event => {
     if (event.which === 13) {
-      this.input.htmlEl.blur();
+      this.input.input.blur();
     }
   };
 
@@ -69,7 +82,7 @@ class SmallTextInput extends Component {
           onBlur={this.blurHandler}
           onKeyPress={this.keyHandler}
           ref={this.inputRef}
-          style={this.inputStyles()}
+          inputStyle={this.inputStyles()}
         />
       </div>
     );

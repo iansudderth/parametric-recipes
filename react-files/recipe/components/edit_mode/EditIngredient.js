@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import TextAreaInput from '../inputs/TextAreaInput';
 import NumberInput from '../inputs/NumberInput';
-import SmallTextAreaInput from '../inputs/SmallTextAreaInput';
+import SmallTextInput from '../inputs/SmallTextInput';
 
 const styles = {
 	container: {
 		display: 'flex',
 		justifyContent: 'space-between',
-		alignItems: 'center',
+		alignItems: 'baseline',
 		paddingTop: 12,
 		paddingBottom: 12,
 		borderBottom: '2px solid #F0F0F0',
@@ -52,7 +52,7 @@ function EditIngredient(props) {
 					<NumberInput amount={props.ingredientAmount} />
 				</div>
 				<div className={unitContainer}>
-					<SmallTextAreaInput
+					<SmallTextInput
 						value={props.ingredientUnit}
 						fontWeight={400}
 					/>

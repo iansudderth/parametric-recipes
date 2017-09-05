@@ -44,9 +44,11 @@ class AmountInput extends Component {
   };
 
   focusInput = () => {
-    const length = this.input.value.length;
-    this.input.focus();
-    this.input.setSelectionRange(length, length);
+    if (this.input) {
+      const length = this.input.value.length;
+      this.input.focus();
+      this.input.setSelectionRange(length, length);
+    }
   };
 
   render() {
