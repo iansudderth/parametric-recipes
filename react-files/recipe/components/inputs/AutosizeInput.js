@@ -1,6 +1,5 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const createClass = require('create-react-class');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const sizerStyle = {
 	position: 'absolute',
@@ -12,60 +11,47 @@ const sizerStyle = {
 	whiteSpace: 'pre',
 };
 
-const AutosizeInput = createClass({
-	propTypes: {
-		className: PropTypes.string, // className for the outer element
-		defaultValue: PropTypes.any, // default field value
-		inputClassName: PropTypes.string, // className for the input element
-		inputStyle: PropTypes.object, // css styles for the input element
-		minWidth: PropTypes.oneOfType([
-			// minimum width for input element
-			PropTypes.number,
-			PropTypes.string,
-		]),
-		onAutosize: PropTypes.func, // onAutosize handler: function(newWidth) {}
-		onChange: PropTypes.func, // onChange handler: function(newValue) {}
-		placeholder: PropTypes.string, // placeholder text
-		placeholderIsMinWidth: PropTypes.bool, // don't collapse size to less than the placeholder
-		style: PropTypes.object, // css styles for the outer element
-		value: PropTypes.any, // field value
-	},
-	getDefaultProps() {
-		return {
-			minWidth: 1,
-		};
-	},
-	getInitialState() {
-		return {
+class AutosizeInput extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
 			inputWidth: this.props.minWidth,
 		};
-	},
-	componentDidMount() {
+	}
+
+	componentDidMount = () => {
 		this.mounted = true;
 		this.copyInputStyles();
 		this.updateInputWidth();
-	},
-	componentDidUpdate(prevProps, prevState) {
+	};
+
+	componentDidUpdate = (prevProps, prevState) => {
 		if (prevState.inputWidth !== this.state.inputWidth) {
 			if (typeof this.props.onAutosize === 'function') {
 				this.props.onAutosize(this.state.inputWidth);
 			}
 		}
 		this.updateInputWidth();
-	},
-	componentWillUnmount() {
+	};
+
+	componentWillUnmount = () => {
 		this.mounted = false;
-	},
-	inputRef(el) {
+	};
+
+	inputRef = el => {
 		this.input = el;
-	},
-	placeHolderSizerRef(el) {
+	};
+
+	placeHolderSizerRef = el => {
 		this.placeHolderSizer = el;
-	},
-	sizerRef(el) {
+	};
+
+	sizerRef = el => {
 		this.sizer = el;
-	},
-	copyInputStyles() {
+	};
+
+	copyInputStyles = () => {
 		if (!this.mounted || !window.getComputedStyle) {
 			return;
 		}
@@ -89,8 +75,9 @@ const AutosizeInput = createClass({
 			placeholderNode.style.letterSpacing = inputStyle.letterSpacing;
 			placeholderNode.style.textTransform = inputStyle.textTransform;
 		}
-	},
-	updateInputWidth() {
+	};
+
+	updateInputWidth = () => {
 		if (
 			!this.mounted ||
 			!this.sizer ||
@@ -120,19 +107,20 @@ const AutosizeInput = createClass({
 				inputWidth: newInputWidth,
 			});
 		}
-	},
-	getInput() {
-		return this.input;
-	},
-	focus() {
+	};
+
+	focus = () => {
 		this.input.focus();
-	},
-	blur() {
+	};
+
+	blur = () => {
 		this.input.blur();
-	},
-	select() {
+	};
+
+	select = () => {
 		this.input.select();
-	},
+	};
+
 	render() {
 		const sizerValue = [
 			this.props.defaultValue,
@@ -172,7 +160,29 @@ const AutosizeInput = createClass({
 				) : null}
 			</div>
 		);
-	},
-});
+	}
+}
 
-module.exports = AutosizeInput;
+AutosizeInput.propTypes = {
+	className: PropTypes.string, // className for the outer element
+	defaultValue: PropTypes.any, // default field value
+	inputClassName: PropTypes.string, // className for the input element
+	inputStyle: PropTypes.object, // css styles for the input element
+	minWidth: PropTypes.oneOfType([
+		// minimum width for input element
+		PropTypes.number,
+		PropTypes.string,
+	]),
+	onAutosize: PropTypes.func, // onAutosize handler: function(newWidth) {}
+	onChange: PropTypes.func, // onChange handler: function(newValue) {}
+	placeholder: PropTypes.string, // placeholder text
+	placeholderIsMinWidth: PropTypes.bool, // don't collapse size to less than the placeholder
+	style: PropTypes.object, // css styles for the outer element
+	value: PropTypes.any, // field value
+};
+
+AutosizeInput.defaultProps = {
+	minWidth: 1,
+};
+
+export default AutosizeInput;
