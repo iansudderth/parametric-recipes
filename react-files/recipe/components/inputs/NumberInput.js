@@ -9,13 +9,13 @@ const styles = {
     display: 'inline',
   },
   input: {
-    fontFamily: 'Roboto',
-    fontSize: 40,
-    border: 'none',
-    background: 'none',
-    textAlign: 'center',
-    '&:focus': {
-      outline: 'none',
+    '& input': {
+      border: 'none',
+      background: 'none',
+      textAlign: 'center',
+      '&:focus': {
+        outline: 'none',
+      },
     },
   },
 };
@@ -88,20 +88,16 @@ class NumberInput extends Component {
     const classes = this.props.classes;
     return (
       <div className={classes.root}>
-        {this.props.amount === null ? (
-          ''
-        ) : (
-          <AutosizeInput
-            type="text"
-            onChange={this.changeHandler}
-            onFocus={this.focusHandler}
-            onBlur={this.blurHandler}
-            value={this.outputValue()}
-            style={this.resizeStyle()}
-            className={classes.input}
-            ref={this.props.inputRef}
-          />
-        )}
+        <AutosizeInput
+          type="text"
+          onChange={this.changeHandler}
+          onFocus={this.focusHandler}
+          onBlur={this.blurHandler}
+          value={this.outputValue()}
+          className={classes.input}
+          ref={this.props.inputRef}
+          inputStyle={this.resizeStyle()}
+        />
       </div>
     );
   }
