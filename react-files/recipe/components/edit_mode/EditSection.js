@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import IconButton from 'material-ui/IconButton';
 import Button from 'material-ui/Button';
 import Add from 'material-ui-icons/Add';
+import DeleteForever from 'material-ui-icons/DeleteForever';
 import EditIngredient from './EditIngredient';
 import EditStep from './EditStep';
 import {
@@ -18,12 +19,12 @@ import {
 	editIngredientAmount,
 	editIngredientUnit,
 	deleteIngredient,
+	deleteSection,
 } from '../../actions';
 
 const styles = {
 	sectionContainer: {
 		display: 'flex',
-		borderBottom: `2px solid ${red[500]}`,
 		fontSize: '20px',
 		fontFamily: 'Roboto',
 		'&:last-child': {
@@ -74,6 +75,21 @@ const styles = {
 		paddingBottom: 12,
 		paddingTop: 12,
 	},
+	controlsContainer: {
+		borderBottom: `2px solid ${red[500]}`,
+	},
+	buttonContainer: {
+		display: 'flex',
+		justifyContent: 'center',
+		padding: 12,
+	},
+	deleteButton: {
+		backgroundColor: 'red',
+		color: 'white',
+		'&:hover': {
+			backgroundColor: red['A700'],
+		},
+	},
 };
 
 function EditSection(props) {
@@ -84,6 +100,9 @@ function EditSection(props) {
 		stepsContainer,
 		newStepContainer,
 		newIngredientContainer,
+		controlsContainer,
+		buttonContainer,
+		deleteButton,
 	} = props.classes;
 
 	function newStepDispatcher() {
@@ -98,58 +117,77 @@ function EditSection(props) {
 		props.newIngredient(props.sectionIndex);
 	}
 
+	function deleteSectionDispatcher() {
+		props.deleteSection(props.sectionIndex);
+	}
+
 	return (
-		<div className={sectionContainer}>
-			<div className={ingredientSection}>
-				<ul>
-					{props.ingredientsArray.map((ingredient, index) => (
-						<EditIngredient
-							key={`ingredient-${index}-${ingredient.name}`}
-							ingredientName={ingredient.name}
-							ingredientAmount={ingredient.amount}
-							ingredientUnit={ingredient.unit}
-							sectionIndex={props.sectionIndex}
-							ingredientIndex={index}
-							deleteIngredient={props.deleteIngredient}
-							editIngredientName={props.editIngredientName}
-							editIngredientAmount={props.editIngredientAmount}
-							editIngredientUnit={props.editIngredientUnit}
-						/>
-					))}
-				</ul>
-				<div className={newIngredientContainer}>
-					<Button
-						raised
-						color="primary"
-						onClick={newIngredientDispatcher}
-					>
-						<Add />
-						{'New Ingredient'}
-					</Button>
-				</div>
+		<div className={controlsContainer}>
+			<div className={buttonContainer}>
+				<Button
+					className={deleteButton}
+					raised
+					dense
+					onClick={deleteSectionDispatcher}
+				>
+					<DeleteForever />
+					{'Delete Section'}
+				</Button>
 			</div>
-			<div className={stepsSection}>
-				<ol className={stepsContainer}>
-					{props.steps.map((step, index) => (
-						<EditStep
-							key={`step-${index}-${step}`}
-							stepText={step}
-							sectionIndex={props.sectionIndex}
-							stepIndex={index}
-							editStep={props.editStep}
-							deleteStep={deleteStepDispatcher}
-						/>
-					))}
-				</ol>
-				<div className={newStepContainer}>
-					<Button
-						raised
-						color={'primary'}
-						onClick={newStepDispatcher}
-					>
-						<Add />
-						{'New Step'}
-					</Button>
+			<div className={sectionContainer}>
+				<div className={ingredientSection}>
+					<ul>
+						{props.ingredientsArray.map((ingredient, index) => (
+							<EditIngredient
+								key={`ingredient-${index}-${ingredient.name}`}
+								ingredientName={ingredient.name}
+								ingredientAmount={ingredient.amount}
+								ingredientUnit={ingredient.unit}
+								sectionIndex={props.sectionIndex}
+								ingredientIndex={index}
+								deleteIngredient={props.deleteIngredient}
+								editIngredientName={props.editIngredientName}
+								editIngredientAmount={
+									props.editIngredientAmount
+								}
+								editIngredientUnit={props.editIngredientUnit}
+							/>
+						))}
+					</ul>
+					<div className={newIngredientContainer}>
+						<Button
+							raised
+							color="primary"
+							onClick={newIngredientDispatcher}
+						>
+							<Add />
+							{'New Ingredient'}
+						</Button>
+					</div>
+				</div>
+				<div className={stepsSection}>
+					<ol className={stepsContainer}>
+						{props.steps.map((step, index) => (
+							<EditStep
+								key={`step-${index}-${step}`}
+								stepText={step}
+								sectionIndex={props.sectionIndex}
+								stepIndex={index}
+								editStep={props.editStep}
+								deleteStep={deleteStepDispatcher}
+							/>
+						))}
+					</ol>
+					<div className={newStepContainer}>
+						<Button
+							raised
+							color={'primary'}
+							onClick={newStepDispatcher}
+						>
+							<Add />
+							{'New Step'}
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -181,6 +219,7 @@ function mapDispatchToProps(dispatch) {
 			editIngredientAmount,
 			editIngredientUnit,
 			deleteIngredient,
+			deleteSection,
 		},
 		dispatch,
 	);

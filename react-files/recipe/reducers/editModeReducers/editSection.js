@@ -14,6 +14,14 @@ export default function editSectionReducer(state, action) {
 			newState.recipe = [...newState.recipe, newSection];
 			return newState;
 		}
+		case DELETE_SECTION: {
+			const { sectionIndex } = action.payload;
+			let newState = _.merge({}, state);
+			let newRecipe = [...newState.recipe];
+			_.pullAt(newRecipe, sectionIndex);
+			newState.recipe = newRecipe;
+			return newState;
+		}
 		default:
 			return state;
 	}
