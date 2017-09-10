@@ -11,79 +11,75 @@ import EditHeader from '../components/edit_mode/EditHeader';
 import EditSection from '../components/edit_mode/EditSection';
 
 const styles = {
-	container: {
-		margin: 12,
-	},
-	buttonContainer: {
-		display: 'flex',
-		justifyContent: 'center',
-		padding: 12,
-	},
+  container: {
+    margin: 12,
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    padding: 12,
+  },
 };
 
 class RecipeEditorContainer extends Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {};
-	}
+    this.state = {};
+  }
 
-	generateSections = () => {
-		let stepStartingNumber = 1;
-		return this.props.recipe.recipe.map((section, index) => {
-			let currentStep = stepStartingNumber;
-			stepStartingNumber += section.procedure.length;
-			return (
-				<EditSection
-					key={`recipe-section-${index}`}
-					sectionIndex={index}
-					ingredientsArray={section.ingredients}
-					steps={section.procedure}
-					startStepAt={currentStep}
-				/>
-			);
-		});
-	};
+  generateSections = () => {
+    let stepStartingNumber = 1;
+    return this.props.recipe.recipe.map((section, index) => {
+      let currentStep = stepStartingNumber;
+      stepStartingNumber += section.procedure.length;
+      return (
+        <EditSection
+          key={`recipe-section-${index}`}
+          sectionIndex={index}
+          ingredientsArray={section.ingredients}
+          steps={section.procedure}
+          startStepAt={currentStep}
+        />
+      );
+    });
+  };
 
-	render() {
-		const { container, buttonContainer } = this.props.classes;
-		return (
-			<div className={container}>
-				<Card>
-					<EditHeader
-						title={this.props.recipe.title}
-						servingAmount={this.props.recipe.serving.amount}
-						servingUnit={this.props.recipe.serving.unit}
-					/>
-					{this.generateSections()}
-					<div className={buttonContainer}>
-						<Button
-							raised
-							color="primary"
-							onClick={this.props.newSection}
-						>
-							<Add />
-							{'New Section'}
-						</Button>
-					</div>
-				</Card>
-			</div>
-		);
-	}
+  render() {
+    const { container, buttonContainer } = this.props.classes;
+    return (
+      <div className={container}>
+        <Card>
+          <EditHeader
+            title={this.props.recipe.title}
+            servingAmount={this.props.recipe.serving.amount}
+            servingUnit={this.props.recipe.serving.unit}
+          />
+          {this.generateSections()}
+          <div className={buttonContainer}>
+            <Button raised color="primary" onClick={this.props.newSection}>
+              <Add />
+              {'New Section'}
+            </Button>
+          </div>
+        </Card>
+      </div>
+    );
+  }
 }
 
 RecipeEditorContainer.propTypes = {};
 
 function mapStateToProps({ recipe }) {
-	return {
-		recipe,
-	};
+  return {
+    recipe,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ newSection }, dispatch);
+  return bindActionCreators({ newSection }, dispatch);
 }
 
 export default withStyles(styles)(
-	connect(mapStateToProps, mapDispatchToProps)(RecipeEditorContainer),
+  connect(mapStateToProps, mapDispatchToProps)(RecipeEditorContainer),
 );

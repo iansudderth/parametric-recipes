@@ -4,521 +4,547 @@
 		"selected_items":
 		[
 			[
-				"exp",
-				"export\t(newRecipe.js)"
+				"Sav",
+				"SaveButtonAndDialog\t(SaveButtonAndDialog.js)"
 			],
 			[
-				"Edit",
-				"EditStepsList"
+				"def",
+				"defaultProps\t(EditHeader.js)"
 			],
 			[
-				"prop",
-				"prop-types\t(RecipeEditorContainer.js)"
+				"text",
+				"textContainer"
 			],
 			[
-				"Reci",
-				"RecipeEditorContainer"
+				"NEW",
+				"NEW_RECIPE\t(recipe_reducer.js)"
 			],
 			[
-				"ext",
-				"extends\t(newRecipe.js)"
-			],
-			[
-				"rec",
-				"recipe"
-			],
-			[
-				"db",
-				"dburl"
-			],
-			[
-				"seed",
-				"seedDB"
-			],
-			[
-				"update",
-				"updateRecipeList"
-			],
-			[
-				"Re",
-				"Recipe"
-			],
-			[
-				"dis",
-				"dispatch\t(index.js)"
-			],
-			[
-				"reque",
-				"requestUpdateRecipeList"
-			],
-			[
-				"bind",
-				"bindActionCreators\t(ChangeRecipeDialog.js)"
-			],
-			[
-				"up",
-				"updateRecipeListSuccess"
-			],
-			[
-				"UP",
-				"UPDATE_RECIPE_LIST"
-			],
-			[
-				"upda",
-				"updateRecipeList"
-			],
-			[
-				"upd",
-				"updateRecipeList"
-			],
-			[
-				"head",
-				"headingText"
-			],
-			[
-				"max",
-				"maxWidth\t = 'none' Style CSS"
-			],
-			[
-				"class",
-				"className\t: DOMString Element"
-			],
-			[
-				"W",
-				"WelcomeScreen"
-			],
-			[
-				"Welcome",
-				"WelcomeScreen\t(WelcomeScreen.js)"
+				"de",
+				"default"
 			],
 			[
 				"new",
 				"newRecipe"
 			],
 			[
-				"chang",
-				"changeRecipe"
+				"EDIT",
+				"EDIT_RECIPE\t(recipeActions.js)"
 			],
 			[
-				"requ",
-				"requestRecipe"
-			],
-			[
-				"reci",
-				"recipe"
-			],
-			[
-				"n",
-				"networkError"
-			],
-			[
-				"cha",
-				"changeRecipe"
-			],
-			[
-				"net",
-				"networkSuccess"
-			],
-			[
-				"N",
-				"NETWORK_SUCCESS"
-			],
-			[
-				"NET",
-				"NETWORK_SUCCESS"
-			],
-			[
-				"NE",
-				"NETWORK_ERROR"
-			],
-			[
-				"NETWE",
-				"NETWORK_SUCCESS"
-			],
-			[
-				"map",
-				"mapStateToProps"
-			],
-			[
-				"createSt",
-				"createStoreWithMiddleware"
-			],
-			[
-				"res",
-				"response"
-			],
-			[
-				"recipe",
-				"recipeList"
-			],
-			[
-				"recip",
-				"recipeList\t(server.js)"
-			],
-			[
-				"as",
-				"async\t(todo.js)"
-			],
-			[
-				"merg",
-				"mergedQuery"
-			],
-			[
-				"cons",
-				"console"
-			],
-			[
-				"pot",
-				"potatoSalad"
-			],
-			[
-				"tamal",
-				"tamales"
-			],
-			[
-				"CHA",
-				"CHANGE_RECIPE"
-			],
-			[
-				"tuna",
-				"tunaConfit"
-			],
-			[
-				"CH",
-				"CHANGE_RECIPE"
-			],
-			[
-				"CHANGE",
-				"CHANGE_RECIPE\t(index.js)"
-			],
-			[
-				"chan",
-				"changeRecipeComposer"
-			],
-			[
-				"change",
-				"changeRecipe"
-			],
-			[
-				"list",
-				"listText"
-			],
-			[
-				"transi",
-				"transient〔keyword〕"
-			],
-			[
-				"with",
-				"withStyles"
-			],
-			[
-				"List",
-				"ListItemText"
-			],
-			[
-				"close",
-				"closeRecipeDialog"
-			],
-			[
-				"Change",
-				"ChangeRecipeDialog\t(ChangeRecipeDialog.js)"
-			],
-			[
-				"Di",
-				"DialogTitle"
-			],
-			[
-				"Chang",
-				"ChangeRecipeDialog"
-			],
-			[
-				"Chan",
-				"ChangeRecipeDialog"
-			],
-			[
-				"nav",
-				"navText"
-			],
-			[
-				"T",
-				"Typography"
-			],
-			[
-				"cont",
-				"container"
-			],
-			[
-				"clas",
-				"className\t: DOMString Element"
-			],
-			[
-				"flexWr",
-				"flexWrap\t Style CSS"
-			],
-			[
-				"input",
-				"inputValue"
-			],
-			[
-				"output",
-				"outputValue"
-			],
-			[
-				"outp",
-				"outputValue"
-			],
-			[
-				"sty",
-				"styles"
-			],
-			[
-				"CHANGE_",
-				"CHANGE_SCALING_FACTOR\t(index.js)"
-			],
-			[
-				"oneOf",
-				"PropTypes.oneOfType"
-			],
-			[
-				"blur",
-				"blurHandler"
-			],
-			[
-				"mapt",
-				"mapDispatchToProps"
-			],
-			[
-				"scaling",
-				"scalingFactor"
-			],
-			[
-				"serve",
-				"servingsContainer"
-			],
-			[
-				"servin",
-				"servingsContainer"
-			],
-			[
-				"header",
-				"headerContainer"
-			],
-			[
-				"Nu",
-				"NumberInput\t(Ingredient.js)"
-			],
-			[
-				"Style",
-				"StyledInput"
-			],
-			[
-				"Number",
-				"NumberInput"
-			],
-			[
-				"ing",
-				"ingredientSection"
-			],
-			[
-				"step",
-				"stepsCount"
-			],
-			[
-				"start",
-				"startingNumber"
-			],
-			[
-				"steps",
-				"stepsStartingNumber"
+				"next",
+				"nextProps"
 			],
 			[
 				"ste",
-				"stepsStartingNumber"
+				"stepStart"
 			],
 			[
-				"ingre",
-				"ingredientSection"
+				"step",
+				"stepCount"
 			],
 			[
 				"section",
-				"sectionContainer"
+				"sectionIndex\t(EditIngredient.js)"
 			],
 			[
-				"flexG",
-				"flexGrow\t Style CSS"
+				"deleteSe",
+				"deleteSectionDispatcher"
 			],
 			[
-				"sc",
-				"scaling"
-			],
-			[
-				"Recipe",
-				"RecipeContainer\t(RecipeContainer.js)"
-			],
-			[
-				"defau",
-				"defaultProps\t(Section.js)"
-			],
-			[
-				"inge",
-				"ingredientsArray\t(Section.js)"
-			],
-			[
-				"scal",
-				"scalingFactor"
-			],
-			[
-				"js",
-				"jsx-indent"
-			],
-			[
-				"ingred",
-				"ingredient"
-			],
-			[
-				"sca",
-				"scalingFactor"
-			],
-			[
-				"appl",
-				"applyMiddleware"
-			],
-			[
-				"compos",
-				"composeWithDevTools"
-			],
-			[
-				"newS",
-				"newScalingFactor"
-			],
-			[
-				"CHANG",
-				"CHANGE_SCALING_FACTOR"
-			],
-			[
-				"numb",
-				"numberChange"
-			],
-			[
-				"str",
-				"strArray"
+				"delete",
+				"deleteSection"
 			],
 			[
 				"back",
-				"background\t Style CSS"
+				"backgroundColor"
+			],
+			[
+				"REO",
+				"REORDER_SECTION\t(recipe_reducer.js)"
+			],
+			[
+				"DEL",
+				"DELETE_SECTION\t(recipe_reducer.js)"
+			],
+			[
+				"NEW_",
+				"NEW_SECTION\t(recipe_reducer.js)"
+			],
+			[
+				"bind",
+				"bindActionCreators"
+			],
+			[
+				"Parse",
+				"parseFloat\t( s: string ): double Global"
+			],
+			[
+				"ED",
+				"EDIT_SERVING_AMOUNT"
+			],
+			[
+				"edit",
+				"editIngredientUnit\t(EditSection.js)"
+			],
+			[
+				"EDIT_Ing",
+				"EDIT_INGREDIENT_AMOUNT"
+			],
+			[
+				"editIn",
+				"editIngredientName〔variable〕"
+			],
+			[
+				"ing",
+				"ingredientIndex"
+			],
+			[
+				"ingred",
+				"ingredients"
+			],
+			[
+				"EDI",
+				"EDIT_INGREDIENT_NAME"
+			],
+			[
+				"ingre",
+				"ingredientIndex\t(EditSection.js)"
+			],
+			[
+				"sec",
+				"sectionIndex"
+			],
+			[
+				"inp",
+				"inputString"
+			],
+			[
+				"input",
+				"inputString"
+			],
+			[
+				"contro",
+				"controlsContainer"
+			],
+			[
+				"Ed",
+				"EditIngredient"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"res",
+				"resize\t.resize()"
+			],
+			[
+				"left",
+				"leftSpacing"
+			],
+			[
+				"font",
+				"fontFamily"
+			],
+			[
+				"inputS",
+				"inputStyles\t(TextAreaInput.js)"
+			],
+			[
+				"key",
+				"keyHandler"
+			],
+			[
+				"blure",
+				"blurHandler"
+			],
+			[
+				"onC",
+				"onChange\t(TestInput.js)"
+			],
+			[
+				"Auto",
+				"AutosizeInput"
+			],
+			[
+				"conta",
+				"container\t(EditStep.js)"
+			],
+			[
+				"cons",
+				"constructor\t(SmallTextInput.js)"
+			],
+			[
+				"ext",
+				"extends\t(SmallTextInput.js)"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"min",
+				"minWidth\t = 'initial' Style CSS"
+			],
+			[
+				"max",
+				"maxWidth"
+			],
+			[
+				"char",
+				"charLimit"
+			],
+			[
+				"Smal",
+				"SmallTextAreaInput"
+			],
+			[
+				"chara",
+				"characterCap"
+			],
+			[
+				"bl",
+				"blurHandler"
+			],
+			[
+				"dis",
+				"display"
 			],
 			[
 				"inpu",
 				"inputValue"
 			],
 			[
-				"scroll",
+				"change",
+				"changeHandler"
+			],
+			[
+				"reac",
+				"react-input-autosize\t(app.js)"
+			],
+			[
+				"scro",
 				"scrollWidth"
 			],
 			[
-				"char",
-				"charWidth"
+				"sc",
+				"scrollWidth"
 			],
 			[
-				"in",
+				"inpt",
 				"inputValue"
 			],
 			[
-				"set",
-				"setState"
+				"inn",
+				"innerRef"
 			],
 			[
-				"gho",
-				"ghostWidth"
+				"inner",
+				"innerRef"
 			],
 			[
-				"ghot",
-				"ghostWidth"
+				"ex",
+				"extends\t(NumberInput.js)"
 			],
 			[
-				"Num",
-				"NumberSpace"
+				"number",
+				"numberContainer"
 			],
 			[
-				"width",
-				"width"
+				"unit",
+				"unitContainer"
 			],
 			[
-				"wid",
-				"width"
+				"inline",
+				"inline-flex\t(EditStep.js)"
 			],
 			[
-				"inp",
-				"inputValue"
+				"name",
+				"nameContainer"
 			],
 			[
-				"css",
-				"cssAnswer2RegEx"
+				"Tex",
+				"TextAreaInput"
 			],
 			[
-				"htm",
-				"htmlAnswer2RegEx"
+				"newI",
+				"newIngredientDispatcher"
 			],
 			[
-				"cssA",
-				"cssAnswerRegEx"
+				"padd",
+				"paddingTop"
 			],
 			[
-				"htmlA",
-				"htmlAnswerRegEx"
+				"padding",
+				"paddingBottom"
 			],
 			[
-				"min",
-				"minWidth\t = 'inherit' Style CSS"
+				"pro",
+				"procedure"
+			],
+			[
+				"dele",
+				"deleteStepDispatcher\t(EditSection.js)"
+			],
+			[
+				"mater",
+				"material-ui-icons\t(EditSection.js)"
+			],
+			[
+				"I",
+				"IconButton"
+			],
+			[
+				"deleteSt",
+				"deleteStepDispatcher"
 			],
 			[
 				"tex",
-				"textField"
+				"textareaRef"
 			],
 			[
-				"clan",
-				"className\t: DOMString Element"
+				"merg",
+				"merge"
+			],
+			[
+				"newSec",
+				"newStepDispatcher"
+			],
+			[
+				"newSt",
+				"newStepContainer"
+			],
+			[
+				"upda",
+				"updateStepValue"
+			],
+			[
+				"editI",
+				"editIngredientUnit\t(index.js)"
 			],
 			[
 				"react",
-				"react-files"
+				"react-redux\t(AmountInput.js)"
 			],
 			[
-				"St",
-				"StyledInput"
+				"with",
+				"withStyles"
+			],
+			[
+				"pad",
+				"paddingLeft\t(TextAreaInput.js)"
+			],
+			[
+				"class",
+				"className\t: DOMString Element"
+			],
+			[
+				"amount",
+				"amountContainer"
+			],
+			[
+				"st",
+				"styles"
+			],
+			[
+				"steps",
+				"stepsContainer"
+			],
+			[
+				"sect",
+				"sectionIndex"
+			],
+			[
+				"Edit",
+				"EditIngredient"
+			],
+			[
+				"cont",
+				"container\t(TextAreaInput.js)"
+			],
+			[
+				"fontS",
+				"fontSize\t = 'xx-large' Style CSS"
+			],
+			[
+				"pa",
+				"payload"
+			],
+			[
+				"ed",
+				"editTitle"
+			],
+			[
+				"upd",
+				"updateValue"
+			],
+			[
+				"oneO",
+				"oneOfType\t(NumberInput.js)"
+			],
+			[
+				"ProP",
+				"PropTypes.string"
+			],
+			[
+				"out",
+				"outline\t(NumberInput.js)"
+			],
+			[
+				"Pr",
+				"PropTypes"
+			],
+			[
+				"contain",
+				"container"
+			],
+			[
+				"serving",
+				"servingSection"
+			],
+			[
+				"serv",
+				"servingSection"
+			],
+			[
+				"disp",
+				"display\t(NumberInput.js)"
+			],
+			[
+				"Text",
+				"TextAreaInput\t(TextAreaInput.js)"
+			],
+			[
+				"extend",
+				"extends\t(NumberInput.js)"
+			],
+			[
+				"prop",
+				"prop-types\t(NumberInput.js)"
+			],
+			[
+				"EDIT_",
+				"EDIT_TITLE\t(index.js)"
+			],
+			[
+				"Num",
+				"NumberInput"
+			],
+			[
+				"setSec",
+				"setSelectionRange\t(NumberInput.js)"
 			],
 			[
 				"const",
-				"constructor\tReact.Component"
+				"constructor\t(NumberInput.js)"
 			],
 			[
-				"sec",
-				"sectionKey"
+				"editS",
+				"editServingUnit"
 			],
 			[
-				"Art",
-				"ArticleItem"
+				"map",
+				"mapDispatchToProps"
 			],
 			[
-				"Tutor",
-				"Tutorials\t(Nav.js)"
+				"ti",
+				"title\t(Header.js)"
 			],
 			[
-				"click",
-				"clickHandler"
+				"scaling",
+				"scalingFactor"
 			],
 			[
-				"Nav",
-				"NavItem"
+				"chang",
+				"changeScalingFactor"
 			],
 			[
-				"de",
-				"description"
+				"update",
+				"updateValue"
+			],
+			[
+				"N",
+				"NumberInput"
+			],
+			[
+				"Number",
+				"NumberInput\t(NumberInput.js)"
+			],
+			[
+				"editStep",
+				"editStepReducer\t(editStep.js)"
+			],
+			[
+				"REOR",
+				"REORDER_STEP"
+			],
+			[
+				"DELE",
+				"DELETE_STEP\t(index.js)"
+			],
+			[
+				"DE",
+				"DELETE_INGREDIENT\t(index.js)"
+			],
+			[
+				"RE",
+				"REORDER_INGREDIENT\t(index.js)"
+			],
+			[
+				"DELETE",
+				"DELETE_SECTION\t(index.js)"
+			],
+			[
+				"editHea",
+				"editHeaderReducer\t(editHeader.js)"
+			],
+			[
+				"EDIT_SER",
+				"EDIT_SERVING_UNIT\t(index.js)"
+			],
+			[
+				"reor",
+				"reorderStep\t(editStepActions.js)"
+			],
+			[
+				"newS",
+				"newStep\t(editStepActions.js)"
+			],
+			[
+				"old",
+				"oldStepIndex"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "react-files/recipe/components/edit_mode/EditHeader.js",
+			"settings":
+			{
+				"buffer_size": 2237,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "react-files/recipe/components/edit_mode/SaveButtonAndDialog.js",
+			"settings":
+			{
+				"buffer_size": 483,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/iansudderth/Library/Application Support/Sublime Text 3/Packages/User/JsPrettier.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 362,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -528,9 +554,13 @@
 	"command_palette":
 	{
 		"height": 400.0,
-		"last_filter": "packages",
+		"last_filter": "packa",
 		"selected_items":
 		[
+			[
+				"packa",
+				"Packages UI"
+			],
 			[
 				"packages",
 				"Packages UI"
@@ -640,10 +670,6 @@
 				"Snippet: React: class component"
 			],
 			[
-				"packa",
-				"Package Control: Install Package"
-			],
-			[
 				"ins",
 				"Package Control: Install Package"
 			],
@@ -733,76 +759,100 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/iansudderth/Desktop/parametric-recipes",
+		"/Users/iansudderth/Desktop/parametric-recipes/node_modules/react-input-autosize",
+		"/Users/iansudderth/Desktop/parametric-recipes/node_modules/react-input-autosize/lib",
+		"/Users/iansudderth/Desktop/parametric-recipes/node_modules/react-input-autosize/src",
 		"/Users/iansudderth/Desktop/parametric-recipes/pages",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/inputs",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/container",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/recipes",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/style",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/editModeReducers",
 		"/Users/iansudderth/Desktop/parametric-recipes/schema",
 		"/Users/iansudderth/Desktop/portfolio site",
-		"/Users/iansudderth/Desktop/portfolio site/pages",
 		"/Users/iansudderth/Desktop/portfolio site/react-files",
+		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src",
-		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/actions",
-		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components",
-		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/containers",
-		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/reducers",
-		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/style",
-		"/Users/iansudderth/Desktop/portfolio site/schema"
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components"
 	],
 	"file_history":
 	[
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/NavBar.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions/index.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions/recipeActions.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions/editIngredientAction.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/inputs/SmallTextInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/recipes/deafaultRecipe.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/editMode_reducer.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/recipe_reducer.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/inputs/TextAreaInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/editModeReducers/editIngredient.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/editModeReducers/editSection.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/container/RecipeEditorContainer.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditSection.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditIngredient.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/inputs/AutosizeInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/schema/seed.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/Ingredient.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/AmountInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/pages/newRecipe.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions/networkActions.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditStep.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditHeader.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/inputs/TestInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/node_modules/react-input-autosize/src/AutosizeInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/editModeReducers/editStep.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/inputs/SmallTextAreaInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/inputs/NumberInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/node_modules/react-input-autosize/example/src/app.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/Steps.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/package.json",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/editModeReducers/editHeader.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/inputs/TextInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditAmountInput.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/Header.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/index.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions/editHeaderActions.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions/editSectionActions.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions/editStepActions.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/recipeHeader_reducer.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/App.js",
+		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditAddDeleteControls.js",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/reducers/items_reducer.js",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/ListItem.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/server.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/pages/newRecipe.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/container/RecipeEditorContainer.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditHeader.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditSection.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditIngredient.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditIngredientList.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditStepsList.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/edit_mode/EditStep.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/ChangeRecipeDialog.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/container/RecipeContainer.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/WelcomeScreen.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/NavBar.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/package.json",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/recipeList_reducer.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/actions/index.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/recipe_reducer.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/pages/recipe.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/schema/seedRemoteDB.js",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/actions/index.js",
 		"/Users/iansudderth/Desktop/portfolio site/pages/todo.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/.gitignore",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/index.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/index.js",
 		"/Users/iansudderth/Desktop/portfolio site/server.js",
 		"/Users/iansudderth/Desktop/portfolio site/schema/todoListSchema.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/recipes/tunaConfit.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/recipes/tamales.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/recipes/potatoSalad.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/schema/Recipe.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/schema/seed.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/Header.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/reducers/scalingFactor_reducer.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/App.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/Section.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/Steps.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/StepItem.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/NumberInput.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/Ingredient.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/.eslintrc.json",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/ContentEditable.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/NumberSpace.js",
-		"/Users/iansudderth/Desktop/parametric-recipes/node_modules/react-input-autosize/example/src/app.js",
 		"/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/components/StyledInput.js",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/AboutPage/index.js",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/portfolio/src/components/ConnectPage/index.js",
@@ -861,35 +911,11 @@
 		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/CompleteList.js",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/index.js",
 		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/Progress.js",
-		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/NewItemForm.js",
-		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/App.js",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/server.js",
-		"/Users/iansudderth/Desktop/portfolio site/style/withRoot.js",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/package.json",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/pages/todo.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/PortfolioPage/PortfolioItemDialogs/test.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/PortfolioPage/_portfolioItems.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/PortfolioPage/PortfolioItem.js",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/README.md",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/ListHeader.js",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/schema/generateNewTodoList.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/Layout.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/AboutPage/index.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/ConnectPage/index.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/index.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/Navbar.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/NavbarDrawer.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/style/context.js",
-		"/Users/iansudderth/Desktop/portfolio site/portfolio/src/components/Navbar/index.js",
-		"/Users/iansudderth/Desktop/Spring 17 Graduation/CSV_Processor.py",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/ColorMenu.js",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/components/CompleteList.js",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/index.js",
-		"/Users/iansudderth/Desktop/recursive-to-do/recursive-todo/todo-list/src/App.js"
+		"/Users/iansudderth/Desktop/portfolio site/react-files/todo-list/src/components/NewItemForm.js"
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -905,6 +931,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"input",
+			"getInput",
+			"getInitial",
+			"inputWidth",
 			"roast",
 			"null",
 			"this.input",
@@ -978,8 +1008,390 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "react-files/recipe/components/edit_mode/EditHeader.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1566,
+								1566
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1735,
+										1736
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1037,
+										1038
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/my-monokai-theme.tmTheme",
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/babel-sublime/JavaScript (Babel).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "react-files/recipe/components/edit_mode/SaveButtonAndDialog.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 483,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								481,
+								481
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/my-monokai-theme.tmTheme",
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/babel-sublime/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/iansudderth/Library/Application Support/Sublime Text 3/Packages/User/JsPrettier.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								346,
+								55
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										359,
+										360
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										53,
+										54
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/my-monokai-theme.tmTheme",
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],

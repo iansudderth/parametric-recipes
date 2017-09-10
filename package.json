@@ -21,6 +21,9 @@
         "material-ui-icons": "^1.0.0-beta.5",
         "mongoose": "^4.11.9",
         "next": "^3.0.6",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0",
+        "passport-local-mongoose": "^4.2.1",
         "prop-types": "^15.5.10",
         "react": "^15.4.2",
         "react-autosize-textarea": "^0.4.8",
@@ -47,5 +50,15 @@
     },
     "engines": {
         "node": "6.9.x"
+    },
+    "prettier": {
+        "printWidth": 80,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "parser": "babylon",
+        "semi": true,
+        "tabWidth": 2
     }
 }

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Recipe = require('./Recipe');
 
 const potatoSalad = {
+  password: false,
   title: 'Warm Potato and Pistachio Pesto Salad',
   serving: { amount: 8, unit: 'servings' },
   recipe: [
@@ -92,6 +93,7 @@ const potatoSalad = {
 };
 
 const tamales = {
+  password: false,
   title: 'Pressure Cooked Tamales',
   serving: { amount: 10, unit: 'servings' },
   recipe: [
@@ -171,6 +173,7 @@ const tamales = {
 };
 
 const tunaConfit = {
+  password: false,
   title: 'Tuna Confit',
   serving: { amount: 6, unit: 'servings' },
   recipe: [
