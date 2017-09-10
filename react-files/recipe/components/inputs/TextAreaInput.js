@@ -34,6 +34,10 @@ class TextAreaInput extends Component {
 		};
 	}
 
+	componentWillReceiveProps(nextProps) {
+		this.setState({ value: nextProps.value });
+	}
+
 	changeHandler = event => {
 		let newValue = event.target.value;
 		newValue = newValue.replace(/[\t\n\r]/g, '');

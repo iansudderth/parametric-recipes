@@ -1,5 +1,6 @@
 import {
 	CHANGE_RECIPE,
+	NEW_RECIPE,
 	EDIT_TITLE,
 	EDIT_SERVING_AMOUNT,
 	EDIT_SERVING_UNIT,
@@ -18,6 +19,8 @@ import {
 	REORDER_STEP,
 } from '../actions';
 
+import defaultRecipe from '../recipes/deafaultRecipe';
+
 import editHeaderReducer from './editModeReducers/editHeader';
 import editSectionReducer from './editModeReducers/editSection';
 import editIngredientReducer from './editModeReducers/editIngredient';
@@ -32,6 +35,9 @@ function recipe(state = null, action) {
 				default:
 					return action.payload;
 			}
+		case NEW_RECIPE: {
+			return defaultRecipe;
+		}
 		case EDIT_TITLE:
 		case EDIT_SERVING_AMOUNT:
 		case EDIT_SERVING_UNIT:

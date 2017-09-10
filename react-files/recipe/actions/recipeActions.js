@@ -13,3 +13,20 @@ export function changeScalingFactor(newScalingFactor) {
 		payload: newScalingFactor,
 	};
 }
+
+export const NEW_RECIPE = 'NEW_RECIPE';
+export function newRecipe() {
+	return {
+		type: NEW_RECIPE,
+	};
+}
+
+export const EDIT_RECIPE = 'EDIT_RECIPE';
+export function editRecipe(id) {
+	return {
+		type: EDIT_RECIPE,
+		payload: {
+			id,
+		},
+	};
+}

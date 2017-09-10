@@ -24,6 +24,10 @@ class SmallTextInput extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ inputValue: nextProps.value });
+  }
+
   changeHandler = event => {
     const oldVal = this.state.inputValue;
     const newVal = event.target.value;

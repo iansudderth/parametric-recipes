@@ -28,6 +28,23 @@ class RecipeEditorContainer extends Component {
 		this.state = {};
 	}
 
+	generateSections = () => {
+		let stepStartingNumber = 1;
+		return this.props.recipe.recipe.map((section, index) => {
+			let currentStep = stepStartingNumber;
+			stepStartingNumber += section.procedure.length;
+			return (
+				<EditSection
+					key={`recipe-section-${index}`}
+					sectionIndex={index}
+					ingredientsArray={section.ingredients}
+					steps={section.procedure}
+					startStepAt={currentStep}
+				/>
+			);
+		});
+	};
+
 	render() {
 		const { container, buttonContainer } = this.props.classes;
 		return (
@@ -38,16 +55,7 @@ class RecipeEditorContainer extends Component {
 						servingAmount={this.props.recipe.serving.amount}
 						servingUnit={this.props.recipe.serving.unit}
 					/>
-					{this.props.recipe.recipe.map((section, index) => {
-						return (
-							<EditSection
-								key={`recipe-section-${index}`}
-								sectionIndex={index}
-								ingredientsArray={section.ingredients}
-								steps={section.procedure}
-							/>
-						);
-					})}
+					{this.generateSections()}
 					<div className={buttonContainer}>
 						<Button
 							raised

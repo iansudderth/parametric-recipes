@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { requestUpdateRecipeList } from '../actions';
+import { requestUpdateRecipeList, newRecipe } from '../actions';
 import { withStyles } from 'material-ui/styles';
 import { red } from 'material-ui/colors';
 import AppBar from 'material-ui/AppBar';
@@ -58,12 +58,20 @@ class NavBar extends Component {
 					<Typography type={'title'} className={navText}>
 						{'Parametric Recipes'}
 					</Typography>
-					<Button
-						className={changeRecipeButton}
-						onClick={this.openRecipeDialog}
-					>
-						{'Change Recipe'}
-					</Button>
+					<div>
+						<Button
+							className={changeRecipeButton}
+							onClick={this.props.newRecipe}
+						>
+							{'New Recipe'}
+						</Button>
+						<Button
+							className={changeRecipeButton}
+							onClick={this.openRecipeDialog}
+						>
+							{'Change Recipe'}
+						</Button>
+					</div>
 				</Toolbar>
 				<ChangeRecipeDialog
 					open={this.state.dialogOpen}
@@ -75,7 +83,7 @@ class NavBar extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ requestUpdateRecipeList }, dispatch);
+	return bindActionCreators({ requestUpdateRecipeList, newRecipe }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(withStyles(styles)(NavBar));

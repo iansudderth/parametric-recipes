@@ -166,7 +166,7 @@ function EditSection(props) {
 					</div>
 				</div>
 				<div className={stepsSection}>
-					<ol className={stepsContainer}>
+					<ol className={stepsContainer} start={props.startStepAt}>
 						{props.steps.map((step, index) => (
 							<EditStep
 								key={`step-${index}-${step}`}

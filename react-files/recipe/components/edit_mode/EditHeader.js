@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withStyles } from 'material-ui/styles';
 import { red } from 'material-ui/colors';
+import Button from 'material-ui/Button';
 import { editTitle, editServingAmount, editServingUnit } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
 import SmallTextInput from '../inputs/SmallTextInput';
+import SaveButtonAndDialog from './SaveButtonAndDialog';
 
 const styles = {
 	servingSection: {
@@ -23,35 +25,51 @@ const styles = {
 		padding: 18,
 		borderBottom: `4px double ${red[500]}`,
 		marginBottom: 18,
+		display: 'flex',
+	},
+	controlsContainer: {},
+	textContainer: {
+		flexGrow: 1,
 	},
 };
 
 function EditHeader(props) {
-	const { servingSection, title, container } = props.classes;
+	const {
+		servingSection,
+		title,
+		container,
+		controlsContainer,
+		textContainer,
+	} = props.classes;
 	return (
 		<div className={container}>
-			<h1 className={title}>
-				<TextAreaInput
-					value={props.title}
-					updateValue={props.editTitle}
-					fontSize={40}
-					fontWeight={600}
-				/>
-			</h1>
-			<div className={servingSection}>
-				<NumberInput
-					amount={props.servingAmount}
-					updateValue={props.editServingAmount}
-					fontSize={30}
-					fontWeight={400}
-				/>
-				<SmallTextInput
-					updateValue={props.editServingUnit}
-					value={props.servingUnit}
-					fontSize={30}
-					fontWeight={400}
-					leftPadding={4}
-				/>
+			<div className={textContainer}>
+				<h1 className={title}>
+					<TextAreaInput
+						value={props.title}
+						updateValue={props.editTitle}
+						fontSize={40}
+						fontWeight={600}
+					/>
+				</h1>
+				<div className={servingSection}>
+					<NumberInput
+						amount={props.servingAmount}
+						updateValue={props.editServingAmount}
+						fontSize={30}
+						fontWeight={400}
+					/>
+					<SmallTextInput
+						updateValue={props.editServingUnit}
+						value={props.servingUnit}
+						fontSize={30}
+						fontWeight={400}
+						leftPadding={4}
+					/>
+				</div>
+			</div>
+			<div className={controlsContainer}>
+				<SaveButtonAndDialog />
 			</div>
 		</div>
 	);
