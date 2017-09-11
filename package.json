@@ -15,6 +15,7 @@
         "draft-js": "^0.10.1",
         "eslint-config-prettier": "^2.3.0",
         "express": "^4.14.0",
+        "express-session": "^1.15.5",
         "jquery": "^3.2.1",
         "lodash": "^4.17.4",
         "material-ui": "next",
@@ -54,7 +55,7 @@
     "prettier": {
         "printWidth": 80,
         "singleQuote": true,
-        "trailingComma": "all",
+        "trailingComma": "es5",
         "bracketSpacing": true,
         "jsxBracketSameLine": false,
         "parser": "babylon",

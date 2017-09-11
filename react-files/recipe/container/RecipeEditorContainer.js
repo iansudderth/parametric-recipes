@@ -50,11 +50,7 @@ class RecipeEditorContainer extends Component {
     return (
       <div className={container}>
         <Card>
-          <EditHeader
-            title={this.props.recipe.title}
-            servingAmount={this.props.recipe.serving.amount}
-            servingUnit={this.props.recipe.serving.unit}
-          />
+          <EditHeader />
           {this.generateSections()}
           <div className={buttonContainer}>
             <Button raised color="primary" onClick={this.props.newSection}>
@@ -81,5 +77,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default withStyles(styles)(
-  connect(mapStateToProps, mapDispatchToProps)(RecipeEditorContainer),
+  connect(mapStateToProps, mapDispatchToProps)(RecipeEditorContainer)
 );

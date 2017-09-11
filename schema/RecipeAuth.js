@@ -12,4 +12,4 @@ recipeAuthSchema.plugin(passportLocalMongoose);
 
 const RecipeAuth = mongoose.model('RecipeAuth', recipeAuthSchema);
 
-export default RecipeAuth;
+module.exports = RecipeAuth;
