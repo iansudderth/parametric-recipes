@@ -102,6 +102,14 @@ app.prepare().then(() => {
     });
   });
 
+  server.post('/recipe/auth/login', (req, res) => {
+    console.log('id  :  ', req.body.id);
+    console.log('pass :  ', req.body.password);
+    res.json({
+      message: 'got it',
+    });
+  });
+
   server.get('/', (req, res) => {
     res.redirect('/recipe');
   });
