@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 
 const recipeAuthSchema = new Schema({
   recipeId: Schema.Types.ObjectId,
-  password: String,
 });
 
 recipeAuthSchema.plugin(passportLocalMongoose);

@@ -42,7 +42,7 @@ function EditHeader(props) {
   const recipe = props.recipe;
 
   function publishRecipeDispatch(password) {
-    props.publishRecipe(recipe, false);
+    props.publishRecipe(recipe, password);
   }
 
   const {

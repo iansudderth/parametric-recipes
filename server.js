@@ -60,16 +60,21 @@ app.prepare().then(() => {
     Recipe.create(recipe)
       .then(newRecipe => {
         if (password) {
-          RecipeAuth.create({
-            recipeId: newRecipe._id,
+          RecipeAuth.register(
+            new RecipeAuth({
+              recipeId: newRecipe._id,
+              username: newRecipe._id,
+            }),
             password,
-          })
-            .then(newAuth => {
-              console.log(newAuth);
-            })
-            .catch(error => {
-              console.log(error);
-            });
+            error => {
+              if (error) {
+                console.log(error);
+              } else {
+                console.log('successfully made account');
+                res.json({ recipeId: newRecipe._id });
+              }
+            }
+          );
         } else {
           res.json({
             recipeId: newRecipe._id,
