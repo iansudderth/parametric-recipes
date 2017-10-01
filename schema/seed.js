@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Recipe = require('./Recipe');
+const RecipeAuth = require('./RecipeAuth');
 
 const potatoSalad = {
   password: false,
@@ -214,19 +215,27 @@ const tunaConfit = {
 const recipeArray = [potatoSalad, tamales, tunaConfit];
 
 function seedDB() {
-  Recipe.remove({}, error => {
-    if (error) {
+  Recipe.remove({})
+    .then(response => {
+      console.log('Recipes dropped successfully');
+      return Recipe.create(recipeArray);
+    })
+    .then(response => {
+      console.log('Recipe db seeded successfully');
+    })
+    .catch(error => {
+      console.log('error in Recipe drop/seed');
       console.log(error);
-    } else {
-      Recipe.create(recipeArray, (error, state) => {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Seed Recipe Created', state._id);
-        }
-      });
-    }
-  });
+    });
+
+  RecipeAuth.remove({})
+    .then(response => {
+      console.log('RecipeAuth dropped successfully');
+    })
+    .catch(error => {
+      console.log('Error in  RecipeAuth drop');
+      console.log(error);
+    });
 }
 
 module.exports = seedDB;
