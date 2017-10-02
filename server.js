@@ -138,7 +138,7 @@ app.prepare().then(() => {
               });
             } else {
               res.json({
-                status: 'ERROR',
+                status: 'SUCCESS',
                 authStatus: 'INCORRECT PASSWORD',
               });
             }
@@ -153,7 +153,7 @@ app.prepare().then(() => {
       .catch(error => {
         res.json({
           status: 'ERROR',
-          recipeStatus: 'ERROR FINDING AUTH RECORD',
+          authStatus: 'ERROR FINDING AUTH RECORD',
         });
       });
   });
@@ -185,11 +185,18 @@ app.prepare().then(() => {
             res.json({
               status: 'ERROR',
               recipeStatus: 'RECIPE NOT FOUND',
+              authStatus: null,
             });
           } else {
+            req.session.destroy(error => {
+              if (error) {
+                console.log(error);
+              }
+            });
             res.json({
               status: 'SUCCESS',
               recipeStatus: 'RECIPE UPDATED SUCCESSFULLY',
+              authStatus: 'PASSWORD ACCEPTED',
             });
           }
         })
@@ -198,12 +205,14 @@ app.prepare().then(() => {
           res.json({
             status: 'ERROR',
             recipeStatus: 'ERROR IN RECIPE UPDATE',
+            authStatus: null,
           });
         });
     } else {
       res.json({
         status: 'ERROR',
         authStatus: 'NOT LOGGED IN',
+        recipeStatus: null,
       });
     }
   });

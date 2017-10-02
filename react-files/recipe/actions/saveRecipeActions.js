@@ -3,9 +3,10 @@ import _ from 'lodash';
 import { requestRecipe } from './index';
 
 // Action dispactchers to control to opening and closing of SaveDialog
+// Sould not be called directly, only through thunks
 
 export const SAVE_DIALOG_OPEN = 'SAVE_DIALOG_OPEN';
-export function SaveDialogOpen() {
+export function saveDialogOpen() {
   return {
     type: SAVE_DIALOG_OPEN,
   };
@@ -51,10 +52,24 @@ export function saveStatusError() {
   };
 }
 
-// Action dispatch for saving recipe to database
-// This action should be called to handle api interactions
+// Action dispatchers to call directly for opening and closing dialog
 
-export const SAVE_NEW_RECIPE = 'SAVE_NEW_RECIPE';
+export function openSaveDialog() {
+  return dispatch => {
+    dispatch(saveDialogOpen());
+    dispatch(saveStatusInitial());
+  };
+}
+
+export function closeSaveDialog() {
+  return dispatch => {
+    dispatch(saveDialogClose);
+  };
+}
+
+// Action dispatch for saving recipe to database
+// This action dispatch should be called to handle api interactions
+
 export function saveNewRecipe(recipe, password) {
   return dispatch => {
     dispatch(saveStatusProgress());
@@ -62,7 +77,7 @@ export function saveNewRecipe(recipe, password) {
       response => {
         dispatch(saveStatusSuccess());
         dispatch(requestRecipe(response.data.recipeId));
-        _.delay(dispatch, 1500, saveDialogClose());
+        _.delay(closeSaveDialog, 1500);
         console.log(response);
       },
       error => {
