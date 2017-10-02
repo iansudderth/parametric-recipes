@@ -123,8 +123,9 @@ app.prepare().then(() => {
   });
 
   server.post('/recipe/auth/login', (req, res) => {
-    const recipeId = req.body.recipeId;
+    const recipeId = req.body.id;
     const password = req.body.password;
+    console.log(recipeId, password);
     RecipeAuth.findOne({ recipeId })
       .then(auth => {
         if (auth) {

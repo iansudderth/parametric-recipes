@@ -10,7 +10,7 @@ export function recipeLoginProgress() {
 export const RECIPE_LOGIN_SUCCESS = 'RECIPE_LOGIN_SUCCESS';
 export function recipeLoginSuccess() {
   return {
-    type: RECIPE_LOGIN_PROGRESS,
+    type: RECIPE_LOGIN_SUCCESS,
   };
 }
 
@@ -36,8 +36,15 @@ export function recipeLogin(id, password) {
       .post('/recipe/auth/login', { id, password })
       .then(response => {
         console.log(response);
+        if (response.data.authStatus === 'CORRECT PASSWORD') {
+          dispatch(recipeLoginSuccess());
+        } else {
+          dispatch(recipeLoginFail());
+        }
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log(error);
+      });
   };
 }
 

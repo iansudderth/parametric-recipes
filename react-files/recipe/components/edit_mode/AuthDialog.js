@@ -31,7 +31,7 @@ const styles = {
   },
 };
 
-class SaveButtonAndDialog extends Component {
+class AuthDialog extends Component {
   constructor(props) {
     super(props);
 
@@ -128,8 +128,8 @@ class SaveButtonAndDialog extends Component {
   }
 }
 
-SaveButtonAndDialog.propTypes = {};
+AuthDialog.propTypes = {};
 
-SaveButtonAndDialog.defaultProps = {};
+AuthDialog.defaultProps = {};
 
-export default withStyles(styles)(SaveButtonAndDialog);
+export default withStyles(styles)(AuthDialog);

@@ -113,7 +113,7 @@ class EditMenu extends Component {
                 className={passwordInput}
                 inputRef={this.passwordRef}
               />
-              <Button color="primary" raised>
+              <Button color="primary" raised onClick={this.submitPassword}>
                 {'Submit'}
               </Button>
             </form>
