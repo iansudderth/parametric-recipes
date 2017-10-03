@@ -29,25 +29,24 @@ export function discardStatusInitial() {
   };
 }
 
-export const DISCARD_STATUS_LOG_OUT_PROGRESS =
-  'DISCARD_STATUS_LOG_OUT_PROGRESS';
+export const DISCARD_STATUS_LOGOUT_PROGRESS = 'DISCARD_STATUS_LOG_OUT_PROGRESS';
 export function discardStatusLogOutProgress() {
   return {
-    type: DISCARD_STATUS_LOG_OUT_PROGRESS,
+    type: DISCARD_STATUS_LOGOUT_PROGRESS,
   };
 }
 
-export const DISCARD_STATUS_LOG_OUT_SUCCESS = 'DISCARD_STATUS_LOG_OUT_SUCCESS';
+export const DISCARD_STATUS_LOGOUT_SUCCESS = 'DISCARD_STATUS_LOG_OUT_SUCCESS';
 export function discardStatusLogOutSuccess() {
   return {
-    type: DISCARD_STATUS_LOG_OUT_SUCCESS,
+    type: DISCARD_STATUS_LOGOUT_SUCCESS,
   };
 }
 
-export const DISCARD_STATUS_LOG_OUT_ERROR = 'DISCARD_STATUS_LOG_OUT_ERROR';
+export const DISCARD_STATUS_LOGOUT_ERROR = 'DISCARD_STATUS_LOG_OUT_ERROR';
 export function discardStatusLogOutError() {
   return {
-    type: DISCARD_STATUS_LOG_OUT_ERROR,
+    type: DISCARD_STATUS_LOGOUT_ERROR,
   };
 }
 

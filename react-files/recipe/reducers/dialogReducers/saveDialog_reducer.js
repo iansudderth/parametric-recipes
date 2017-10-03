@@ -26,6 +26,26 @@ export default function saveDialog(state = initialState, action) {
         open: false,
       });
     }
+    case SAVE_STATUS_INITIAL: {
+      return stateChange(state, {
+        status: 'INITIAL',
+      });
+    }
+    case SAVE_STATUS_PROGRESS: {
+      return stateChange(state, {
+        status: 'PROGRESS',
+      });
+    }
+    case SAVE_STATUS_SUCCESS: {
+      return stateChange(state, {
+        status: 'SUCCESS',
+      });
+    }
+    case SAVE_STATUS_ERROR: {
+      return stateChange(state, {
+        status: 'ERROR',
+      });
+    }
     default: {
       return state;
     }

@@ -30,6 +30,46 @@ export default function updateDialog(state = initialState, action) {
         open: false,
       });
     }
+    case UPDATE_STATUS_INITIAL: {
+      return stateChange(state, {
+        status: 'INITIAL',
+      });
+    }
+    case UPDATE_STATUS_PROGRESS: {
+      return stateChange(state, {
+        status: 'PROGRESS',
+      });
+    }
+    case UPDATE_STATUS_SUCCESS: {
+      return stateChange(state, {
+        status: 'SUCCESS',
+      });
+    }
+    case UPDATE_STATUS_NEED_PASSWORD: {
+      return stateChange(state, {
+        status: 'NEED_PASSWORD',
+      });
+    }
+    case UPDATE_STATUS_PASSWORD_PROGRESS: {
+      return stateChange(state, {
+        status: 'PASSWORD_PROGRESS',
+      });
+    }
+    case UPDATE_STATUS_INCORRECT_PASSWORD: {
+      return stateChange(state, {
+        status: 'INCORRECT_PASSWORD',
+      });
+    }
+    case UPDATE_STATUS_PASSWORD_ERROR: {
+      return stateChange(state, {
+        status: 'PASSWORD_ERROR',
+      });
+    }
+    case UPDATE_STATUS_ERROR: {
+      return stateChange(state, {
+        status: 'ERROR',
+      });
+    }
     default: {
       return state;
     }

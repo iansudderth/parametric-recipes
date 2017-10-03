@@ -27,6 +27,31 @@ export default function editAuthDialog(state = initialState, action) {
         open: false,
       });
     }
+    case EDIT_AUTH_STATUS_INITIAL: {
+      return stateChange(state, {
+        status: 'INITIAL',
+      });
+    }
+    case EDIT_AUTH_STATUS_SUCCESS: {
+      return stateChange(state, {
+        status: 'SUCCESS',
+      });
+    }
+    case EDIT_AUTH_STATUS_ERROR: {
+      return stateChange(state, {
+        status: 'ERROR',
+      });
+    }
+    case EDIT_AUTH_STATUS_INCORRECT_PASSWORD: {
+      return stateChange(state, {
+        status: 'INCORRECT_PASSWORD',
+      });
+    }
+    case EDIT_AUTH_STATUS_NO_PASSWORD: {
+      return stateChange(state, {
+        status: 'NO_PASSWORD',
+      });
+    }
     default: {
       return state;
     }

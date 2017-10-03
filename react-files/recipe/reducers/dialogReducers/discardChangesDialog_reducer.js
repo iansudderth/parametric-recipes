@@ -4,9 +4,9 @@ import {
   DISCARD_DIALOG_OPEN,
   DISCARD_DIALOG_CLOSE,
   DISCARD_STATUS_INITIAL,
-  DISCARD_STATUS_LOG_OUT_PROGRESS,
-  DISCARD_STATUS_LOG_OUT_SUCCESS,
-  DISCARD_STATUS_LOG_OUT_ERROR,
+  DISCARD_STATUS_LOGOUT_PROGRESS,
+  DISCARD_STATUS_LOGOUT_SUCCESS,
+  DISCARD_STATUS_LOGOUT_ERROR,
 } from '../../actions';
 
 const initialState = {
@@ -24,6 +24,26 @@ export default function discardChangesDialog(state = initialState, action) {
     case DISCARD_DIALOG_CLOSE: {
       return stateChange(state, {
         open: false,
+      });
+    }
+    case DISCARD_STATUS_INITIAL: {
+      return stateChange(state, {
+        status: 'INITIAL',
+      });
+    }
+    case DISCARD_STATUS_LOGOUT_PROGRESS: {
+      return stateChange(state, {
+        status: 'LOGOUT_PROGRESS',
+      });
+    }
+    case DISCARD_STATUS_LOGOUT_SUCCESS: {
+      return stateChange(state, {
+        status: 'LOGOUT_SUCCESS',
+      });
+    }
+    case DISCARD_STATUS_LOGOUT_ERROR: {
+      return stateChange(state, {
+        status: 'LOGOUT_ERROR',
       });
     }
     default: {
