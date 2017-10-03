@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import DialogWrapper from './DialogWrapper';
+import { closeEditAuthDialog, editAuth } from '../../actions';
 
 const styles = {};
 
@@ -18,12 +19,21 @@ class EditAuthDialog extends Component {
   }
 }
 
-function mapStateToProps({}) {
-  return {};
+function mapStateToProps({ editAuthDialog, recipe }) {
+  return {
+    editAuthDialog,
+    recipe,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-  bindActionCreators({}, dispatch);
+  bindActionCreators(
+    {
+      closeEditAuthDialog,
+      editAuth,
+    },
+    dispatch
+  );
 }
 
 EditAuthDialog.propTypes = {};

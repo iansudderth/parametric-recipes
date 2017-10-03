@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import DialogWrapper from './DialogWrapper';
+import { closeDiscardChangesDialog, discardChanges } from '../../actions';
 
 const styles = {};
 
@@ -18,12 +19,18 @@ class DiscardChangesDialog extends Component {
   }
 }
 
-function mapStateToProps({}) {
-  return {};
+function mapStateToProps({ discardChangesDialog, recipe }) {
+  return { discardChanges, recipe };
 }
 
 function mapDispatchToProps(dispatch) {
-  bindActionCreators({}, dispatch);
+  bindActionCreators(
+    {
+      closeDiscardChangesDialog,
+      discardChanges,
+    },
+    dispatch
+  );
 }
 
 DiscardChangesDialog.propTypes = {};

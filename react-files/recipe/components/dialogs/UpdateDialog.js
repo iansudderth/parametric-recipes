@@ -5,6 +5,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import DialogWrapper from './DialogWrapper';
+import {
+  closeUpdateDialog,
+  updateRecipe,
+  updateRecipeWithPassword,
+} from '../../actions';
 
 const styles = {};
 
@@ -18,12 +23,18 @@ class UpdateDialog extends Component {
   }
 }
 
-function mapStateToProps({}) {
-  return {};
+function mapStateToProps({ updateDialog, recipe }) {
+  return {
+    updateDialog,
+    recipe,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-  bindActionCreators({}, dispatch);
+  bindActionCreators(
+    { closeUpdateDialog, updateRecipe, updateRecipeWithPassword },
+    dispatch
+  );
 }
 
 UpdateDialog.propTypes = {};
