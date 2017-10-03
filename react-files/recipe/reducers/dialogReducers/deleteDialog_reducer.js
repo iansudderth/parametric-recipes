@@ -29,6 +29,46 @@ export default function deleteDialog(state = initialState, action) {
         open: false,
       });
     }
+    case DELETE_STATUS_INITIAL: {
+      return stateChange(state, {
+        status: 'INITIAL',
+      });
+    }
+    case DELETE_STATUS_ERROR: {
+      return stateChange(state, {
+        status: 'ERROR',
+      });
+    }
+    case DELETE_STATUS_SUCCESS: {
+      return stateChange(state, {
+        status: 'SUCCESS',
+      });
+    }
+    case DELETE_STATUS_NEED_PASSWORD: {
+      return stateChange(state, {
+        status: 'NEED_PASSWORD',
+      });
+    }
+    case DELETE_STATUS_NO_PASSWORD: {
+      return stateChange(state, {
+        status: 'NO_PASSWORD',
+      });
+    }
+    case DELETE_STATUS_PASSWORD_CORRECT: {
+      return stateChange(state, {
+        status: 'PASSWORD_CORRECT',
+      });
+    }
+    case DELETE_STATUS_PASSWORD_INCORRECT: {
+      return stateChange(state, {
+        status: 'PASSWORD_INCORRECT',
+      });
+    }
+    case DELETE_STATUS_PASSWORD_ERROR: {
+      return stateChange(state, {
+        status: 'PASSWORD_ERROR',
+      });
+    }
     default: {
       return state;
     }

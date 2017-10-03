@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import { withStyles } from 'material-ui/styles';
 import IconButton from 'material-ui/IconButton';
-import Clear from 'material-ui-icons';
+import Clear from 'material-ui-icons/Clear';
 
 const style = {
   dialogContainer: {

@@ -10,6 +10,7 @@ import {
   editServingAmount,
   editServingUnit,
   publishRecipe,
+  openSaveDialog,
 } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
@@ -81,10 +82,9 @@ function EditHeader(props) {
         </div>
       </div>
       <div className={controlsContainer}>
-        <SaveButtonAndDialog
-          recipe={recipe}
-          publishRecipe={publishRecipeDispatch}
-        />
+        <Button color="primary" raised onClick={props.openSaveDialog}>
+          {'Save & Publish'}
+        </Button>
       </div>
     </div>
   );
@@ -109,6 +109,7 @@ function mapDispatchToProps(dispatch) {
       editServingUnit,
       editServingAmount,
       publishRecipe,
+      openSaveDialog,
     },
     dispatch
   );

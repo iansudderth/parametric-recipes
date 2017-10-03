@@ -63,7 +63,7 @@ export function openSaveDialog() {
 
 export function closeSaveDialog() {
   return dispatch => {
-    dispatch(saveDialogClose);
+    dispatch(saveDialogClose());
   };
 }
 
@@ -77,7 +77,7 @@ export function saveNewRecipe(recipe, password) {
       response => {
         dispatch(saveStatusSuccess());
         dispatch(requestRecipe(response.data.recipeId));
-        _.delay(closeSaveDialog, 1500);
+        _.delay(dispatch, 1000, closeSaveDialog());
         console.log(response);
       },
       error => {
