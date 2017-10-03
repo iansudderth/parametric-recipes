@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Button from 'material-ui/Button';
 import { DialogTitle } from 'material-ui/Dialog';
 import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
-import { withStyles } from 'material-ui/styles';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { closeSaveDialog, saveNewRecipe } from '../../actions';
 
 import DialogWrapper from './DialogWrapper';
