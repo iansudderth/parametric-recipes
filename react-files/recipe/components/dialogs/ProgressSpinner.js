@@ -7,8 +7,7 @@ const styles = {
   spinnerContainer: {
     textAlign: 'center',
     padding: 16,
-    width: '100vw',
-    maxWidth: 332,
+    width: '100%',
   },
 };
 

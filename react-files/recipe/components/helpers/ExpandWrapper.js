@@ -39,7 +39,10 @@ class ExpandWrapper extends Component {
         }}
       >
         {({ y }) => (
-          <div style={{ height: `${y}px` }} className={this.props.outerClass}>
+          <div
+            style={{ height: `${y}px`, overflow: 'hidden' }}
+            className={this.props.outerClass}
+          >
             <div ref={this.innerDivRef} className={this.props.innerClass}>
               {this.props.children}
             </div>

@@ -8,18 +8,22 @@ import Clear from 'material-ui-icons/Clear';
 import ExpandWrapper from '../helpers/ExpandWrapper';
 
 const style = {
-  dialogRoot: {
+  dialogRoot: {},
+  paperOverride: {
+    maxWidth: 600,
     width: '100%',
   },
   dialogContainer: {
     padding: 12,
-    transition: '1s',
+    boxSizing: 'border-box',
   },
   closeContainer: {
     display: 'flex',
     justifyContent: 'flex-end',
   },
   contentContainer: {},
+  innerWrapper: {},
+  outerWrapper: {},
 };
 
 function DialogWrapper(props) {
@@ -28,13 +32,18 @@ function DialogWrapper(props) {
     closeContainer,
     contentContainer,
     innerWrapper,
+    outerWrapper,
     dialogRoot,
+    paperOverride,
   } = props.classes;
   return (
     <Dialog
       open={props.dialogIsOpen}
       onRequestClose={props.dialogCloseAction}
       className={dialogRoot}
+      classes={{
+        paperWidthSm: paperOverride,
+      }}
     >
       <div className={dialogContainer}>
         <div className={closeContainer}>
@@ -42,7 +51,12 @@ function DialogWrapper(props) {
             <Clear />
           </IconButton>
         </div>
-        <ExpandWrapper innerClass={innerWrapper}>
+        <ExpandWrapper
+          innerClass={innerWrapper}
+          outerClass={outerWrapper}
+          stiffness={200}
+          damping={30}
+        >
           <div className={contentContainer}>{props.children}</div>
         </ExpandWrapper>
       </div>

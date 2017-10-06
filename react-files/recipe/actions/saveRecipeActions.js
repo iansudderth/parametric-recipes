@@ -1,6 +1,7 @@
 import axios from 'axios';
 import _ from 'lodash';
 import { requestRecipe } from './index';
+import { enforceDelay } from './actionHelperFunctions';
 
 // Action dispactchers to control to opening and closing of SaveDialog
 // Sould not be called directly, only through thunks
@@ -72,13 +73,17 @@ export function closeSaveDialog() {
 
 export function saveNewRecipe(recipe, password) {
   return dispatch => {
+    const delayTime = 800;
     dispatch(saveStatusProgress());
+    const delayStart = new Date();
     axios.post('/recipe/new', { recipe, password }).then(
       response => {
-        dispatch(saveStatusSuccess());
-        dispatch(requestRecipe(response.data.recipeId));
-        _.delay(dispatch, 1000, closeSaveDialog());
-        console.log(response);
+        enforceDelay(delayStart, delayTime, () => {
+          dispatch(saveStatusSuccess());
+          dispatch(requestRecipe(response.data.recipeId));
+          _.delay(dispatch, 1000, closeSaveDialog());
+          console.log(response);
+        });
       },
       error => {
         dispatch(saveStatusError());
