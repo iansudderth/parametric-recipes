@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
+import _ from 'lodash';
 
 class ExpandWrapper extends Component {
   constructor(props) {
@@ -11,13 +12,16 @@ class ExpandWrapper extends Component {
   }
 
   componentDidMount() {
-    const height = this.innerDiv.offsetHeight + this.props.paddingCompensation;
-    if (height !== this.state.height) {
-      this.setState({ height });
-    }
+    this.checkHeightAndUpdate();
+    _.delay(this.checkHeightAndUpdate, 250);
   }
 
   componentDidUpdate() {
+    this.checkHeightAndUpdate();
+    _.delay(this.checkHeightAndUpdate, 250);
+  }
+
+  checkHeightAndUpdate() {
     const height = this.innerDiv.offsetHeight + this.props.paddingCompensation;
     if (height !== this.state.height) {
       this.setState({ height });

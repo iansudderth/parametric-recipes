@@ -12,6 +12,7 @@ import { closeSaveDialog, saveNewRecipe } from '../../actions';
 
 import DialogWrapper from './DialogWrapper';
 import ProgressSpinner from './ProgressSpinner';
+import SuccessWrapper from './SuccessWrapper';
 
 const styles = {
   dialogContainer: {
@@ -120,6 +121,16 @@ class SaveDialog extends Component {
             case 'PROGRESS': {
               return <ProgressSpinner />;
             }
+            case 'SUCCESS': {
+              return (
+                <SuccessWrapper>
+                  <Typography align="center" type="headline">
+                    {'Recipe Saved Successfully'}
+                  </Typography>
+                </SuccessWrapper>
+              );
+            }
+            case 'ERROR':
             case 'INITIAL':
             default: {
               return this.innerContent();
