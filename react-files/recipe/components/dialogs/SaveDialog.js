@@ -11,6 +11,7 @@ import Divider from 'material-ui/Divider';
 import { closeSaveDialog, saveNewRecipe } from '../../actions';
 
 import DialogWrapper from './DialogWrapper';
+import ProgressSpinner from './ProgressSpinner';
 
 const styles = {
   dialogContainer: {
@@ -47,6 +48,60 @@ class SaveDialog extends Component {
   saveRecipeWithNoPassword = () => {
     this.props.saveNewRecipe(this.props.recipe, null);
   };
+
+  innerContent = () => {
+    const {
+      dialogContainer,
+      passwordContainer,
+      passwordField,
+      noPassContainer,
+    } = this.props.classes;
+    return (
+      <div className={dialogContainer}>
+        <DialogTitle>{'Create Password to Enable Editing?'}</DialogTitle>
+        <Typography>
+          {
+            "If you want to edit the recipe later, you'll need to set a password "
+          }
+        </Typography>
+        <form onSubmit={this.saveRecipeWithPassword}>
+          <div className={passwordContainer}>
+            <TextField
+              id="password"
+              label="Password"
+              type="password"
+              margin="normal"
+              className={passwordField}
+              inputRef={this.inputRef}
+            />
+            <Button
+              color="primary"
+              raised
+              onClick={this.saveRecipeWithPassword}
+            >
+              {'Save and Publish'}
+            </Button>
+          </div>
+        </form>
+        <Divider />
+        <div className={noPassContainer}>
+          <Typography>
+            {
+              'You can still publish a recipe without setting a password, however you will not be able to edit it later if you need to make corrections or updates'
+            }
+          </Typography>
+          <br />
+          <Button
+            raised
+            color="primary"
+            onClick={this.saveRecipeWithNoPassword}
+          >
+            {'Publish without Password'}
+          </Button>
+        </div>
+      </div>
+    );
+  };
   render() {
     const {
       dialogContainer,
@@ -60,49 +115,17 @@ class SaveDialog extends Component {
         dialogCloseAction={this.props.closeSaveDialog}
         dialogIsOpen={this.props.saveDialog.open}
       >
-        <div className={dialogContainer}>
-          <DialogTitle>{'Create Password to Enable Editing?'}</DialogTitle>
-          <Typography>
-            {
-              "If you want to edit the recipe later, you'll need to set a password "
+        {(() => {
+          switch (this.props.saveDialog.status) {
+            case 'PROGRESS': {
+              return <ProgressSpinner />;
             }
-          </Typography>
-          <form onSubmit={this.saveRecipeWithPassword}>
-            <div className={passwordContainer}>
-              <TextField
-                id="password"
-                label="Password"
-                type="password"
-                margin="normal"
-                className={passwordField}
-                inputRef={this.inputRef}
-              />
-              <Button
-                color="primary"
-                raised
-                onClick={this.saveRecipeWithPassword}
-              >
-                {'Save and Publish'}
-              </Button>
-            </div>
-          </form>
-          <Divider />
-          <div className={noPassContainer}>
-            <Typography>
-              {
-                'You can still publish a recipe without setting a password, however you will not be able to edit it later if you need to make corrections or updates'
-              }
-            </Typography>
-            <br />
-            <Button
-              raised
-              color="primary"
-              onClick={this.saveRecipeWithNoPassword}
-            >
-              {'Publish without Password'}
-            </Button>
-          </div>
-        </div>
+            case 'INITIAL':
+            default: {
+              return this.innerContent();
+            }
+          }
+        })()}
       </DialogWrapper>
     );
   }
