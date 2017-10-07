@@ -21,7 +21,7 @@ function generateSections(recipeArr, scalingFactor) {
 
     return (
       <Section
-        key={`section-${section.procedure[0]}`}
+        key={`section-${section.key}`}
         steps={section.procedure}
         ingredientsArray={section.ingredients}
         scalingFactor={scalingFactor}

@@ -158,7 +158,6 @@ SaveDialog.propTypes = {
   }).isRequired,
   closeSaveDialog: PropTypes.func.isRequired,
   saveNewRecipe: PropTypes.func.isRequired,
-  recipe: PropTypes.object.isRequired,
 };
 
 SaveDialog.defaultProps = {};

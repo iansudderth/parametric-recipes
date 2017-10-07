@@ -11,14 +11,21 @@ const recipeSchema = new Schema({
   },
   recipe: [
     {
+      key: Number,
       ingredients: [
         {
           name: { type: String, default: '' },
           amount: { type: Schema.Types.Mixed, default: null },
           unit: { type: String, default: 'g' },
+          key: { type: Number },
         },
       ],
-      procedure: [String],
+      procedure: [
+        {
+          content: { type: String },
+          key: { type: Number },
+        },
+      ],
     },
   ],
 });

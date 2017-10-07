@@ -35,7 +35,7 @@ class RecipeEditorContainer extends Component {
       stepStartingNumber += section.procedure.length;
       return (
         <EditSection
-          key={`recipe-section-${index}`}
+          key={`recipe-section-${section.key}`}
           sectionIndex={index}
           ingredientsArray={section.ingredients}
           steps={section.procedure}
