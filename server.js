@@ -10,6 +10,8 @@ const RecipeAuth = require('./schema/RecipeAuth');
 const bluebird = require('bluebird');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
+const sanitizer = require('sanitizer');
+const mongoSanitizer = require('mongo-sanitize');
 const MongoStore = require('connect-mongo')(session);
 
 const port = process.env.PORT || 3000;
@@ -27,6 +29,15 @@ const saltingRounds = process.env.SALTING_ROUNDS || 8;
 
 if (_.includes(process.argv, '--seed')) {
   seedDB();
+}
+
+function sanitizeString(str) {
+  return sanitizer.escape(str);
+}
+
+function validatePassword(password) {
+  const validator = new RegExp(/^[\w\-\s]{4,42}$/);
+  return validator.test(password);
 }
 
 app.prepare().then(() => {
@@ -59,51 +70,59 @@ app.prepare().then(() => {
   });
 
   server.post('/recipe/new', (req, res) => {
-    const recipe = req.body.recipe;
-    const password = req.body.password;
-    recipe.password = password ? true : false;
-    Recipe.create(recipe)
-      .then(newRecipe => {
-        if (password) {
-          bcrypt
-            .hash(password, saltingRounds)
-            .then(hash => {
-              const auth = new RecipeAuth();
-              auth.recipeId = newRecipe._id;
-              auth.hash = hash;
-              return auth.save();
-            })
-            .then(auth => {
-              res.json({
-                status: 'SUCCESS',
-                recipeStatus: 'RECIPE CREATED SUCCESSFULLY',
-                authStatus: 'RECIPE AUTH CREATED SUCCESSFULLY',
-                recipeId: newRecipe._id,
+    const recipe = mongoSanitizer(req.body.recipe);
+    const password = sanitizeString(req.body.password);
+    if (validatePassword(password)) {
+      recipe.password = password ? true : false;
+      Recipe.create(recipe)
+        .then(newRecipe => {
+          if (password) {
+            bcrypt
+              .hash(password, saltingRounds)
+              .then(hash => {
+                const auth = new RecipeAuth();
+                auth.recipeId = newRecipe._id;
+                auth.hash = hash;
+                return auth.save();
+              })
+              .then(auth => {
+                res.json({
+                  status: 'SUCCESS',
+                  recipeStatus: 'RECIPE CREATED SUCCESSFULLY',
+                  authStatus: 'RECIPE AUTH CREATED SUCCESSFULLY',
+                  recipeId: newRecipe._id,
+                });
+              })
+              .catch(error => {
+                console.log(error);
+                res.json({
+                  status: 'ERROR',
+                  recipeStatus: 'RECIPE CREATED SUCCESSFULLY',
+                  authStatus: 'ERROR IN CREATING AUTH',
+                });
               });
-            })
-            .catch(error => {
-              console.log(error);
-              res.json({
-                status: 'ERROR',
-                recipeStatus: 'RECIPE CREATED SUCCESSFULLY',
-                authStatus: 'ERROR IN CREATING AUTH',
-              });
+          } else {
+            res.json({
+              status: 'SUCCESS',
+              recipeStatus: 'RECIPE CREATED SUCCESSFULLY',
+              recipeId: newRecipe._id,
             });
-        } else {
+          }
+        })
+        .catch(error => {
           res.json({
-            status: 'SUCCESS',
-            recipeStatus: 'RECIPE CREATED SUCCESSFULLY',
-            recipeId: newRecipe._id,
+            status: 'ERROR',
+            recipeStatus: 'ERROR IN CREATING RECIPE',
           });
-        }
-      })
-      .catch(error => {
-        res.json({
-          status: 'ERROR',
-          recipeStatus: 'ERROR IN CREATING RECIPE',
+          console.log(error);
         });
-        console.log(error);
+    } else {
+      res.json({
+        status: 'ERROR',
+        recipeStatus: null,
+        authStatus: 'INVALID_PASSWORD',
       });
+    }
   });
 
   server.get('/recipe/index', (req, res) => {

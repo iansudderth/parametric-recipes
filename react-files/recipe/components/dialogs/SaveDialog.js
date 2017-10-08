@@ -14,6 +14,7 @@ import DialogWrapper from './DialogWrapper';
 import ProgressSpinner from './ProgressSpinner';
 import SuccessWrapper from './SuccessWrapper';
 import PasswordInput from '../inputs/PasswordInput';
+import ErrorWrapper from './ErrorWrapper';
 
 const styles = {
   dialogContainer: {
@@ -106,7 +107,15 @@ class SaveDialog extends Component {
                 </SuccessWrapper>
               );
             }
-            case 'ERROR':
+            case 'ERROR': {
+              return (
+                <ErrorWrapper>
+                  <Typography type="headline" align="center">
+                    {'There was an error saving your recipe.'}
+                  </Typography>
+                </ErrorWrapper>
+              );
+            }
             case 'INITIAL':
             default: {
               return this.innerContent();
