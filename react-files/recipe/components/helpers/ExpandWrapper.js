@@ -1,68 +1,94 @@
 import React, { Component } from 'react';
-import { Motion, spring } from 'react-motion';
-import _ from 'lodash';
+import PropTypes from 'prop-types';
+import { VelocityComponent } from 'velocity-react';
 
 class ExpandWrapper extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       height: 0,
     };
   }
 
-  componentDidMount() {
-    this.checkHeightAndUpdate();
-    _.delay(this.checkHeightAndUpdate, 250);
-  }
+  componentDidMount = () => {
+    this.updateHeight();
+  };
 
-  componentDidUpdate() {
-    this.checkHeightAndUpdate();
-    _.delay(this.checkHeightAndUpdate, 250);
-  }
-
-  checkHeightAndUpdate() {
-    const height = this.innerDiv.offsetHeight + this.props.paddingCompensation;
-    if (height !== this.state.height) {
-      this.setState({ height });
-    }
-  }
+  componentDidUpdate = () => {
+    this.updateHeight();
+  };
 
   innerDivRef = el => {
     this.innerDiv = el;
   };
 
+  updateHeight = () => {
+    const newHeight =
+      this.innerDiv.clientHeight + this.props.paddingCompensation;
+    if (newHeight !== this.state.height) {
+      this.setState({ height: newHeight });
+    }
+  };
+
   render() {
+    const {
+      spring,
+      stiffness,
+      damping,
+      duration,
+      outerClass,
+      innerClass,
+      innerProps,
+      outerProps,
+    } = this.props;
+
+    const configProps = spring
+      ? {
+          easing: [stiffness, damping],
+        }
+      : {
+          duration,
+        };
+
     return (
-      <Motion
-        style={{
-          y: spring(this.state.height, {
-            stiffness: this.props.stiffness,
-            damping: this.props.damping,
-          }),
+      <VelocityComponent
+        animation={{
+          height: `${this.state.height}px`,
         }}
+        {...configProps}
       >
-        {({ y }) => (
-          <div
-            style={{ height: `${y}px`, overflow: 'hidden' }}
-            className={this.props.outerClass}
-          >
-            <div ref={this.innerDivRef} className={this.props.innerClass}>
-              {this.props.children}
-            </div>
+        <div className={outerClass} {...outerProps}>
+          <div ref={this.innerDivRef} className={innerClass} {...innerProps}>
+            {this.props.children}
           </div>
-        )}
-      </Motion>
+        </div>
+      </VelocityComponent>
     );
   }
 }
 
+ExpandWrapper.propTypes = {
+  paddingCompensation: PropTypes.number,
+  spring: PropTypes.bool,
+  stiffness: PropTypes.number,
+  damping: PropTypes.number,
+  duration: PropTypes.number,
+  outerClass: PropTypes.string,
+  innerClass: PropTypes.string,
+  outerProps: PropTypes.object,
+  innerProps: PropTypes.object,
+};
+
 ExpandWrapper.defaultProps = {
-  paddingCompensation: 50,
-  innerClass: '',
+  paddingCompensation: 0,
+  spring: true,
+  stiffness: 200,
+  damping: 30,
+  duration: 250,
   outerClass: '',
-  stiffness: 130,
-  damping: 18,
+  innerClass: '',
+  outerProps: {},
+  innerProps: {},
 };
 
 export default ExpandWrapper;

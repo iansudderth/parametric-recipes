@@ -9,6 +9,7 @@ import Add from 'material-ui-icons/Add';
 import { newSection } from '../actions';
 import EditHeader from '../components/edit_mode/EditHeader';
 import EditSection from '../components/edit_mode/EditSection';
+import EnterExitWrapper from '../components/helpers/EnterExitWrapper';
 
 const styles = {
   container: {
@@ -18,6 +19,9 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     padding: 12,
+  },
+  expandContainer: {
+    overflow: 'hidden',
   },
 };
 
@@ -46,12 +50,14 @@ class RecipeEditorContainer extends Component {
   };
 
   render() {
-    const { container, buttonContainer } = this.props.classes;
+    const { container, buttonContainer, expandContainer } = this.props.classes;
     return (
       <div className={container}>
         <Card>
           <EditHeader />
-          {this.generateSections()}
+          <EnterExitWrapper enterSpring={false}>
+            {this.generateSections()}
+          </EnterExitWrapper>
           <div className={buttonContainer}>
             <Button raised color="primary" onClick={this.props.newSection}>
               <Add />

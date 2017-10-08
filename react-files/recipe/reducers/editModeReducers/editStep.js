@@ -7,7 +7,7 @@ export default function editStepReducer(state, action) {
     case EDIT_STEP: {
       const { sectionIndex, stepIndex, newText } = action.payload;
       newState = _.merge({}, state);
-      newState.recipe[sectionIndex].procedure[stepIndex] = newText;
+      newState.recipe[sectionIndex].procedure[stepIndex].content = newText;
       return newState;
     }
     case NEW_STEP: {

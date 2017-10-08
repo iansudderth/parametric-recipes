@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 const sizerStyle = {
   position: 'absolute',
@@ -24,6 +25,7 @@ class AutosizeInput extends Component {
     this.mounted = true;
     this.copyInputStyles();
     this.updateInputWidth();
+    _.delay(this.mountUpdates, 100);
   };
 
   componentDidUpdate = (prevProps, prevState) => {
@@ -37,6 +39,11 @@ class AutosizeInput extends Component {
 
   componentWillUnmount = () => {
     this.mounted = false;
+  };
+
+  mountUpdates = () => {
+    this.copyInputStyles();
+    this.updateInputWidth();
   };
 
   inputRef = el => {

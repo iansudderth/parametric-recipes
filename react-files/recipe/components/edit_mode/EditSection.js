@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { red } from 'material-ui/colors';
@@ -10,6 +10,8 @@ import Add from 'material-ui-icons/Add';
 import DeleteForever from 'material-ui-icons/DeleteForever';
 import EditIngredient from './EditIngredient';
 import EditStep from './EditStep';
+import EnterExitWrapper from '../helpers/EnterExitWrapper';
+
 import {
   editStep,
   newStep,
@@ -92,96 +94,124 @@ const styles = {
   },
 };
 
-function EditSection(props) {
-  const {
-    sectionContainer,
-    ingredientSection,
-    stepsSection,
-    stepsContainer,
-    newStepContainer,
-    newIngredientContainer,
-    controlsContainer,
-    buttonContainer,
-    deleteButton,
-  } = props.classes;
+class EditSection extends Component {
+  constructor(props) {
+    super(props);
 
-  function newStepDispatcher() {
-    props.newStep(props.sectionIndex);
+    this.state = {
+      shouldAnimateOnMount: false,
+    };
   }
 
-  function deleteStepDispatcher(stepIndex) {
-    props.deleteStep(props.sectionIndex, stepIndex);
-  }
+  componentDidMount = () => {
+    this.setState({ shouldAnimateOnMount: true });
+  };
 
-  function newIngredientDispatcher() {
-    props.newIngredient(props.sectionIndex);
-  }
+  newStepDispatcher = () => {
+    this.props.newStep(this.props.sectionIndex);
+  };
 
-  function deleteSectionDispatcher() {
-    props.deleteSection(props.sectionIndex);
-  }
+  deleteStepDispatcher = stepIndex => {
+    this.props.deleteStep(this.props.sectionIndex, stepIndex);
+  };
 
-  return (
-    <div className={controlsContainer}>
-      <div className={buttonContainer}>
-        <Button
-          className={deleteButton}
-          raised
-          dense
-          onClick={deleteSectionDispatcher}
-        >
-          <DeleteForever />
-          {'Delete Section'}
-        </Button>
-      </div>
-      <div className={sectionContainer}>
-        <div className={ingredientSection}>
-          <ul>
-            {props.ingredientsArray.map((ingredient, index) => (
-              <EditIngredient
-                key={`ingredient-${ingredient.name}-${ingredient.key}`}
-                ingredientName={ingredient.name}
-                ingredientAmount={ingredient.amount}
-                ingredientUnit={ingredient.unit}
-                sectionIndex={props.sectionIndex}
-                ingredientIndex={index}
-                deleteIngredient={props.deleteIngredient}
-                editIngredientName={props.editIngredientName}
-                editIngredientAmount={props.editIngredientAmount}
-                editIngredientUnit={props.editIngredientUnit}
-              />
-            ))}
-          </ul>
-          <div className={newIngredientContainer}>
-            <Button raised color="primary" onClick={newIngredientDispatcher}>
-              <Add />
-              {'New Ingredient'}
-            </Button>
+  newIngredientDispatcher = () => {
+    this.props.newIngredient(this.props.sectionIndex);
+  };
+
+  deleteSectionDispatcher = () => {
+    this.props.deleteSection(this.props.sectionIndex);
+  };
+
+  render() {
+    const {
+      sectionContainer,
+      ingredientSection,
+      stepsSection,
+      stepsContainer,
+      newStepContainer,
+      newIngredientContainer,
+      controlsContainer,
+      buttonContainer,
+      deleteButton,
+    } = this.props.classes;
+
+    return (
+      <div className={controlsContainer}>
+        <div className={buttonContainer}>
+          <Button
+            className={deleteButton}
+            raised
+            dense
+            onClick={this.deleteSectionDispatcher}
+          >
+            <DeleteForever />
+            {'Delete Section'}
+          </Button>
+        </div>
+        <div className={sectionContainer}>
+          <div className={ingredientSection}>
+            <EnterExitWrapper
+              parentComponent="ul"
+              enterSpring={false}
+              runOnMount={this.state.shouldAnimateOnMount}
+            >
+              {this.props.ingredientsArray.map((ingredient, index) => (
+                <EditIngredient
+                  key={`ingredient-${ingredient.key}`}
+                  ingredientName={ingredient.name}
+                  ingredientAmount={ingredient.amount}
+                  ingredientUnit={ingredient.unit}
+                  sectionIndex={this.props.sectionIndex}
+                  ingredientIndex={index}
+                  deleteIngredient={this.props.deleteIngredient}
+                  editIngredientName={this.props.editIngredientName}
+                  editIngredientAmount={this.props.editIngredientAmount}
+                  editIngredientUnit={this.props.editIngredientUnit}
+                />
+              ))}
+            </EnterExitWrapper>
+            <div className={newIngredientContainer}>
+              <Button
+                raised
+                color="primary"
+                onClick={this.newIngredientDispatcher}
+              >
+                <Add />
+                {'New Ingredient'}
+              </Button>
+            </div>
+          </div>
+          <div className={stepsSection}>
+            <EnterExitWrapper
+              parentClass={stepsContainer}
+              parentComponent="ol"
+              enterSpring={false}
+              runOnMount={this.state.shouldAnimateOnMount}
+            >
+              {this.props.steps.map((step, index) => (
+                <EditStep
+                  key={`step-${step.key}`}
+                  startStepAt={this.props.startStepAt}
+                  stepText={step.content}
+                  sectionIndex={this.props.sectionIndex}
+                  stepIndex={index}
+                  editStep={this.props.editStep}
+                  deleteStep={this.deleteStepDispatcher}
+                />
+              ))}
+            </EnterExitWrapper>
+            <div className={newStepContainer}>
+              <Button raised color={'primary'} onClick={this.newStepDispatcher}>
+                <Add />
+                {'New Step'}
+              </Button>
+            </div>
           </div>
         </div>
-        <div className={stepsSection}>
-          <ol className={stepsContainer} start={props.startStepAt}>
-            {props.steps.map((step, index) => (
-              <EditStep
-                key={`step-${step.key}-${step.content}`}
-                stepText={step.content}
-                sectionIndex={props.sectionIndex}
-                stepIndex={index}
-                editStep={props.editStep}
-                deleteStep={deleteStepDispatcher}
-              />
-            ))}
-          </ol>
-          <div className={newStepContainer}>
-            <Button raised color={'primary'} onClick={newStepDispatcher}>
-              <Add />
-              {'New Step'}
-            </Button>
-          </div>
-        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 EditSection.propTypes = {

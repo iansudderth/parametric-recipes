@@ -16,6 +16,7 @@ const style = {
   dialogContainer: {
     padding: 12,
     boxSizing: 'border-box',
+    paddingBottom: 24,
   },
   closeContainer: {
     display: 'flex',
@@ -54,7 +55,7 @@ function DialogWrapper(props) {
         <ExpandWrapper
           innerClass={innerWrapper}
           outerClass={outerWrapper}
-          stiffness={200}
+          tension={200}
           damping={30}
         >
           <div className={contentContainer}>{props.children}</div>
