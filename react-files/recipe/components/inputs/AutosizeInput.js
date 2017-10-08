@@ -25,7 +25,7 @@ class AutosizeInput extends Component {
     this.mounted = true;
     this.copyInputStyles();
     this.updateInputWidth();
-    _.delay(this.mountUpdates, 100);
+    _.delay(this.mountUpdates, 150);
   };
 
   componentDidUpdate = (prevProps, prevState) => {

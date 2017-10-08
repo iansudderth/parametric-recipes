@@ -53,7 +53,7 @@ class ExpandWrapper extends Component {
     return (
       <VelocityComponent
         animation={{
-          height: `${this.state.height}px`,
+          minHeight: `${this.state.height}px`,
         }}
         {...configProps}
       >

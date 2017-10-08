@@ -13,10 +13,11 @@ import { closeSaveDialog, saveNewRecipe } from '../../actions';
 import DialogWrapper from './DialogWrapper';
 import ProgressSpinner from './ProgressSpinner';
 import SuccessWrapper from './SuccessWrapper';
+import PasswordInput from '../inputs/PasswordInput';
 
 const styles = {
   dialogContainer: {
-    padding: 16,
+    paddingBottom: 16,
     textAlign: 'center',
   },
   noPassContainer: {
@@ -26,25 +27,16 @@ const styles = {
     alignItems: 'center',
     marginTop: 16,
   },
-  passwordContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'baseline',
-    padding: 16,
-  },
-  passwordField: {
-    flexGrow: 1,
-    paddingRight: 16,
-  },
 };
 
 class SaveDialog extends Component {
   inputRef = el => {
     this.passwordInput = el;
   };
-  saveRecipeWithPassword = () => {
-    const password = this.passwordInput.value;
-    this.props.saveNewRecipe(this.props.recipe, password);
+  saveRecipeWithPasswordConstructor = () => {
+    return password => {
+      this.props.saveNewRecipe(this.props.recipe, password);
+    };
   };
   saveRecipeWithNoPassword = () => {
     this.props.saveNewRecipe(this.props.recipe, null);
@@ -65,25 +57,9 @@ class SaveDialog extends Component {
             "If you want to edit the recipe later, you'll need to set a password "
           }
         </Typography>
-        <form onSubmit={this.saveRecipeWithPassword}>
-          <div className={passwordContainer}>
-            <TextField
-              id="password"
-              label="Password"
-              type="password"
-              margin="normal"
-              className={passwordField}
-              inputRef={this.inputRef}
-            />
-            <Button
-              color="primary"
-              raised
-              onClick={this.saveRecipeWithPassword}
-            >
-              {'Save and Publish'}
-            </Button>
-          </div>
-        </form>
+        <PasswordInput
+          submitFunction={this.saveRecipeWithPasswordConstructor()}
+        />
         <Divider />
         <div className={noPassContainer}>
           <Typography>
