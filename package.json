@@ -11,26 +11,43 @@
     "dependencies": {
         "autosize-input": "^0.4.0",
         "axios": "^0.16.2",
+        "bcrypt": "^1.0.3",
+        "bluebird": "^3.5.0",
         "body-parser": "^1.17.2",
+        "connect-mongo": "^1.3.2",
+        "cookie-parser": "^1.4.3",
         "draft-js": "^0.10.1",
         "eslint-config-prettier": "^2.3.0",
         "express": "^4.14.0",
+        "express-jwt": "^5.3.0",
+        "express-session": "^1.15.5",
         "jquery": "^3.2.1",
+        "jsonwebtoken": "^8.0.0",
+        "jwt-simple": "^0.5.1",
         "lodash": "^4.17.4",
         "material-ui": "next",
         "material-ui-icons": "^1.0.0-beta.5",
+        "mongo-sanitize": "^1.0.0",
         "mongoose": "^4.11.9",
         "next": "^3.0.6",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0",
+        "passport-local-mongoose": "^4.2.1",
         "prop-types": "^15.5.10",
         "react": "^15.4.2",
+        "react-autosize-textarea": "^0.4.8",
         "react-contenteditable": "^2.0.4",
         "react-dom": "^15.4.2",
         "react-input-autosize": "^1.1.4",
         "react-jss": "^7.1.0",
+        "react-motion": "^0.5.2",
         "react-redux": "^5.0.6",
         "redux": "^3.7.2",
         "redux-devtools-extension": "^2.13.2",
-        "redux-thunk": "^2.2.0"
+        "redux-thunk": "^2.2.0",
+        "sanitize-html": "^1.14.1",
+        "sanitizer": "^0.1.3",
+        "velocity-react": "^1.3.3"
     },
     "devDependencies": {
         "babel-eslint": "^7.2.3",
@@ -40,10 +57,20 @@
         "eslint-plugin-jsx-a11y": "^5.1.1",
         "eslint-plugin-prettier": "^2.2.0",
         "eslint-plugin-react": "^7.3.0",
-        "prettier": "^1.5.3",
+        "prettier": "^1.6.1",
         "prettier-eslint": "^6.4.2"
     },
     "engines": {
         "node": "6.9.x"
+    },
+    "prettier": {
+        "printWidth": 80,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "parser": "babylon",
+        "semi": true,
+        "tabWidth": 2
     }
 }

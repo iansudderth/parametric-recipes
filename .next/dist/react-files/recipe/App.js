@@ -1,82 +1,105 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
-
-var _getPrototypeOf = require('next/node_modules/babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('next/node_modules/babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('next/node_modules/babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('next/node_modules/babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('next/node_modules/babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _NumberInput = require('./components/NumberInput');
-
-var _NumberInput2 = _interopRequireDefault(_NumberInput);
+var _reactRedux = require('react-redux');
 
 var _RecipeContainer = require('./container/RecipeContainer');
 
 var _RecipeContainer2 = _interopRequireDefault(_RecipeContainer);
 
+var _RecipeEditorContainer = require('./container/RecipeEditorContainer');
+
+var _RecipeEditorContainer2 = _interopRequireDefault(_RecipeEditorContainer);
+
 var _NavBar = require('./components/NavBar');
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
+
+var _SaveDialog = require('./components/dialogs/SaveDialog');
+
+var _SaveDialog2 = _interopRequireDefault(_SaveDialog);
+
+var _EditAuthDialog = require('./components/dialogs/EditAuthDialog');
+
+var _EditAuthDialog2 = _interopRequireDefault(_EditAuthDialog);
+
+var _DiscardChangesDialog = require('./components/dialogs/DiscardChangesDialog');
+
+var _DiscardChangesDialog2 = _interopRequireDefault(_DiscardChangesDialog);
+
+var _UpdateDialog = require('./components/dialogs/UpdateDialog');
+
+var _UpdateDialog2 = _interopRequireDefault(_UpdateDialog);
+
+var _DeleteDialog = require('./components/dialogs/DeleteDialog');
+
+var _DeleteDialog2 = _interopRequireDefault(_DeleteDialog);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = '/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/App.js';
 
 
-var App = function (_Component) {
-	(0, _inherits3.default)(App, _Component);
+function App(props) {
+  return _react2.default.createElement('div', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    }
+  }, _react2.default.createElement(_NavBar2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    }
+  }), props.editMode ? _react2.default.createElement(_RecipeEditorContainer2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    }
+  }) : _react2.default.createElement(_RecipeContainer2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    }
+  }), _react2.default.createElement(_SaveDialog2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    }
+  }), _react2.default.createElement(_EditAuthDialog2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    }
+  }), _react2.default.createElement(_DiscardChangesDialog2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    }
+  }), _react2.default.createElement(_UpdateDialog2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    }
+  }), _react2.default.createElement(_DeleteDialog2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    }
+  }));
+}
 
-	function App() {
-		(0, _classCallCheck3.default)(this, App);
+function mapStateToProps(_ref) {
+  var editMode = _ref.editMode;
 
-		return (0, _possibleConstructorReturn3.default)(this, (App.__proto__ || (0, _getPrototypeOf2.default)(App)).apply(this, arguments));
-	}
+  return { editMode: editMode };
+}
 
-	(0, _createClass3.default)(App, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement('div', {
-				__source: {
-					fileName: _jsxFileName,
-					lineNumber: 9
-				}
-			}, _react2.default.createElement(_NavBar2.default, {
-				__source: {
-					fileName: _jsxFileName,
-					lineNumber: 10
-				}
-			}), _react2.default.createElement(_RecipeContainer2.default, {
-				__source: {
-					fileName: _jsxFileName,
-					lineNumber: 12
-				}
-			}));
-		}
-	}]);
-
-	return App;
-}(_react.Component);
-
-exports.default = App;
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
