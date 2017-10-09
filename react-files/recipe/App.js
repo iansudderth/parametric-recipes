@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import SaveDialog from './components/dialogs/SaveDialog';
 import EditAuthDialog from './components/dialogs/EditAuthDialog';
 import DiscardChangesDialog from './components/dialogs/DiscardChangesDialog';
+import UpdateDialog from './components/dialogs/UpdateDialog';
 
 function App(props) {
   return (
@@ -15,6 +16,7 @@ function App(props) {
       <SaveDialog />
       <EditAuthDialog />
       <DiscardChangesDialog />
+      <UpdateDialog />
     </div>
   );
 }

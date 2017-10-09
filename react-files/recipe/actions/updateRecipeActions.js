@@ -1,5 +1,6 @@
 import axios from 'axios';
 import _ from 'lodash';
+import { enforceDelay } from './actionHelperFunctions';
 
 // Actions for opening and closing UpdateDialog
 // These are not to be called directly, only via thunks
@@ -102,7 +103,9 @@ export function closeUpdateDialog() {
 
 export function updateRecipe(recipeId, recipe) {
   return dispatch => {
+    const delayTime = 800;
     dispatch(updateStatusProgress());
+    const delayStart = new Date();
     axios
       .post('/recipe/update', {
         recipeId,
@@ -110,18 +113,20 @@ export function updateRecipe(recipeId, recipe) {
       })
       .then(response => {
         console.log(response);
-        if (response.data.status === 'SUCCESS') {
-          dispatch(updateStatusSuccess());
-          _.delay(closeUpdateDialog, 1500);
-        } else if (response.data.authStatus === 'NOT LOGGED IN') {
-          dispatch(updateStatusNeedPassword());
-        } else {
-          switch (response.data.recipeStatus) {
-            default: {
-              dispatch(updateStatusError());
+        enforceDelay(delayStart, delayTime, () => {
+          if (response.data.status === 'SUCCESS') {
+            dispatch(updateStatusSuccess());
+            _.delay(dispatch, 1000, closeUpdateDialog());
+          } else if (response.data.authStatus === 'NOT LOGGED IN') {
+            dispatch(updateStatusNeedPassword());
+          } else {
+            switch (response.data.recipeStatus) {
+              default: {
+                dispatch(updateStatusError());
+              }
             }
           }
-        }
+        });
       })
       .catch(error => {
         dispatch(updateStatusError());
@@ -135,7 +140,9 @@ export function updateRecipe(recipeId, recipe) {
 
 export function updateRecipeWithPassword(recipeId, recipe, password) {
   return dispatch => {
+    const delayTime = 800;
     dispatch(updateStatusPasswordProgress());
+    const delayStart = new Date();
     axios
       .post('/recipe/auth/login', {
         id: recipeId,
@@ -143,15 +150,17 @@ export function updateRecipeWithPassword(recipeId, recipe, password) {
       })
       .then(response => {
         console.log(response);
-        if (response.data.status === 'ERROR') {
-          dispatch(updateStatusPasswordError());
-        } else if (response.data.authStatus === 'INCORRECT PASSWORD') {
-          dispatch(updateStatusIncorrectPassword());
-        } else if (response.data.authStatus === 'CORRECT PASSWORD') {
-          updateRecipe(recipeId, recipe);
-        } else {
-          dispatch(updateStatusPasswordError());
-        }
+        enforceDelay(delayStart, delayTime, () => {
+          if (response.data.status === 'ERROR') {
+            dispatch(updateStatusPasswordError());
+          } else if (response.data.authStatus === 'INCORRECT PASSWORD') {
+            dispatch(updateStatusIncorrectPassword());
+          } else if (response.data.authStatus === 'CORRECT PASSWORD') {
+            updateRecipe(recipeId, recipe);
+          } else {
+            dispatch(updateStatusPasswordError());
+          }
+        });
       })
       .catch(error => {
         console.log(error);

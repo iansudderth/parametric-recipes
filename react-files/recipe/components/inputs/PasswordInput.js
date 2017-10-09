@@ -92,6 +92,7 @@ class PasswordInput extends Component {
               margin="normal"
               className={passwordField}
               inputRef={this.inputRef}
+              autoFocus={this.props.autoFocus}
             />
             <Button color="primary" raised onClick={this.submitHandler}>
               {this.props.buttonText}
@@ -117,12 +118,14 @@ PasswordInput.propTypes = {
   errorMessage: PropTypes.string,
   submitFunction: PropTypes.func.isRequired,
   buttonText: PropTypes.string,
+  autoFocus: PropTypes.bool,
 };
 
 PasswordInput.defaultProps = {
   errorMode: false,
   errorMessage: null,
   buttonText: 'Save and Publish',
+  autoFocus: false,
 };
 
 export default withStyles(styles)(PasswordInput);

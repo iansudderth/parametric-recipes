@@ -6,6 +6,7 @@ import {
   EDIT_AUTH_STATUS_SUCCESS,
   RESET,
   DISCARD_STATUS_LOGOUT_PROGRESS,
+  UPDATE_STATUS_SUCCESS,
 } from '../actions';
 
 function editMode(state = false, action) {
@@ -28,6 +29,9 @@ function editMode(state = false, action) {
       return true;
     }
     case DISCARD_STATUS_LOGOUT_PROGRESS: {
+      return false;
+    }
+    case UPDATE_STATUS_SUCCESS: {
       return false;
     }
     default:

@@ -99,7 +99,7 @@ function EditHeader(props) {
               color="primary"
               raised
               className={topButton}
-              onClick={props.openSaveDialog}
+              onClick={props.openUpdateDialog}
             >
               {'Save Changes'}
             </Button>
