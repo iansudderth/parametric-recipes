@@ -11,6 +11,8 @@ import {
   editServingUnit,
   publishRecipe,
   openSaveDialog,
+  openDiscardChangesDialog,
+  openUpdateDialog,
 } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
@@ -37,6 +39,13 @@ const styles = {
   textContainer: {
     flexGrow: 1,
   },
+  saveDiscardContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  topButton: {
+    marginBottom: 12,
+  },
 };
 
 function EditHeader(props) {
@@ -52,6 +61,8 @@ function EditHeader(props) {
     container,
     controlsContainer,
     textContainer,
+    saveDiscardContainer,
+    topButton,
   } = props.classes;
 
   return (
@@ -82,9 +93,29 @@ function EditHeader(props) {
         </div>
       </div>
       <div className={controlsContainer}>
-        <Button color="primary" raised onClick={props.openSaveDialog}>
-          {'Save & Publish'}
-        </Button>
+        {props.recipe._id ? (
+          <div className={saveDiscardContainer}>
+            <Button
+              color="primary"
+              raised
+              className={topButton}
+              onClick={props.openSaveDialog}
+            >
+              {'Save Changes'}
+            </Button>
+            <Button
+              color="accent"
+              raised
+              onClick={props.openDiscardChangesDialog}
+            >
+              {'Discard Changes'}
+            </Button>
+          </div>
+        ) : (
+          <Button color="primary" raised onClick={props.openSaveDialog}>
+            {'Save & Publish'}
+          </Button>
+        )}
       </div>
     </div>
   );
@@ -110,6 +141,8 @@ function mapDispatchToProps(dispatch) {
       editServingAmount,
       publishRecipe,
       openSaveDialog,
+      openDiscardChangesDialog,
+      openUpdateDialog,
     },
     dispatch
   );

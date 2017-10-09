@@ -71,6 +71,7 @@ export function closeDiscardChangesDialog() {
 
 export function discardChanges() {
   return dispatch => {
+    dispatch(discardDialogClose());
     dispatch(discardStatusLogOutProgress());
     dispatch(closeDiscardChangesDialog());
     axios

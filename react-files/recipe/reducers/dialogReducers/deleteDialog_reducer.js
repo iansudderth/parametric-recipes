@@ -10,6 +10,7 @@ import {
   DELETE_STATUS_PASSWORD_INCORRECT,
   DELETE_STATUS_NO_PASSWORD,
   DELETE_STATUS_PASSWORD_ERROR,
+  RESET,
 } from '../../actions';
 
 const initialState = {
@@ -19,6 +20,8 @@ const initialState = {
 
 export default function deleteDialog(state = initialState, action) {
   switch (action.type) {
+    case RESET:
+      return initialState;
     case DELETE_DIALOG_OPEN: {
       return stateChange(state, {
         open: true,

@@ -4,10 +4,14 @@ import {
   PUBLISH_RECIPE_SUCCESS,
   RECIPE_LOGIN_SUCCESS,
   EDIT_AUTH_STATUS_SUCCESS,
+  RESET,
+  DISCARD_STATUS_LOGOUT_PROGRESS,
 } from '../actions';
 
 function editMode(state = false, action) {
   switch (action.type) {
+    case RESET:
+      return false;
     case NEW_RECIPE: {
       return true;
     }
@@ -22,6 +26,9 @@ function editMode(state = false, action) {
     }
     case EDIT_AUTH_STATUS_SUCCESS: {
       return true;
+    }
+    case DISCARD_STATUS_LOGOUT_PROGRESS: {
+      return false;
     }
     default:
       return state;

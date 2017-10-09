@@ -1,30 +1,81 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Typography from 'material-ui/Typography';
+import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { green, red } from 'material-ui/colors';
 
 import DialogWrapper from './DialogWrapper';
 import { closeDiscardChangesDialog, discardChanges } from '../../actions';
 
-const styles = {};
+const styles = {
+  buttonsContainer: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    marginTop: 16,
+  },
+  declineButton: {
+    backgroundColor: green.A400,
+    marginBottom: 16,
+    '&:hover': {
+      backgroundColor: green.A700,
+    },
+  },
+  acceptButton: {
+    backgroundColor: red[400],
+    color: 'white',
+    marginBottom: 16,
+    '&:hover': {
+      backgroundColor: red[600],
+    },
+  },
+};
 
 class DiscardChangesDialog extends Component {
   render() {
+    const {
+      buttonsContainer,
+      acceptButton,
+      declineButton,
+    } = this.props.classes;
     return (
-      <DialogWrapper>
-        <div>{'Stuff'}</div>
+      <DialogWrapper
+        dialogIsOpen={this.props.discardChangesDialog.open}
+        dialogCloseAction={this.props.closeDiscardChangesDialog}
+      >
+        <Typography type="headline" align="center">
+          {'Discard changes without saving?'}
+        </Typography>
+        <div className={buttonsContainer}>
+          <Button
+            raised
+            className={acceptButton}
+            onClick={this.props.discardChanges}
+          >
+            {'Yes, Discard Changes'}
+          </Button>
+          <Button
+            raised
+            className={declineButton}
+            onClick={this.props.closeDiscardChangesDialog}
+          >
+            {'No, Return to Editing'}
+          </Button>
+        </div>
       </DialogWrapper>
     );
   }
 }
 
 function mapStateToProps({ discardChangesDialog, recipe }) {
-  return { discardChanges, recipe };
+  return { discardChangesDialog, recipe };
 }
 
 function mapDispatchToProps(dispatch) {
-  bindActionCreators(
+  return bindActionCreators(
     {
       closeDiscardChangesDialog,
       discardChanges,

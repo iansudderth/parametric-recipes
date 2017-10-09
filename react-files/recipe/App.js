@@ -5,6 +5,7 @@ import RecipeEditorContainer from './container/RecipeEditorContainer';
 import NavBar from './components/NavBar';
 import SaveDialog from './components/dialogs/SaveDialog';
 import EditAuthDialog from './components/dialogs/EditAuthDialog';
+import DiscardChangesDialog from './components/dialogs/DiscardChangesDialog';
 
 function App(props) {
   return (
@@ -13,6 +14,7 @@ function App(props) {
       {props.editMode ? <RecipeEditorContainer /> : <RecipeContainer />}
       <SaveDialog />
       <EditAuthDialog />
+      <DiscardChangesDialog />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import {
   SAVE_STATUS_PROGRESS,
   SAVE_STATUS_SUCCESS,
   SAVE_STATUS_ERROR,
+  RESET,
 } from '../../actions';
 
 const initialState = {
@@ -16,6 +17,8 @@ const initialState = {
 
 export default function saveDialog(state = initialState, action) {
   switch (action.type) {
+    case RESET:
+      return initialState;
     case SAVE_DIALOG_OPEN: {
       return stateChange(state, {
         open: true,

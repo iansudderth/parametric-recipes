@@ -9,6 +9,7 @@ import {
   EDIT_AUTH_STATUS_ERROR,
   EDIT_AUTH_STATUS_INCORRECT_PASSWORD,
   EDIT_AUTH_STATUS_NO_PASSWORD,
+  RESET,
 } from '../../actions';
 
 const initialState = {
@@ -18,6 +19,8 @@ const initialState = {
 
 export default function editAuthDialog(state = initialState, action) {
   switch (action.type) {
+    case RESET:
+      return initialState;
     case EDIT_AUTH_DIALOG_OPEN: {
       return stateChange(state, {
         open: true,

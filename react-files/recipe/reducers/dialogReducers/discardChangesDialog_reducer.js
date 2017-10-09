@@ -7,6 +7,7 @@ import {
   DISCARD_STATUS_LOGOUT_PROGRESS,
   DISCARD_STATUS_LOGOUT_SUCCESS,
   DISCARD_STATUS_LOGOUT_ERROR,
+  RESET,
 } from '../../actions';
 
 const initialState = {
@@ -16,6 +17,8 @@ const initialState = {
 
 export default function discardChangesDialog(state = initialState, action) {
   switch (action.type) {
+    case RESET:
+      return initialState;
     case DISCARD_DIALOG_OPEN: {
       return stateChange(state, {
         open: true,

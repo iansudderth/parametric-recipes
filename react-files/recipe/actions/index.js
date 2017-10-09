@@ -444,9 +444,5 @@ export {
   updateRecipeWithPassword,
 };
 
-export const RESET = 'RESET';
-export function reset() {
-  return {
-    type: RESET,
-  };
-}
+import { RESET, reset } from './resetActions';
+export { RESET, reset };

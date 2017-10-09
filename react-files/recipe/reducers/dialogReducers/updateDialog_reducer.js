@@ -11,6 +11,7 @@ import {
   UPDATE_STATUS_INCORRECT_PASSWORD,
   UPDATE_STATUS_PASSWORD_ERROR,
   UPDATE_STATUS_ERROR,
+  RESET,
 } from '../../actions';
 
 const initialState = {
@@ -20,6 +21,8 @@ const initialState = {
 
 export default function updateDialog(state = initialState, action) {
   switch (action.type) {
+    case RESET:
+      return initialState;
     case UPDATE_DIALOG_OPEN: {
       return stateChange(state, {
         open: true,
