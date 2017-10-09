@@ -1,3 +1,7 @@
+import _ from 'lodash';
+import axios from 'axios';
+import { enforceDelay } from './actionHelperFunctions';
+
 // Action dispatchers for opening and closing DeleteDialog
 // Not to be called directly, only through thunks
 
@@ -17,12 +21,19 @@ export function deleteDialogClose() {
 
 // Action dispatchers for deleteRecipeStatus
 // Not to be called directly, only via thunks
-// Valid values: INITIAL, SUCCESS, ERROR, NEED_PASSWORD, PASSWORD_CORRECT, PASSWORD_INCORRECT, NO_PASSWORD, PASSWORD_ERROR
+// Valid values: INITIAL, PROGRESS, SUCCESS, ERROR, NEED_PASSWORD, PASSWORD_CORRECT, PASSWORD_INCORRECT, NO_PASSWORD, PASSWORD_ERROR
 
 export const DELETE_STATUS_INITIAL = 'DELETE_STATUS_INITIAL';
 export function deleteStatusInitial() {
   return {
     type: DELETE_STATUS_INITIAL,
+  };
+}
+
+export const DELETE_STATUS_PROGRESS = 'DELETE_STATUS_PROGRESS';
+export function deleteStatusProgress() {
+  return {
+    type: DELETE_STATUS_PROGRESS,
   };
 }
 
@@ -88,7 +99,7 @@ export function openDeleteDialog() {
 
 export function closeDeleteDialog() {
   return dispatch => {
-    dispatch(deleteDialogClose);
+    dispatch(deleteDialogClose());
   };
 }
 
@@ -97,7 +108,30 @@ export function closeDeleteDialog() {
 // !!!!! Server side not yet implemented
 
 export function deleteRecipe(recipeId) {
-  return dispatch => {};
+  return dispatch => {
+    const delayTime = 800;
+    dispatch(deleteStatusProgress());
+    const delayStart = new Date();
+    axios
+      .delete(`/recipe/delete/${recipeId}`)
+      .then(response => {
+        console.log(response);
+        enforceDelay(delayStart, delayTime, () => {
+          if (response.data.status === 'SUCCESS') {
+            dispatch(deleteStatusSuccess());
+            _.delay(dispatch, 1000, closeDeleteDialog());
+          } else if (response.data.authStatus === 'NOT LOGGED IN') {
+            dispatch(deleteStatusNeedPassword());
+          } else {
+            dispatch(deleteStatusError());
+          }
+        });
+      })
+      .catch(error => {
+        console.log(error);
+        dispatch(deleteStatusError());
+      });
+  };
 }
 
 export function deleteRecipeWithPassword(recipeId, password) {

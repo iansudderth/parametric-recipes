@@ -3,6 +3,7 @@ import {
   DELETE_DIALOG_OPEN,
   DELETE_DIALOG_CLOSE,
   DELETE_STATUS_INITIAL,
+  DELETE_STATUS_PROGRESS,
   DELETE_STATUS_SUCCESS,
   DELETE_STATUS_ERROR,
   DELETE_STATUS_NEED_PASSWORD,
@@ -35,6 +36,11 @@ export default function deleteDialog(state = initialState, action) {
     case DELETE_STATUS_INITIAL: {
       return stateChange(state, {
         status: 'INITIAL',
+      });
+    }
+    case DELETE_STATUS_PROGRESS: {
+      return stateChange(state, {
+        status: 'PROGRESS',
       });
     }
     case DELETE_STATUS_ERROR: {

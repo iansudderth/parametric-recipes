@@ -22,6 +22,7 @@ import {
   REORDER_STEP,
   RESET,
   NEW_RECIPE_FROM_COPY,
+  DELETE_STATUS_SUCCESS,
 } from '../actions';
 
 import defaultRecipe from '../recipes/deafaultRecipe';
@@ -34,6 +35,8 @@ import editStepReducer from './editModeReducers/editStep';
 function recipe(state = null, action) {
   switch (action.type) {
     case RESET:
+      return null;
+    case DELETE_STATUS_SUCCESS:
       return null;
     case CHANGE_RECIPE:
       switch (action.payload) {

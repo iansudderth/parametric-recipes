@@ -13,6 +13,7 @@ import {
   openSaveDialog,
   openDiscardChangesDialog,
   openUpdateDialog,
+  openDeleteDialog,
 } from '../../actions';
 import NumberInput from '../inputs/NumberInput';
 import TextAreaInput from '../inputs/TextAreaInput';
@@ -43,8 +44,18 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
   },
-  topButton: {
+  updateButton: {
     marginBottom: 12,
+  },
+  discardButton: {
+    marginBottom: 12,
+  },
+  deleteButton: {
+    color: 'white',
+    backgroundColor: red[400],
+    '&:hover': {
+      backgroundColor: red[600],
+    },
   },
 };
 
@@ -62,7 +73,9 @@ function EditHeader(props) {
     controlsContainer,
     textContainer,
     saveDiscardContainer,
-    topButton,
+    updateButton,
+    discardButton,
+    deleteButton,
   } = props.classes;
 
   return (
@@ -98,7 +111,7 @@ function EditHeader(props) {
             <Button
               color="primary"
               raised
-              className={topButton}
+              className={updateButton}
               onClick={props.openUpdateDialog}
             >
               {'Save Changes'}
@@ -107,8 +120,16 @@ function EditHeader(props) {
               color="accent"
               raised
               onClick={props.openDiscardChangesDialog}
+              className={discardButton}
             >
               {'Discard Changes'}
+            </Button>
+            <Button
+              raised
+              className={deleteButton}
+              onClick={props.openDeleteDialog}
+            >
+              {'Delete Recipe'}
             </Button>
           </div>
         ) : (
@@ -143,6 +164,7 @@ function mapDispatchToProps(dispatch) {
       openSaveDialog,
       openDiscardChangesDialog,
       openUpdateDialog,
+      openDeleteDialog,
     },
     dispatch
   );

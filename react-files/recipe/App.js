@@ -7,6 +7,7 @@ import SaveDialog from './components/dialogs/SaveDialog';
 import EditAuthDialog from './components/dialogs/EditAuthDialog';
 import DiscardChangesDialog from './components/dialogs/DiscardChangesDialog';
 import UpdateDialog from './components/dialogs/UpdateDialog';
+import DeleteDialog from './components/dialogs/DeleteDialog';
 
 function App(props) {
   return (
@@ -17,6 +18,7 @@ function App(props) {
       <EditAuthDialog />
       <DiscardChangesDialog />
       <UpdateDialog />
+      <DeleteDialog />
     </div>
   );
 }

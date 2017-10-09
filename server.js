@@ -244,6 +244,44 @@ app.prepare().then(() => {
     }
   });
 
+  server.delete('/recipe/delete/:id', (req, res) => {
+    const recipeId = sanitizeString(req.params.id);
+    if (req.session.recipeId === recipeId) {
+      Recipe.findByIdAndRemove(recipeId)
+        .then(response => {
+          RecipeAuth.deleteOne({ recipeId })
+            .then(auth => {
+              res.json({
+                status: 'SUCCESS',
+                authStatus: 'AUTH DELETED SUCCESSFULLY',
+                recipeStatus: 'RECIPE DELETED SUCCESSFULLY',
+              });
+            })
+            .catch(error => {
+              console.log(error);
+              res.json({
+                status: 'ERROR',
+                authStatus: 'ERROR IN DELETING AUTH',
+                recipeStatus: 'RECIPE DELETED',
+              });
+            });
+        })
+        .catch(error => {
+          console.log(error);
+          res.json({
+            status: 'ERROR',
+            recipeStatus: 'ERROR IN FINDING RECIPE',
+          });
+        });
+    } else {
+      res.json({
+        status: 'ERROR',
+        authStatus: 'NOT LOGGED IN',
+        recipeStatus: null,
+      });
+    }
+  });
+
   server.get('/', (req, res) => {
     res.redirect('/recipe');
   });
