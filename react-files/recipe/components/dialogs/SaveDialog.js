@@ -31,9 +31,6 @@ const styles = {
 };
 
 class SaveDialog extends Component {
-  inputRef = el => {
-    this.passwordInput = el;
-  };
   saveRecipeWithPasswordConstructor = () => {
     return password => {
       this.props.saveNewRecipe(this.props.recipe, password);

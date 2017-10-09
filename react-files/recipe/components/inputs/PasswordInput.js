@@ -94,14 +94,14 @@ class PasswordInput extends Component {
               inputRef={this.inputRef}
             />
             <Button color="primary" raised onClick={this.submitHandler}>
-              {'Save and Publish'}
+              {this.props.buttonText}
             </Button>
           </div>
         </form>
         <div className={errorContainer}>
           <EnterExitWrapper enterSpring={false}>
             {this.state.errorMode ? (
-              <Typography className={errorText}>
+              <Typography className={errorText} align="center">
                 {this.state.errorMessage}
               </Typography>
             ) : null}
@@ -116,11 +116,13 @@ PasswordInput.propTypes = {
   errorMode: PropTypes.bool,
   errorMessage: PropTypes.string,
   submitFunction: PropTypes.func.isRequired,
+  buttonText: PropTypes.string,
 };
 
 PasswordInput.defaultProps = {
   errorMode: false,
   errorMessage: null,
+  buttonText: 'Save and Publish',
 };
 
 export default withStyles(styles)(PasswordInput);

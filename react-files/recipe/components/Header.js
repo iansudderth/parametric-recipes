@@ -61,10 +61,7 @@ function Header(props) {
         </div>
       </div>
       <div className={editMenuContainer}>
-        <EditMenu
-          recipeHasPassword={props.recipeHasPassword}
-          recipeId={props.recipeId}
-        />
+        <EditMenu recipeHasPassword={props.recipeHasPassword} />
       </div>
     </div>
   );

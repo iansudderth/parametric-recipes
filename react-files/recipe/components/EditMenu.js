@@ -5,11 +5,9 @@ import Button from 'material-ui/Button';
 import Settings from 'material-ui-icons/Settings';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
-import Dialog, { DialogTitle } from 'material-ui/Dialog';
-import TextField from 'material-ui/TextField';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { recipeLogin } from '../actions';
+import { openEditAuthDialog } from '../actions';
 
 const styles = {
   menuContainer: {
@@ -57,15 +55,6 @@ class EditMenu extends Component {
     this.setState({ dialogOpen: false });
   };
 
-  submitPassword = event => {
-    event.preventDefault();
-    this.props.recipeLogin(this.props.recipeId, this.passwordInput.value);
-  };
-
-  passwordRef = el => {
-    this.passwordInput = el;
-  };
-
   render() {
     const {
       menuContainer,
@@ -86,7 +75,11 @@ class EditMenu extends Component {
           <div className={menuContainer}>
             {this.props.recipeHasPassword ? (
               <div className={buttonWrapper}>
-                <Button raised color="primary" onClick={this.handleDialogOpen}>
+                <Button
+                  raised
+                  color="primary"
+                  onClick={this.props.openEditAuthDialog}
+                >
                   {'Edit Recipe'}
                 </Button>
               </div>
@@ -100,36 +93,21 @@ class EditMenu extends Component {
             </div>
           </div>
         </Menu>
-        <Dialog
-          open={this.state.dialogOpen}
-          onRequestClose={this.handleDialogClose}
-        >
-          <DialogTitle align="center">{'Enter Recipe Password'}</DialogTitle>
-          <div className={dialogContainer}>
-            <form onSubmit={this.submitPassword}>
-              <TextField
-                label="Password"
-                type="password"
-                className={passwordInput}
-                inputRef={this.passwordRef}
-              />
-              <Button color="primary" raised onClick={this.submitPassword}>
-                {'Submit'}
-              </Button>
-            </form>
-          </div>
-        </Dialog>
       </div>
     );
   }
 }
 
-EditMenu.propTypes = {};
+EditMenu.propTypes = {
+  recipeHasPassword: PropTypes.bool,
+};
 
-EditMenu.defaultProps = {};
+EditMenu.defaultProps = {
+  recipeHasPassword: false,
+};
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ recipeLogin }, dispatch);
+  return bindActionCreators({ openEditAuthDialog }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(withStyles(styles)(EditMenu));

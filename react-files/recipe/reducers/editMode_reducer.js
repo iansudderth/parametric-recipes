@@ -3,6 +3,7 @@ import {
   CHANGE_RECIPE,
   PUBLISH_RECIPE_SUCCESS,
   RECIPE_LOGIN_SUCCESS,
+  EDIT_AUTH_STATUS_SUCCESS,
 } from '../actions';
 
 function editMode(state = false, action) {
@@ -17,6 +18,9 @@ function editMode(state = false, action) {
       return false;
     }
     case RECIPE_LOGIN_SUCCESS: {
+      return true;
+    }
+    case EDIT_AUTH_STATUS_SUCCESS: {
       return true;
     }
     default:

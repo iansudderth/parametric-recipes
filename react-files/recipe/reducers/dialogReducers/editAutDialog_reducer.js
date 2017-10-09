@@ -4,6 +4,7 @@ import {
   EDIT_AUTH_DIALOG_OPEN,
   EDIT_AUTH_DIALOG_CLOSE,
   EDIT_AUTH_STATUS_INITIAL,
+  EDIT_AUTH_STATUS_PROGRESS,
   EDIT_AUTH_STATUS_SUCCESS,
   EDIT_AUTH_STATUS_ERROR,
   EDIT_AUTH_STATUS_INCORRECT_PASSWORD,
@@ -30,6 +31,11 @@ export default function editAuthDialog(state = initialState, action) {
     case EDIT_AUTH_STATUS_INITIAL: {
       return stateChange(state, {
         status: 'INITIAL',
+      });
+    }
+    case EDIT_AUTH_STATUS_PROGRESS: {
+      return stateChange(state, {
+        status: 'PROGRESS',
       });
     }
     case EDIT_AUTH_STATUS_SUCCESS: {
