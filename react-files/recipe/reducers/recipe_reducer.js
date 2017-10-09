@@ -1,3 +1,6 @@
+import _ from 'lodash';
+import { removeIds } from './helper_functions';
+
 import {
   CHANGE_RECIPE,
   NEW_RECIPE,
@@ -18,6 +21,7 @@ import {
   DELETE_STEP,
   REORDER_STEP,
   RESET,
+  NEW_RECIPE_FROM_COPY,
 } from '../actions';
 
 import defaultRecipe from '../recipes/deafaultRecipe';
@@ -40,6 +44,11 @@ function recipe(state = null, action) {
       }
     case NEW_RECIPE: {
       return defaultRecipe;
+    }
+    case NEW_RECIPE_FROM_COPY: {
+      const oldRecipe = _.merge({}, action.payload.recipeToCopy);
+      const newRecipe = removeIds(oldRecipe);
+      return newRecipe;
     }
     case EDIT_TITLE:
     case EDIT_SERVING_AMOUNT:

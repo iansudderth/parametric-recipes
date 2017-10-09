@@ -35,6 +35,12 @@ const styles = {
 };
 
 class DiscardChangesDialog extends Component {
+  discardChangesComposer = () => {
+    return () => {
+      this.props.discardChanges(this.props.recipe._id);
+    };
+  };
+
   render() {
     const {
       buttonsContainer,
@@ -53,7 +59,7 @@ class DiscardChangesDialog extends Component {
           <Button
             raised
             className={acceptButton}
-            onClick={this.props.discardChanges}
+            onClick={this.discardChangesComposer()}
           >
             {'Yes, Discard Changes'}
           </Button>

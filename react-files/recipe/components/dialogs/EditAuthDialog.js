@@ -39,7 +39,6 @@ class EditAuthDialog extends Component {
                     <PasswordInput
                       submitFunction={this.authorizeEditConstructor()}
                       buttonText="Submit"
-                      autoFocus
                     />
                   </div>
                 );

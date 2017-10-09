@@ -1,5 +1,6 @@
 import axios from 'axios';
 import _ from 'lodash';
+import { requestRecipe } from './index';
 
 // Action dispatchers for opening and closing DiscardChangesDialog
 // Not to be called directly, only through thunks
@@ -69,8 +70,9 @@ export function closeDiscardChangesDialog() {
 // Dispatcher for discarding changes
 // Call this directly
 
-export function discardChanges() {
+export function discardChanges(id) {
   return dispatch => {
+    dispatch(requestRecipe(id));
     dispatch(discardDialogClose());
     dispatch(discardStatusLogOutProgress());
     dispatch(closeDiscardChangesDialog());

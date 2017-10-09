@@ -7,6 +7,7 @@ import {
   RESET,
   DISCARD_STATUS_LOGOUT_PROGRESS,
   UPDATE_STATUS_SUCCESS,
+  NEW_RECIPE_FROM_COPY,
 } from '../actions';
 
 function editMode(state = false, action) {
@@ -33,6 +34,9 @@ function editMode(state = false, action) {
     }
     case UPDATE_STATUS_SUCCESS: {
       return false;
+    }
+    case NEW_RECIPE_FROM_COPY: {
+      return true;
     }
     default:
       return state;

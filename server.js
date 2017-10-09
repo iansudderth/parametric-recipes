@@ -32,7 +32,7 @@ if (_.includes(process.argv, '--seed')) {
 }
 
 function sanitizeString(str) {
-  return sanitizer.escape(str);
+  return mongoSanitizer(sanitizer.escape(str));
 }
 
 function validatePassword(password) {
@@ -135,46 +135,54 @@ app.prepare().then(() => {
   });
 
   server.get('/recipe/:id', (req, res) => {
-    const id = req.params.id;
+    const id = sanitizeString(req.params.id);
     Recipe.findOne({ _id: id }).then(response => {
       res.json(response);
     });
   });
 
   server.post('/recipe/auth/login', (req, res) => {
-    const recipeId = req.body.id;
-    const password = req.body.password;
-    console.log(recipeId, password);
-    RecipeAuth.findOne({ recipeId })
-      .then(auth => {
-        if (auth) {
-          bcrypt.compare(password, auth.hash).then(passwordIsCorrect => {
-            if (passwordIsCorrect) {
-              req.session.recipeId = recipeId;
-              res.json({
-                status: 'SUCCESS',
-                authStatus: 'CORRECT PASSWORD',
-              });
-            } else {
-              res.json({
-                status: 'SUCCESS',
-                authStatus: 'INCORRECT PASSWORD',
-              });
-            }
-          });
-        } else {
+    const recipeId = sanitizeString(req.body.id);
+    const password = sanitizeString(req.body.password);
+
+    if (validatePassword(password)) {
+      RecipeAuth.findOne({ recipeId })
+        .then(auth => {
+          if (auth) {
+            bcrypt.compare(password, auth.hash).then(passwordIsCorrect => {
+              if (passwordIsCorrect) {
+                req.session.recipeId = recipeId;
+                res.json({
+                  status: 'SUCCESS',
+                  authStatus: 'CORRECT PASSWORD',
+                });
+              } else {
+                res.json({
+                  status: 'SUCCESS',
+                  authStatus: 'INCORRECT PASSWORD',
+                });
+              }
+            });
+          } else {
+            res.json({
+              status: 'ERROR',
+              authStatus: 'NO AUTH RECORD',
+            });
+          }
+        })
+        .catch(error => {
           res.json({
             status: 'ERROR',
-            authStatus: 'NO AUTH RECORD',
+            authStatus: 'ERROR FINDING AUTH RECORD',
           });
-        }
-      })
-      .catch(error => {
-        res.json({
-          status: 'ERROR',
-          authStatus: 'ERROR FINDING AUTH RECORD',
         });
+    } else {
+      res.json({
+        status: 'ERROR',
+        recipeStatus: null,
+        authStatus: 'INVALID_PASSWORD',
       });
+    }
   });
 
   server.post('/recipe/auth/logout', (req, res) => {
@@ -195,8 +203,8 @@ app.prepare().then(() => {
   });
 
   server.post('/recipe/update', (req, res) => {
-    const recipeId = req.body.recipeId;
-    const recipe = req.body.recipe;
+    const recipeId = sanitizeString(req.body.recipeId);
+    const recipe = mongoSanitizer(req.body.recipe);
     if (req.session.recipeId === recipeId) {
       Recipe.findByIdAndUpdate(recipeId, recipe)
         .then(updatedRecipe => {

@@ -9,6 +9,8 @@ import {
   newRecipe,
   EDIT_RECIPE,
   editRecipe,
+  NEW_RECIPE_FROM_COPY,
+  newRecipeFromCopy,
 } from './recipeActions';
 
 export {
@@ -20,6 +22,8 @@ export {
   newRecipe,
   EDIT_RECIPE,
   editRecipe,
+  NEW_RECIPE_FROM_COPY,
+  newRecipeFromCopy,
 };
 
 import {

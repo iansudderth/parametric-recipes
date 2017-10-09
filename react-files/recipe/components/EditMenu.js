@@ -7,7 +7,7 @@ import Menu, { MenuItem } from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { openEditAuthDialog } from '../actions';
+import { openEditAuthDialog, newRecipeFromCopy } from '../actions';
 
 const styles = {
   menuContainer: {
@@ -55,6 +55,10 @@ class EditMenu extends Component {
     this.setState({ dialogOpen: false });
   };
 
+  newRecipeFromCopyDispatcher = () => {
+    this.props.newRecipeFromCopy(this.props.recipe);
+  };
+
   render() {
     const {
       menuContainer,
@@ -87,7 +91,11 @@ class EditMenu extends Component {
               ''
             )}
             <div className={buttonWrapper}>
-              <Button raised color="primary">
+              <Button
+                raised
+                color="primary"
+                onClick={this.newRecipeFromCopyDispatcher}
+              >
                 {'New Recipe from Copy'}
               </Button>
             </div>
@@ -106,8 +114,17 @@ EditMenu.defaultProps = {
   recipeHasPassword: false,
 };
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ openEditAuthDialog }, dispatch);
+function mapStateToProps({ recipe }) {
+  return { recipe };
 }
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(EditMenu));
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { openEditAuthDialog, newRecipeFromCopy },
+    dispatch
+  );
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  withStyles(styles)(EditMenu)
+);

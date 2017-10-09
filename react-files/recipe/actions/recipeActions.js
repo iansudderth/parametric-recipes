@@ -30,3 +30,13 @@ export function editRecipe(id) {
     },
   };
 }
+
+export const NEW_RECIPE_FROM_COPY = 'NEW_RECIPE_FROM_COPY';
+export function newRecipeFromCopy(recipeToCopy) {
+  return {
+    type: NEW_RECIPE_FROM_COPY,
+    payload: {
+      recipeToCopy,
+    },
+  };
+}
