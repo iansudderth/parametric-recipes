@@ -5,6 +5,7 @@ const _ = require('lodash');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const seedDB = require('./schema/seed');
+const bigSeedDB = require('./schema/bigSeed');
 const Recipe = require('./schema/Recipe');
 const RecipeAuth = require('./schema/RecipeAuth');
 const bluebird = require('bluebird');
@@ -27,8 +28,16 @@ const db = mongoose.connection;
 const secret = process.env.SESSION_SECRET || 'stuff and things';
 const saltingRounds = process.env.SALTING_ROUNDS || 8;
 
+const generatePages = require('./schema/generatePages');
+
+const pageSize = 10;
+
 if (_.includes(process.argv, '--seed')) {
   seedDB();
+}
+
+if (_.includes(process.argv, '--big-seed')) {
+  bigSeedDB();
 }
 
 function sanitizeString(str) {
@@ -54,15 +63,20 @@ app.prepare().then(() => {
   );
 
   server.get('/recipe', (req, res) => {
-    Recipe.find({})
-      .select({ title: true })
-      .sort({ title: 'asc' })
-      .then(response => {
-        const mergedQuery = Object.assign({}, req.query, {
-          recipeList: response,
-        });
-        app.render(req, res, '/recipe', mergedQuery);
+    generatePages(0, pageSize, pages => {
+      const mergedQuery = Object.assign({}, req.query, {
+        recipeList: pages,
       });
+      app.render(req, res, '/recipe', mergedQuery);
+    });
+  });
+
+  server.get('/recipe/index/:pageIndex', (req, res) => {
+    const pageIndex = parseInt(req.params.pageIndex, 10);
+    generatePages(pageIndex, pageSize, pages => {
+      console.log(pages);
+      res.json({ pages });
+    });
   });
 
   server.get('/recipe/new', (req, res) => {
@@ -123,15 +137,6 @@ app.prepare().then(() => {
         authStatus: 'INVALID_PASSWORD',
       });
     }
-  });
-
-  server.get('/recipe/index', (req, res) => {
-    Recipe.find({})
-      .select({ title: true })
-      .sort({ title: 'asc' })
-      .then(response => {
-        res.json(response);
-      });
   });
 
   server.get('/recipe/:id', (req, res) => {

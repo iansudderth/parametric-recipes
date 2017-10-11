@@ -63,21 +63,22 @@ function updateRecipeListError(error) {
 }
 
 export const UPDATE_RECIPE_LIST = 'UPDATE_RECIPE_LIST';
-function updateRecipeList(list) {
+function updateRecipeList(pages) {
   return {
     type: UPDATE_RECIPE_LIST,
-    payload: list,
+    payload: pages,
   };
 }
 
 export const REQUEST_UPDATE_RECIPE_LIST = 'REQUEST_UPDATE_RECIPE_LIST';
-export function requestUpdateRecipeList() {
+export function requestUpdateRecipeList(pageIndex = 0) {
   return dispatch => {
     dispatch(updateRecipeListProgress());
-    axios.get('/recipe/index').then(
+    axios.get(`/recipe/index/${pageIndex}`).then(
       response => {
+        console.log(response);
         dispatch(updateRecipeListSuccess());
-        dispatch(updateRecipeList(response.data));
+        dispatch(updateRecipeList(response.data.pages));
       },
       error => {
         dispatch(updateRecipeListError(error));

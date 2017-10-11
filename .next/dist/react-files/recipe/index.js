@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _react = require('react');
@@ -28,27 +28,13 @@ var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/iansudderth/Desktop/parametric-recipes/react-files/recipe/index.js';
-
+var isBrowser = typeof window !== 'undefined';
+var MyWindowDependentLibrary = isBrowser ? require('velocity-animate/velocity.ui') : undefined;
 
 var createStoreWithMiddleware = (0, _reduxDevtoolsExtension.composeWithDevTools)((0, _redux.applyMiddleware)(_reduxThunk2.default))(_redux.createStore);
 
 var Boiler = function Boiler(props) {
-	return _react2.default.createElement('div', {
-		__source: {
-			fileName: _jsxFileName,
-			lineNumber: 14
-		}
-	}, _react2.default.createElement(_reactRedux.Provider, { store: createStoreWithMiddleware(_reducers2.default, props.seedState), __source: {
-			fileName: _jsxFileName,
-			lineNumber: 15
-		}
-	}, _react2.default.createElement(_App2.default, {
-		__source: {
-			fileName: _jsxFileName,
-			lineNumber: 16
-		}
-	})));
+  return _react2.default.createElement('div', null, _react2.default.createElement(_reactRedux.Provider, { store: createStoreWithMiddleware(_reducers2.default, props.seedState) }, _react2.default.createElement(_App2.default, null)));
 };
 
 exports.default = Boiler;
