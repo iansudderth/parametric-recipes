@@ -69,19 +69,12 @@ app.prepare().then(() => {
       });
       app.render(req, res, '/recipe', mergedQuery);
     });
-    // Recipe.find({})
-    //   .select({ title: true })
-    //   .sort({ title: 'asc' })
-    //   .then(response => {
-    //     const mergedQuery = Object.assign({}, req.query, {
-    //       recipeList: response,
-    //     });
-    //     app.render(req, res, '/recipe', mergedQuery);
-    //   });
   });
 
-  server.get('/recipe/index', (req, res) => {
-    generatePages(0, pageSize, pages => {
+  server.get('/recipe/index/:pageIndex', (req, res) => {
+    const pageIndex = parseInt(req.params.pageIndex, 10);
+    generatePages(pageIndex, pageSize, pages => {
+      console.log(pages);
       res.json({ pages });
     });
   });

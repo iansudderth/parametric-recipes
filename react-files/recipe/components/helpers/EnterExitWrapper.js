@@ -38,10 +38,12 @@ function EnterExitWrapper(props) {
       enter={{
         animation: enterAnimation,
         display,
+        delay: props.enterDelay,
         ...enterAnimationProperties,
       }}
       leave={{
         animation: exitAnimation,
+        delay: props.exitDelay,
         ...exitAnimationProperties,
       }}
       runOnMount={runOnMount}
@@ -68,6 +70,8 @@ EnterExitWrapper.propTypes = {
   runOnMount: PropTypes.bool,
   parentComponent: PropTypes.string,
   parentProps: PropTypes.object,
+  enterDelay: PropTypes.number,
+  exitDelay: PropTypes.number,
 };
 
 EnterExitWrapper.defaultProps = {
@@ -84,6 +88,8 @@ EnterExitWrapper.defaultProps = {
   runOnMount: true,
   parentComponent: 'div',
   parentProps: {},
+  enterDelay: 0,
+  exitDelay: 0,
 };
 
 export default EnterExitWrapper;

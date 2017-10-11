@@ -28,23 +28,26 @@ function getPage(page, pageSize) {
 }
 
 function generatePages(pageIndex, pageSize, callback) {
+  if (pageIndex < 0) {
+    pageIndex = 0;
+  }
+
   let pages = {
     prev: null,
     current: null,
     next: null,
+    index: pageIndex,
   };
-
-  if (pageIndex < 0) {
-    pageIndex = 0;
-  }
 
   getPage(pageIndex, pageSize)
     .then(currentPageResults => {
       if (currentPageResults.length > 0) {
         pages.current = currentPageResults;
       }
+      // console.log('pageIndex', pageIndex);
       getPage(pageIndex + 1, pageSize)
         .then(nextPage => {
+          // console.log('nextPage', nextPage);
           if (nextPage.length > 0) {
             pages.next = nextPage;
           }
@@ -69,5 +72,9 @@ function generatePages(pageIndex, pageSize, callback) {
       console.log(error);
     });
 }
+
+// generatePages(1, 10, pages => {
+//   console.log(pages);
+// });
 
 module.exports = generatePages;

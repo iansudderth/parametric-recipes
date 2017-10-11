@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { connect } from 'react-redux';
@@ -7,7 +7,13 @@ import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import List, { ListItem, ListItemAvatar, ListItemText } from 'material-ui/List';
 import Button from 'material-ui/Button';
 import { lightBlue } from 'material-ui/colors';
-import { changeRecipe, requestRecipe } from '../actions';
+import {
+  changeRecipe,
+  requestRecipe,
+  requestUpdateRecipeList,
+} from '../actions';
+
+import ExpandWrapper from './helpers/ExpandWrapper';
 
 const styles = {
   listItem: {
@@ -33,44 +39,126 @@ const styles = {
   },
 };
 
-function ChangeRecipeDialog(props) {
-  function changeRecipeComposer(id) {
-    return function() {
-      props.requestRecipe(id);
-      props.handleClose();
+class ChangeRecipeDialog extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: 'current',
     };
   }
 
-  const { listItem, listText, innerDialog, buttonsContainer } = props.classes;
-  return (
-    <Dialog open={props.open} onRequestClose={props.handleClose}>
-      <div className={innerDialog}>
-        <DialogTitle>Choose a Recipe </DialogTitle>
-        <div>
-          <List>
-            {props.recipeList.current.map(recipe => (
-              <ListItem
-                key={recipe._id}
-                className={listItem}
-                onClick={changeRecipeComposer(recipe._id)}
+  componentWillReceiveProps = () => {
+    this.setState({ page: 'current' });
+  };
+
+  changeRecipeComposer = id => {
+    return () => {
+      this.props.requestRecipe(id);
+      this.props.handleClose();
+    };
+  };
+
+  handleNext = () => {
+    this.setState({ page: 'next' }, () => {
+      this.requestUpdatedPage();
+    });
+  };
+
+  handlePrev = () => {
+    this.setState({ page: 'prev' }, () => {
+      this.requestUpdatedPage();
+    });
+  };
+
+  requestUpdatedPage = () => {
+    const index = parseInt(this.props.recipeList.index, 10);
+    if (this.state.page === 'next') {
+      this.props.requestUpdateRecipeList(index + 1);
+    } else {
+      this.props.requestUpdateRecipeList(index - 1);
+    }
+  };
+
+  render() {
+    let pageKey;
+
+    switch (this.state.page) {
+      case 'next': {
+        pageKey = this.props.recipeList.next[0];
+        break;
+      }
+      case 'prev': {
+        pageKey = this.props.recipeList.prev[0];
+        break;
+      }
+      case 'current':
+      default: {
+        pageKey = this.props.recipeList.current[0];
+        break;
+      }
+    }
+
+    const {
+      listItem,
+      listText,
+      innerDialog,
+      buttonsContainer,
+    } = this.props.classes;
+    const prevDisabled = this.props.recipeList.prev
+      ? { disabled: false }
+      : { disabled: true };
+    const nextDisabled = this.props.recipeList.next
+      ? { disabled: false }
+      : { disabled: true };
+    return (
+      <Dialog open={this.props.open} onRequestClose={this.props.handleClose}>
+        <div className={innerDialog}>
+          <DialogTitle>Choose a Recipe </DialogTitle>
+          <div>
+            <List>
+              <ExpandWrapper>
+                {this.props.recipeList[this.state.page].map(recipe => (
+                  <ListItem
+                    key={recipe._id}
+                    className={listItem}
+                    onClick={this.changeRecipeComposer(recipe._id)}
+                  >
+                    <ListItemText className={listText} primary={recipe.title} />
+                  </ListItem>
+                ))}
+              </ExpandWrapper>
+            </List>
+            <div className={buttonsContainer}>
+              <Button
+                color="primary"
+                {...prevDisabled}
+                onClick={this.handlePrev}
               >
-                <ListItemText className={listText} primary={recipe.title} />
-              </ListItem>
-            ))}
-          </List>
-          <div className={buttonsContainer}>
-            <Button>{'Previous'}</Button>
-            <Button>{'Next'}</Button>
+                {'Previous'}
+              </Button>
+              <Button
+                color="primary"
+                {...nextDisabled}
+                onClick={this.handleNext}
+              >
+                {'Next'}
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </Dialog>
-  );
+      </Dialog>
+    );
+  }
 }
 
 ChangeRecipeDialog.propTypes = {
   open: PropTypes.bool,
-  handleClose: PropTypes.func,
+  handleClose: PropTypes.func.isRequired,
+};
+
+ChangeRecipeDialog.defaultProps = {
+  open: false,
 };
 
 function mapDispatchToProps(dispatch) {
@@ -78,6 +166,7 @@ function mapDispatchToProps(dispatch) {
     {
       changeRecipe,
       requestRecipe,
+      requestUpdateRecipeList,
     },
     dispatch
   );

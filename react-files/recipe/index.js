@@ -7,14 +7,15 @@ import reducers from './reducers';
 import App from './App';
 
 const createStoreWithMiddleware = composeWithDevTools(applyMiddleware(thunk))(
-	createStore,
+  createStore
 );
 
-const Boiler = props =>
-	<div>
-		<Provider store={createStoreWithMiddleware(reducers, props.seedState)}>
-			<App />
-		</Provider>
-	</div>;
+const Boiler = props => (
+  <div>
+    <Provider store={createStoreWithMiddleware(reducers, props.seedState)}>
+      <App />
+    </Provider>
+  </div>
+);
 
 export default Boiler;
