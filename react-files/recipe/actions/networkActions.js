@@ -63,10 +63,10 @@ function updateRecipeListError(error) {
 }
 
 export const UPDATE_RECIPE_LIST = 'UPDATE_RECIPE_LIST';
-function updateRecipeList(list) {
+function updateRecipeList(pages) {
   return {
     type: UPDATE_RECIPE_LIST,
-    payload: list,
+    payload: pages,
   };
 }
 
@@ -76,8 +76,9 @@ export function requestUpdateRecipeList() {
     dispatch(updateRecipeListProgress());
     axios.get('/recipe/index').then(
       response => {
+        console.log(response);
         dispatch(updateRecipeListSuccess());
-        dispatch(updateRecipeList(response.data));
+        dispatch(updateRecipeList(response.data.pages));
       },
       error => {
         dispatch(updateRecipeListError(error));
