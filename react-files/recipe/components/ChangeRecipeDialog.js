@@ -81,24 +81,6 @@ class ChangeRecipeDialog extends Component {
   };
 
   render() {
-    let pageKey;
-
-    switch (this.state.page) {
-      case 'next': {
-        pageKey = this.props.recipeList.next[0];
-        break;
-      }
-      case 'prev': {
-        pageKey = this.props.recipeList.prev[0];
-        break;
-      }
-      case 'current':
-      default: {
-        pageKey = this.props.recipeList.current[0];
-        break;
-      }
-    }
-
     const {
       listItem,
       listText,
