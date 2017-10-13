@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const Recipe = require('./Recipe');
-const RecipeAuth = require('./RecipeAuth');
+const Recipe = require('../schema/Recipe');
+const RecipeAuth = require('../schema/RecipeAuth');
 const _ = require('lodash');
 const bluebird = require('bluebird');
 
